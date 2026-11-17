@@ -103,9 +103,15 @@ if (-not $failed) {
 if (-not $failed) {
   Write-Line '  正在上传…' 'DarkGray'
   Write-Line '  （第一次在这台电脑上传，会停在 Password：粘贴 GitHub token 后回车；屏幕上不显示字是正常的）' 'DarkGray'
-  # 用 Start-Process 让 git 直接接管控制台，这样登录提示能看见、也能输入
-  $proc = Start-Process -FilePath 'git' -ArgumentList ($netArgs + @('push', 'origin', 'main')) -WorkingDirectory $skillsDir -NoNewWindow -Wait -PassThru
-  if ($proc.ExitCode -ne 0) {
+  # 不用管道捕获输出，让 git 直接写在窗口上：登录提示才看得见、也能输入
+  Push-Location $skillsDir
+  try {
+    & git @($netArgs + @('push', 'origin', 'main'))
+    $pushCode = $LASTEXITCODE
+  } finally {
+    Pop-Location
+  }
+  if ($pushCode -ne 0) {
     Write-Line '  推送失败。' 'Yellow'
     Write-Line '  如果卡在 Password 那一步输错了，或者这台电脑还没登录 GitHub：' 'Yellow'
     Write-Line '    用户名：bfsu1666935342-pixel（已自动填好）' 'Yellow'
