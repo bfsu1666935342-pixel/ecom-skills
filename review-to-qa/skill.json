@@ -1,6 +1,6 @@
 {
   "id": "review-to-qa",
-  "title": "缺点转问答",
+  "title": "缺点转QA",
   "group": "上架与内容",
   "order": 70,
   "tagline": "把 Alexa 抱怨或差评里的每条缺点，拆成 6 组针对性问答，中英双语导出 Excel",

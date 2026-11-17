@@ -3,7 +3,7 @@ name: review-to-qa
 description: "把 Alexa / Rufus 的买家抱怨、或者差评里提到的缺点，逐条拆成 6 组针对性问答（中文一页、英文一页），导出两 sheet 的 Excel。当用户要把差评、评论或 Alexa 总结变成 FAQ / 详情页 Q&A / 客服话术库时使用。不用于写整篇 Listing 文案。"
 ---
 
-# 缺点转问答（Review → Q&A）
+# 缺点转QA（Review → Q&A）
 
 把「买家主要抱怨」里的**每一条缺点**，单独拆成 6 组咬住它的 Q&A，中文一页、英文一页，导出一个两 sheet 的 Excel。
 
