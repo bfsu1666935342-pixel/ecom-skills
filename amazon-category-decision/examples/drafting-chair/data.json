@@ -1,0 +1,587 @@
+{
+  "meta": {
+    "category": "Drafting Chairs",
+    "node": "1069142",
+    "site": "US",
+    "window": "2024-11 — 2026-10",
+    "source": "Sorftime MCP",
+    "pulled": "2026-11-12",
+    "source_banner": "Sorftime MCP 实拉 2026-11-12 · Amazon US「Drafting Chairs」node 1069142 · Top100 · 第三方估算，不是 Amazon 官方。",
+    "footer": "CATEGORY LAB · Drafting Chair · 2026-11-12 · Sorftime MCP 实拉 · 第三方估算，非 Amazon 官方"
+  },
+  "market": {
+    "months": [
+      "2024-11",
+      "2024-12",
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06",
+      "2025-07",
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "sales": [
+      58009,
+      49905,
+      30967,
+      32337,
+      36275,
+      32597,
+      33794,
+      32436,
+      38172,
+      35318,
+      40065,
+      42137,
+      37428,
+      34832,
+      32751,
+      33446,
+      41278,
+      36833,
+      32002,
+      33951,
+      31258,
+      26989,
+      27124,
+      27188
+    ],
+    "revenue": [
+      6079923.29,
+      5268470.85,
+      3282192.33,
+      3604605.39,
+      3989524.5,
+      3677919.51,
+      3774451.86,
+      3662673.12,
+      4276409.16,
+      3937957.0,
+      4411156.5,
+      4635912.74,
+      4109220.12,
+      3814452.32,
+      3593439.72,
+      3784414.9,
+      4678035.74,
+      4063048.23,
+      3500698.78,
+      3675535.26,
+      3356484.04,
+      2815762.37,
+      2897928.16,
+      2968929.6
+    ],
+    "season": [
+      0.8921,
+      0.921,
+      1.0858,
+      0.9721,
+      0.9212,
+      0.9295,
+      0.9721,
+      0.8723,
+      0.9407,
+      0.9706,
+      1.3362,
+      1.1864
+    ]
+  },
+  "metrics": {
+    "sales": 27188,
+    "revenue": 2968929.6,
+    "yoy": -35.5,
+    "asp": 109.2,
+    "top100Sales": 27665,
+    "top100Revenue": 2892680.3,
+    "cr3": 28.25,
+    "cr10": 56.75,
+    "amazonShare": 13.37,
+    "top3Seller": 31.82,
+    "returnRate": 2.93,
+    "avgPrice": 109.02,
+    "maxPrice": 269.99,
+    "productCount": 5251,
+    "available": 1772,
+    "listingDays": 906,
+    "peakTrough": 1.53,
+    "peak": 1.3362,
+    "trough": 0.8723
+  },
+  "priceBands": [
+    {
+      "name": "<$80",
+      "asins": 32,
+      "unitShare": 37.8,
+      "revShare": 22.9,
+      "avg": 55.68,
+      "role": "低价走量"
+    },
+    {
+      "name": "$80–120",
+      "asins": 24,
+      "unitShare": 22.7,
+      "revShare": 22.2,
+      "avg": 101.85,
+      "role": "主力"
+    },
+    {
+      "name": "$120–180",
+      "asins": 39,
+      "unitShare": 36.4,
+      "revShare": 48.2,
+      "avg": 143.92,
+      "role": "薄层"
+    },
+    {
+      "name": ">$180",
+      "asins": 5,
+      "unitShare": 3.1,
+      "revShare": 6.7,
+      "avg": 223.39,
+      "role": "高客单"
+    }
+  ],
+  "brands": [
+    {
+      "name": "Primy",
+      "share": 11.39,
+      "count": 2,
+      "avg": 119.99
+    },
+    {
+      "name": "Brick Attic",
+      "share": 10.15,
+      "count": 3,
+      "avg": 86.66
+    },
+    {
+      "name": "KKTONER",
+      "share": 6.77,
+      "count": 6,
+      "avg": 43.26
+    },
+    {
+      "name": "HYLONE",
+      "share": 5.56,
+      "count": 5,
+      "avg": 162.97
+    },
+    {
+      "name": "SUPERJARE",
+      "share": 5.18,
+      "count": 1,
+      "avg": 79.99
+    },
+    {
+      "name": "Sweetcrispy",
+      "share": 4.06,
+      "count": 2,
+      "avg": 65.33
+    },
+    {
+      "name": "SONGMICS",
+      "share": 3.75,
+      "count": 2,
+      "avg": 74.49
+    },
+    {
+      "name": "Synorla",
+      "share": 3.67,
+      "count": 1,
+      "avg": 129.99
+    },
+    {
+      "name": "Misolant",
+      "share": 3.58,
+      "count": 3,
+      "avg": 133.32
+    },
+    {
+      "name": "Amazon Basics",
+      "share": 2.64,
+      "count": 3,
+      "avg": 80.32
+    }
+  ],
+  "review": {
+    "tiers": [
+      {
+        "label": "0–50",
+        "asinShare": 32.0,
+        "salesShare": 15.8
+      },
+      {
+        "label": "51–200",
+        "asinShare": 22.0,
+        "salesShare": 14.4
+      },
+      {
+        "label": "201–1000",
+        "asinShare": 33.0,
+        "salesShare": 37.0
+      },
+      {
+        "label": "1001+",
+        "asinShare": 13.0,
+        "salesShare": 32.8
+      }
+    ],
+    "negatives": [
+      {
+        "label": "结构 / 稳固",
+        "count": 167
+      },
+      {
+        "label": "晃动 / 稳定性",
+        "count": 139
+      },
+      {
+        "label": "耐久",
+        "count": 107
+      },
+      {
+        "label": "腰背支撑",
+        "count": 101
+      },
+      {
+        "label": "高度 / 调节",
+        "count": 79
+      },
+      {
+        "label": "坐垫",
+        "count": 73
+      }
+    ]
+  },
+  "content": {
+    "aplus": 100,
+    "video": 70,
+    "store": 100,
+    "sample": 10
+  },
+  "features": {
+    "tall": {
+      "asins": 62,
+      "salesShare": 61.3
+    },
+    "footrest": {
+      "asins": 8,
+      "salesShare": 15.6
+    },
+    "flip_arm": {
+      "asins": 27,
+      "salesShare": 32.1
+    },
+    "armless": {
+      "asins": 3,
+      "salesShare": 4.6
+    },
+    "mesh": {
+      "asins": 15,
+      "salesShare": 12.4
+    },
+    "leather": {
+      "asins": 28,
+      "salesShare": 29.2
+    },
+    "standing": {
+      "asins": 52,
+      "salesShare": 48.5
+    },
+    "stool": {
+      "asins": 42,
+      "salesShare": 42.9
+    },
+    "drafting": {
+      "asins": 96,
+      "salesShare": 96.2
+    }
+  },
+  "keywords": [
+    {
+      "term": "drafting chair",
+      "volume": 99649,
+      "yoy": 7.9,
+      "cpc": 3.88,
+      "conv": 4.28,
+      "top3Click": 30.55,
+      "lowReview": 35.71
+    },
+    {
+      "term": "tall office chair",
+      "volume": 38095,
+      "yoy": -1.1,
+      "cpc": 4.84,
+      "conv": 4.55,
+      "top3Click": 39.68,
+      "lowReview": 32.69
+    },
+    {
+      "term": "standing desk chair",
+      "volume": 24438,
+      "yoy": -8.6,
+      "cpc": 3.04,
+      "conv": 3.87,
+      "top3Click": 35.06,
+      "lowReview": 38.46
+    },
+    {
+      "term": "drafting stool",
+      "volume": 8064,
+      "yoy": -21.4,
+      "cpc": 1.86,
+      "conv": 5.49,
+      "top3Click": 20.57,
+      "lowReview": 28.33
+    }
+  ],
+  "products": [
+    {
+      "asin": "B0B41X9SMT",
+      "parent_asin": "B0CLS1P7Q9",
+      "brand": "Primy",
+      "title": "Primy Drafting Chair Tall Office Chair with Flip-up Armrests Executive Ergonomic Computer Standing Desk Chair with Lumbar Support and Adjustable Footrest Ring (Black)",
+      "sub_title": "",
+      "price": 129.99,
+      "seller": "Primy-Super",
+      "is_fba": true,
+      "variations": 26,
+      "profit_rate": 63.91,
+      "monthly_sales_volume": 2895,
+      "monthly_sales_amount": 376321.05,
+      "rating_count": 3542,
+      "rating": 4.3,
+      "a_plus": true,
+      "has_video": true,
+      "has_brand_store": true,
+      "fba_fee": 27.41,
+      "online_date": "2022-08-04",
+      "features": "翻扶手 · 脚托 · 站立桌 · 加高"
+    },
+    {
+      "asin": "B0D8KX7LB6",
+      "parent_asin": "B0DJJWD26C",
+      "brand": "Brick Attic",
+      "title": "Brick Attic Drafting Chair with Backrest – Adjustable Foot Rest Rolling Stool with Wheels, PU Leather Swivel Stool for Office Spa Studio Lab Counter Salon Home Work Bar Kitchen Shop(Black)",
+      "sub_title": "",
+      "price": 79.99,
+      "seller": "SYNERPLUS INC",
+      "is_fba": true,
+      "variations": 8,
+      "profit_rate": 58.19,
+      "monthly_sales_volume": 2095,
+      "monthly_sales_amount": 167579.05,
+      "rating_count": 1221,
+      "rating": 4.5,
+      "a_plus": true,
+      "has_video": true,
+      "has_brand_store": true,
+      "fba_fee": 21.44,
+      "online_date": "2024-09-14",
+      "features": "脚托 · 带轮 · PU/皮 · Drafting"
+    },
+    {
+      "asin": "B082F6Z98J",
+      "parent_asin": "B096RLJXTL",
+      "brand": "SUPERJARE",
+      "title": "SUPERJARE Drafting Chair with Backrest, Adjustable Foot Rest Rolling Stool ",
+      "sub_title": "Multi-Purpose Shop Stool, Drafting Stool, Office Desk Chair, Bar Stools with Thick Seat Cushion for Home Bar Kitchen, Black",
+      "price": 79.99,
+      "seller": "SUPERJARE Direct",
+      "is_fba": true,
+      "variations": 7,
+      "profit_rate": 57.48,
+      "monthly_sales_volume": 1435,
+      "monthly_sales_amount": 114785.65,
+      "rating_count": 2199,
+      "rating": 4.4,
+      "a_plus": true,
+      "has_video": true,
+      "has_brand_store": true,
+      "fba_fee": 22.01,
+      "online_date": "2020-01-14",
+      "features": "脚托 · Drafting"
+    },
+    {
+      "asin": "B0DR2HL6J8",
+      "parent_asin": "B0HPKP52JW",
+      "brand": "Synorla",
+      "title": "Synorla Ergonomic Tall Drafting Chair-Mesh Desk Chair with Flip-Up Arms ",
+      "sub_title": "Adjustable Height,Lumbar Support,Adjustable Footrest Ring,Standing Desk,Breathable Backrest",
+      "price": 129.99,
+      "seller": "QIJI HOME",
+      "is_fba": true,
+      "variations": 4,
+      "profit_rate": 63.15,
+      "monthly_sales_volume": 1017,
+      "monthly_sales_amount": 132199.83,
+      "rating_count": 227,
+      "rating": 4.1,
+      "a_plus": true,
+      "has_video": false,
+      "has_brand_store": true,
+      "fba_fee": 28.4,
+      "online_date": "2024-12-20",
+      "features": "翻扶手 · 脚托 · Mesh · 站立桌"
+    },
+    {
+      "asin": "B0FBWDCG79",
+      "parent_asin": "B0GN2CRJ9D",
+      "brand": "Sweetcrispy",
+      "title": "Sweetcrispy Ergonomic Tall Drafting Chair, High Office Desk Chair ",
+      "sub_title": "Comfy Lumbar Support, Adjustable Height, Footrest, Fixed Arms, Counter, Dark Black",
+      "price": 64.9,
+      "seller": "Amazon",
+      "is_fba": true,
+      "variations": 4,
+      "profit_rate": 40.45,
+      "monthly_sales_volume": 948,
+      "monthly_sales_amount": 61525.2,
+      "rating_count": 296,
+      "rating": 4.5,
+      "a_plus": true,
+      "has_video": true,
+      "has_brand_store": true,
+      "fba_fee": 28.91,
+      "online_date": "2025-06-06",
+      "features": "脚托 · 加高 · Drafting"
+    },
+    {
+      "asin": "B0HDNH8YJ1",
+      "parent_asin": "B0HF3ZJXWZ",
+      "brand": "SONGMICS",
+      "title": "SONGMICS Drafting Chair, Ergonomic Tall Office Chair for Standing Desk ",
+      "sub_title": "Mesh Back, Adjustable Footring, Lumbar Support, Flip-Up Armrests, 25.2 x 25.2 x 41.3-49.2 Inch, KIME Collection UOBN046B101S",
+      "price": 84.99,
+      "seller": "Amazon",
+      "is_fba": true,
+      "variations": 2,
+      "profit_rate": 47.43,
+      "monthly_sales_volume": 741,
+      "monthly_sales_amount": 62977.59,
+      "rating_count": 150,
+      "rating": 3.9,
+      "a_plus": true,
+      "has_video": false,
+      "has_brand_store": true,
+      "fba_fee": 31.93,
+      "online_date": "2026-08-11",
+      "features": "翻扶手 · Mesh · 站立桌 · 加高"
+    },
+    {
+      "asin": "B0D478XJWJ",
+      "parent_asin": "B0DY7QKCMS",
+      "brand": "LIMKOMES",
+      "title": "500lbs Heavy-Duty Adjustable Rolling Stool with Wheels & Foot pedal ring ",
+      "sub_title": "9.5cm Thick Seat Cushion|PU leather|Silent caster|360° Rotating Drafting Work Chair For salon,Spa,tattoo,clinic,home,office",
+      "price": 69.99,
+      "seller": "✯LIMKOMES✯",
+      "is_fba": true,
+      "variations": 4,
+      "profit_rate": 59.19,
+      "monthly_sales_volume": 694,
+      "monthly_sales_amount": 48573.06,
+      "rating_count": 302,
+      "rating": 4.3,
+      "a_plus": true,
+      "has_video": true,
+      "has_brand_store": true,
+      "fba_fee": 18.06,
+      "online_date": "2024-06-11",
+      "features": "带轮 · PU/皮 · Drafting"
+    },
+    {
+      "asin": "B07Q2GQ3RJ",
+      "parent_asin": "B09SH18MPZ",
+      "brand": "KKTONER",
+      "title": "KKTONER PU Leather Round Rolling Stool with Back Rest Height Adjustable Swivel Drafting Work SPA Task Chair with Wheels Black",
+      "sub_title": "",
+      "price": 45.59,
+      "seller": "KKTONER Direct",
+      "is_fba": true,
+      "variations": 4,
+      "profit_rate": 47.36,
+      "monthly_sales_volume": 679,
+      "monthly_sales_amount": 30955.61,
+      "rating_count": 6637,
+      "rating": 4.5,
+      "a_plus": true,
+      "has_video": false,
+      "has_brand_store": true,
+      "fba_fee": 17.16,
+      "online_date": "2019-05-27",
+      "features": "带轮 · PU/皮 · Drafting"
+    },
+    {
+      "asin": "B098Q9LL98",
+      "parent_asin": "B0CWNPKMZ3",
+      "brand": "HYLONE",
+      "title": "Armless Drafting Chair Tall Office Chair Adjustable Height High Back Ergonomic Desk Chair Drafting Stool Rolling Bar Stools Chairs with Footrest and Wheels",
+      "sub_title": "",
+      "price": 139.99,
+      "seller": "Hyloneoffice",
+      "is_fba": true,
+      "variations": 9,
+      "profit_rate": 65.0,
+      "monthly_sales_volume": 640,
+      "monthly_sales_amount": 89593.6,
+      "rating_count": 520,
+      "rating": 4.4,
+      "a_plus": true,
+      "has_video": true,
+      "has_brand_store": true,
+      "fba_fee": 27.99,
+      "online_date": "2021-07-08",
+      "features": "脚托 · 带轮 · 无扶手 · 加高"
+    },
+    {
+      "asin": "B0FXB1BH4V",
+      "parent_asin": "B0GSYMH3JD",
+      "brand": "Brick Attic",
+      "title": "Drafting Chair, Tall Office Chair for Standing Desk, High Executive Leather Ergonomic Computer Chair with Adjustable Height and Flip-Up Armrest for Counter Height Desk, Black, Pack of 1",
+      "sub_title": "",
+      "price": 139.99,
+      "seller": "YazzyBs",
+      "is_fba": true,
+      "variations": 8,
+      "profit_rate": 62.53,
+      "monthly_sales_volume": 600,
+      "monthly_sales_amount": 83994.0,
+      "rating_count": 327,
+      "rating": 4.2,
+      "a_plus": true,
+      "has_video": true,
+      "has_brand_store": true,
+      "fba_fee": 31.45,
+      "online_date": "2026-02-10",
+      "features": "翻扶手 · PU/皮 · 站立桌 · 加高"
+    }
+  ],
+  "assumptions": {
+    "price": 129,
+    "landed": 45,
+    "cpc": 3.88,
+    "cvr": 4.28,
+    "ret": 2.93,
+    "fba": 35,
+    "referral": 15,
+    "overhead": 6
+  }
+}

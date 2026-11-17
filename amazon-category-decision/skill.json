@@ -1,0 +1,42 @@
+{
+  "id": "amazon-category-decision",
+  "title": "类目决策报告",
+  "group": "选品与市场",
+  "order": 11,
+  "tagline": "一个类目 → 六段式决策报告：市场、竞争、产品、单位经济，每个数字都能追到 data.json",
+  "description": "锁定 Amazon 类目节点后，拉类目报告、Top100、关键词、趋势和头部产品详情/评论，归一化成 data.json，按固定评分卡写 narrative.json，渲染成 6 标签页的 HTML 报告，最后校验条数、合计、分值和数据缺口。交付的是一份能直接发给老板的报告，不是一段分析。",
+  "starters": [
+    "帮我评估一下这个类目值不值得做：",
+    "出一份类目报告，US 站，类目是：",
+    "这个 Node 能不能进，做一份完整报告"
+  ],
+  "fields": [
+    {
+      "key": "category",
+      "label": "类目 / Node",
+      "type": "text",
+      "placeholder": "例如：drafting chairs，或 Node 1234567",
+      "required": true
+    },
+    {
+      "key": "site",
+      "label": "站点",
+      "type": "text",
+      "placeholder": "US（默认）"
+    },
+    {
+      "key": "price",
+      "label": "目标售价",
+      "type": "text",
+      "placeholder": "例如：$89.99"
+    },
+    {
+      "key": "params",
+      "label": "其他参数（有就填，没有我会标成假设）",
+      "type": "textarea",
+      "placeholder": "落地成本 / CPC / CVR / 退货率 / FBA 费用"
+    }
+  ],
+  "status": "dsh-only",
+  "source": "https://github.com/bfsu1666935342-pixel/amazon-category-decision-skill"
+}

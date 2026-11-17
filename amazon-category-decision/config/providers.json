@@ -1,0 +1,34 @@
+{
+  "sorftime": {
+    "tools": {
+      "category_search": "category_name_search",
+      "category_report": "category_report",
+      "category_products": "category_products",
+      "category_keywords": "category_keywords",
+      "category_trend": "category_trend",
+      "keyword_detail": "keyword_detail",
+      "keyword_trend": "keyword_trend",
+      "keyword_search_results": "keyword_search_results",
+      "product_detail": "product_detail",
+      "product_customers_say": "product_customers_say",
+      "product_content": "product_content",
+      "category_tree": "category_tree"
+    }
+  },
+  "sif": {
+    "tools": {
+      "category_search": "",
+      "category_report": "",
+      "category_products": "",
+      "category_keywords": "",
+      "category_trend": "",
+      "keyword_detail": "",
+      "keyword_trend": "",
+      "keyword_search_results": "",
+      "product_detail": "",
+      "product_customers_say": "",
+      "product_content": "",
+      "category_tree": ""
+    }
+  }
+}

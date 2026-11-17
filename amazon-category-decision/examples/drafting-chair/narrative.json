@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "eyebrow": "AMAZON US · DRAFTING CHAIRS · SORFTIME MCP",
+    "title": "Drafting Chair",
+    "title_cn": "类目分析",
+    "subtitle": "按「需求质量 → 竞争结构 → 产品空位 → 单位经济 → 供应链门槛」拆解。Sorftime MCP 拉取 Amazon US「Drafting Chairs」node 1069142，Top100 口径，2026-11-12。销量/搜索量为第三方估算，不是 Amazon 官方。",
+    "tags": ["SORFTIME MCP · 实拉", "Drafting Chairs · Node 1069142", "24 个月窗口", "10 / 14 数据模块", "成本 / 供应链待补"],
+    "verdict": "暂不进入",
+    "verdict_class": "red",
+    "score": 40,
+    "reason": "2026-10 销量 27,188，同比 -35.5%；$129 成交价对应 CPC $3.88，广告单均 $90.65，毛利 -54.9%。类目级 No-Go。",
+    "mini": [{"label": "需求", "value": "35"}, {"label": "竞争", "value": "65"}, {"label": "经济", "value": "10"}, {"label": "供应链", "value": "45"}]
+  },
+  "kpis": [
+    {"label": "2026-10 销量", "value": "27,188", "unit": "件", "sub": "Top100 · 自然月"},
+    {"label": "2026-10 销售额", "value": "$2.97M", "sub": "ASP $109"},
+    {"label": "销量同比", "value": "-35.5%", "sub": "2026-10 vs 2025-10"},
+    {"label": "TOP3 销量份额", "value": "28.3%", "sub": "Amazon 13.4% · CR10 56.8%"},
+    {"label": "$129 单位贡献", "value": "-$70.8", "sub": "毛利率 -54.9% · CPC $3.88", "alert": true}
+  ],
+  "scores": {"demand": 35, "competition": 65, "economics": 10, "differentiation": 55, "supply": 45, "content": 55},
+  "total_score": 40,
+  "score_note": "需求 30% · 竞争 25% · 经济 25% · 差异化 10% · 供应链 5% · 内容 5%。需求 fail、经济 fail；评分只用于比较，不救硬门槛。",
+  "gates": [
+    {"label": "需求", "status": "fail", "text": "2026-10 销量 27,188，同比 -35.5%；ASP $109。drafting chair 搜索 99,649/月、+7.9%，但成交额在缩，价格没涨。"},
+    {"label": "竞争", "status": "pass", "text": "TOP3 销量 28.3%，CR10 56.8%，Amazon 自营 13.4%；32% ASIN <50 评论，13% ASIN 1001+ 评论拿 32.8% 销量。"},
+    {"label": "经济性", "status": "fail", "text": "目标价 $129：单位贡献 -$70.8，毛利率 -54.9%；CPC $3.88 / CVR 4.28%，广告单均 $90.65。"},
+    {"label": "供应链", "status": "unknown", "text": "缺供应商报价、MOQ、交期、包装/BIFMA/专利；FBA 约 $27–35，气压棒/脚托/五星脚是主要成本。"},
+    {"label": "差异化", "status": "warn", "text": "Tall 61.3%、Standing 48.5%、Flip Arm 32.1%、Footrest 15.6%。有场景差异，但产品同质化，广告成本吃掉溢价。"}
+  ],
+  "overview": {
+    "signals": [
+      "drafting chair 仍有 99,649/月搜索，同比 +7.9%，需求没有消失。",
+      "Amazon 自营只占 13.4%，TOP3 28.3%，不是被 1P 锁死的类目。",
+      "$120–180 用 36.4% 销量拿 48.2% 销售额，是收入核心。",
+      "32% 的 ASIN 评论不足 50 条，评论墙不算高。"
+    ],
+    "risks": [
+      "2026-10 销量 27,188，同比 -35.5%；ASP 只有 $109。",
+      "CPC $3.88 / CVR 4.28%，广告单均 $90.65；$129 毛利 -54.9%。",
+      "<$80 占 37.8% 销量，只拿 22.9% 销售额，低价带没有利润。",
+      "产品同质化：Tall 61.3%、Standing 48.5%、Flip Arm 32.1%。"
+    ],
+    "next": [
+      "类目级 No-Go：$80–129 成交价撑不起 $3.88 CPC。",
+      "$199+ 只有 3.1% 销量、6.7% 销售额，不足以覆盖广告。",
+      "除非已有站外/品牌流量，否则不要进。"
+    ]
+  },
+  "demand": {
+    "subtitle": "Top100 · 24 个月（2024-11 ~ 2026-10）；看方向与季节。",
+    "season_subtitle": "峰谷比约 1.53×；11 月峰值、1 月次峰，8 月低谷。",
+    "insight": "近 12 个月约 395,080 件 / $43.3M；2026-10 销量 27,188，同比 -35.5%。搜索 drafting chair 仍有 99,649/月、+7.9%，但成交额在缩、ASP 只有 $109。",
+    "season_insight": "峰谷比 1.53×；11 月 1.34、1 月 1.09、8 月 0.87。旺季在 Q4/年初，备货要在 9 月前，但 2026 总量同比 -35.5%，不要按 2024 峰值压库存。",
+    "keyword_tag": "4 词 · 实测",
+    "keyword_note": "同比为 2025-10 vs 2026-10；drafting chair 99,649/月、+7.9%，但 CPC $3.88，搜索在、利润不在。"
+  },
+  "competition": {
+    "band_insight": "<$80 用 37.8% 销量只拿 22.9% 销售额；$120–180 用 36.4% 销量拿 48.2% 销售额，是收入核心。问题是 $129 的成交价撑不起 $3.88 的 CPC。",
+    "brand_top": "TOP3 28.3%，CR10 56.8%，Amazon 自营 13.4%。",
+    "brand_note": "Drafting Chairs 是 5,251 个产品的较小类目；Amazon 只占 13.4%，3P 分散，品牌集中度低。",
+    "metrics": [
+      {"label": "Amazon 自营份额", "value": "13.4%"},
+      {"label": "首页低评论占比", "value": "35.7%"},
+      {"label": "TOP3 点击份额", "value": "30.6%"}
+    ],
+    "review_note": "32% 的 ASIN 评论不足 50 条，只贡献 15.8% 销量；13% 的 ASIN 有 1001+ 评论，贡献 32.8%。评论不是最大问题。",
+    "content_callout": "内容已标配；差异只能在高度适配、脚托、扶手、腰托和稳定性，但这些不足以抵消高 CPC。"
+  },
+  "products": {
+    "note_top": "Top100 中按销量取 Top10；ASIN 可点回 Amazon。",
+    "note": "“内容”= A+ / 视频 / 品牌店；“卖家 / FBA”取 Buy Box 与 FBA 费；功能从标题/属性提取。",
+    "gaps": [
+      "<$80：32 个 ASIN / 37.8% 销量 / 22.9% 销售额；低价走量但不赚钱。",
+      "$120–180：39 个 ASIN / 36.4% 销量 / 48.2% 销售额；收入核心，也是广告最贵的一段。",
+      ">$180：5 个 ASIN / 3.1% 销量 / 6.7% 销售额；高价 niche 太小，撑不起投放。",
+      "产品：Tall 61.3%、Standing 48.5%、Flip Arm 32.1%、Footrest 15.6%；功能同质化。"
+    ],
+    "positioning_good": "类目级 No-Go：$129 成交价 + $3.88 CPC，广告单均 $90.65，毛利 -54.9%；$199+ 只占 3.1% 销量，撑不起投放。",
+    "positioning_bad": "如果已有品牌/站外流量：才考虑 $199–249 的 Tall Executive；否则不要进。"
+  },
+  "concepts": [
+    {"key": "A", "name": "Tall Executive 199", "price": "$199–249", "rec": false, "bullets": ["高背/加高气压棒，适配站立桌", "Flip-up 扶手 + 脚托 + Mesh/Leather", "$120–180 是收入核心（48.2%），$199+ 只有 3.1% 销量", "只有已有站外/品牌流量，才可能覆盖 $3.88 CPC"], "note": "唯一可验证的方向，但不是新卖家可做的主推。"},
+    {"key": "B", "name": "Drafting Stool 99", "price": "$99–129", "rec": false, "bullets": ["Brick Attic / SUPERJARE 在 $80–99 段走量", "Footrest + 可调高度，功能同质", "CPC $3.88 / CVR 4.28%，广告单均 $90.65", "卖 $129 也不够广告费"], "note": "不推荐：低价走量款没有利润。"},
+    {"key": "C", "name": "不做 $80–129", "price": "停止", "rec": false, "bullets": ["37.8% 销量在 <$80，但只拿 22.9% 销售额", "$80–120 是主力，但 $3.88 CPC 吃掉毛利", "Primy / Brick Attic / SUPERJARE 已占位", "没有供应链/品牌优势不要进"], "note": "明确不做：低价 drafting chair。"}
+  ],
+  "economics": {
+    "ladder_note": "实测结论：$129 毛利 -54.9%；$199 仍为负；$249 只有 11.1%，$299 才 23.0%，但类目最高价约 $270，站内广告没有可行区间。"
+  },
+  "data": {
+    "coverage": "10 / 14",
+    "gaps": [
+      {"done": true, "text": "类目 24 个月销量 / 销售额"},
+      {"done": true, "text": "季节性系数 / 峰谷"},
+      {"done": true, "text": "类目报告 / Top100 结构"},
+      {"done": true, "text": "4 个核心词 24 个月趋势"},
+      {"done": true, "text": "Top100 商品明细"},
+      {"done": true, "text": "Top10 商品详情"},
+      {"done": true, "text": "Top3 Customers Say"},
+      {"done": true, "text": "内容 / A+ / 视频覆盖"},
+      {"done": true, "text": "价格带 / 品牌 / 卖家结构"},
+      {"done": true, "text": "样本单位经济假设"},
+      {"done": false, "text": "供应商报价 / landed cost"},
+      {"done": false, "text": "价格 / 促销 / Coupon 历史"},
+      {"done": false, "text": "全量评论 / 图片质量审计"},
+      {"done": false, "text": "认证 / 专利 / 包装"}
+    ],
+    "requests": [
+      {"priority": "P0", "title": "供应商报价 / landed cost", "desc": "FOB、MOQ、交期、包装尺寸/重量、质保；目标 $129–179 的 Tall Drafting。", "level": "必须"},
+      {"priority": "P0", "title": "包装 / FBA / 物流复核", "desc": "FBA 约 $27–35；气压棒、脚托、五星脚是主要成本。", "level": "必须"},
+      {"priority": "P0", "title": "认证 / 专利 / 合规", "desc": "BIFMA、承重/气压棒、脚托/五星脚耐久、外观专利。", "level": "必须"},
+      {"priority": "P1", "title": "价格 / 促销 / Coupon 历史", "desc": "验证 $80–129 真实成交价和站内广告依赖度。", "level": "强烈建议"},
+      {"priority": "P1", "title": "全量评论 / 变体级评论", "desc": "当前只有 Top3 Customers Say；需验证稳定性、腰背支撑、高度。", "level": "强烈建议"},
+      {"priority": "P2", "title": "1P/3P / Buy Box 结构", "desc": "Amazon 13.4%；需要精确到 $120–180 价格带。", "level": "建议"}
+    ],
+    "limits": [
+      {"title": "数据层", "text": "Sorftime 为第三方估算，不是 Amazon 官方；趋势只覆盖 4 个核心词。"},
+      {"title": "经济层", "text": "Landed $45、FBA $35、CPC $3.88、CVR 4.28% 是假设/样本；没有供应商报价，利润只能做方向判断。"},
+      {"title": "判断层", "text": "类目级 No-Go；$129 价格带广告成本 $90.65，$199+ 又只占 3.1% 销量，站内投放没有可行区间。"}
+    ]
+  }
+}
