@@ -1,20 +1,20 @@
 {
   "id": "market-scan",
   "title": "市场机会扫描",
-  "icon": "🔭",
   "group": "选品与市场",
   "order": 10,
-  "featured": true,
-  "tagline": "五道门快速判断：需求 / 竞争 / 利润 / 供应链 / 差异化",
-  "description": "给一个产品想法做 30 分钟粗筛：需求、竞争、单位经济、供应链、差异化五道门，逐项给 pass/warn/fail 和证据，最后给 Go / 谨慎 / No-Go 与下一步验证清单。",
+  "tagline": "初筛：三分钟判断这个类目值不值得花时间深挖，砍掉做不了的和算不过账的",
+  "description": "接 Sorftime/SIF 拉类目报告、Top100 和关键词，用价格分位（P25）定保守售价，查 FBA 费率表算三档净利，再按红旗清单砍掉法规上做不了、经济上不成立的。只回答「要不要继续看」，不出正式报告。",
   "starters": [
-    "这个类目能不能做：便携露营灯，美国站",
-    "帮我对比这三个选品方向，哪个更值得做",
-    "我没有类目数据，先帮我粗筛一下这个想法"
+    "这个类目能不能做：drafting chairs，美国站",
+    "1688 看到个货，帮我看看亚马逊上有没有生意",
+    "帮我快速筛一下这几个方向，哪个值得深挖"
   ],
   "fields": [
-    { "key": "product", "label": "产品 / 类目", "placeholder": "例如：便携露营灯，美国站，目标售价 $29.99", "required": true },
-    { "key": "advantage", "label": "你的优势", "placeholder": "例如：有工厂、能做小批量、有海外仓" },
-    { "key": "worry", "label": "最担心什么", "placeholder": "例如：压货、专利、价格战" }
+    { "key": "product", "label": "产品 / 类目", "type": "text", "placeholder": "英文词最好，例如：drafting chairs", "required": true },
+    { "key": "size", "label": "包装尺寸（英寸）", "type": "text", "placeholder": "长×宽×高，例如：30×25×12。没有 FBA 算不了" },
+    { "key": "weight", "label": "包装重量（磅）", "type": "text", "placeholder": "例如：40" },
+    { "key": "cost", "label": "1688 参考价（元）", "type": "text", "placeholder": "填了就按这个算利润，不填就标 unknown" },
+    { "key": "price", "label": "目标售价（USD）", "type": "text", "placeholder": "不填就按 Top100 的 P25 算" }
   ]
 }
