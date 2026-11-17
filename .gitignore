@@ -1,5 +1,6 @@
-﻿# 本地生成物
+# 本地生成物
 out/
 *.log
 .DS_Store
 Thumbs.db
+logs/

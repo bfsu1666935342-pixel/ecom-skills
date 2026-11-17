@@ -21,6 +21,7 @@ function Invoke-Git {
 $skillsDir = $PSScriptRoot
 $workbenchDir = Join-Path (Split-Path $skillsDir -Parent) 'ecom-workbench'
 $failed = $false
+$report = New-Object System.Collections.ArrayList
 
 Write-Host ''
 Write-Line '=== 1/2  技能库 ===' 'Cyan'
@@ -42,20 +43,23 @@ if (-not $who.Output) {
 $status = Invoke-Git $skillsDir @('status', '--porcelain')
 if ($status.Output) {
   $count = ($status.Output -split "`n").Count
-  $who = $env:COMPUTERNAME
-  if (-not $who) { $who = 'pc' }
-  $msg = 'auto: ' + $who + ' ' + (Get-Date -Format 'yyyy-MM-dd HH:mm')
+  $machine = $env:COMPUTERNAME
+  if (-not $machine) { $machine = 'pc' }
+  $msg = 'auto: ' + $machine + ' ' + (Get-Date -Format 'yyyy-MM-dd HH:mm')
   Invoke-Git $skillsDir @('add', '-A') | Out-Null
   $commit = Invoke-Git $skillsDir @('commit', '-m', $msg)
   if ($commit.Code -eq 0) {
     Write-Line ('  已提交 ' + $count + ' 处改动（' + $msg + '）') 'Green'
+    [void]$report.Add('提交' + $count)
   } else {
     Write-Line '  提交失败：' 'Red'
     Write-Line $commit.Output 'DarkGray'
+    [void]$report.Add('提交失败')
     $failed = $true
   }
 } else {
   Write-Line '  没有本地改动' 'DarkGray'
+  [void]$report.Add('无改动')
 }
 
 # 拉取：把本地提交叠到远端最新之上
@@ -66,9 +70,11 @@ if (-not $failed) {
     Write-Line '  拉取失败——两台电脑可能改了同一个文件。' 'Red'
     Write-Line '  已经退回你的本地版本，东西没丢。把这段截图发我，我来合并。' 'Red'
     Write-Line $pull.Output 'DarkGray'
+    [void]$report.Add('拉取失败')
     $failed = $true
   } else {
     Write-Line '  已拉取远端最新' 'Green'
+    [void]$report.Add('拉取ok')
   }
 }
 
@@ -82,12 +88,15 @@ if (-not $failed) {
       Write-Line '    用户名：bfsu1666935342-pixel' 'Yellow'
       Write-Line '    密码：GitHub 的 Personal Access Token（不是账号密码）' 'Yellow'
       Write-Line '  Windows 会把凭据记住，以后不用再输。' 'Yellow'
+      [void]$report.Add('推送需登录')
     } else {
       Write-Line $push.Output 'DarkGray'
+      [void]$report.Add('推送失败')
     }
     $failed = $true
   } else {
     Write-Line '  已推送到 GitHub' 'Green'
+    [void]$report.Add('推送ok')
   }
 }
 
@@ -101,17 +110,34 @@ if (Test-Path $workbenchDir) {
   $wb = Invoke-Git $workbenchDir @('pull', '--ff-only', 'origin', 'main')
   if ($wb.Code -eq 0) {
     Write-Line '  已是最新' 'Green'
+    [void]$report.Add('工作台最新')
   } else {
     Write-Line '  跳过（本地有改动或无法快进，工作台不动本地文件）' 'DarkGray'
+    [void]$report.Add('工作台跳过')
   }
 } else {
   Write-Line '  旁边没有 ecom-workbench 文件夹，跳过' 'DarkGray'
+  [void]$report.Add('无工作台')
+}
+
+# 记一行日志，方便事后确认到底同步没同步
+$now = Get-Date
+try {
+  $logDir = Join-Path $skillsDir 'logs'
+  New-Item -ItemType Directory -Force -Path $logDir | Out-Null
+  $flag = 'OK  '
+  if ($failed) { $flag = 'FAIL' }
+  $line = ($now.ToString('yyyy-MM-dd HH:mm:ss')) + '  ' + $flag + '  ' + ($report -join ' / ')
+  Add-Content -Path (Join-Path $logDir 'sync.log') -Value $line -Encoding UTF8
+} catch {
+  # 日志写不进去不影响同步结果
 }
 
 Write-Host ''
 if ($failed) {
-  Write-Line '同步没有全部完成，看上面的红字。' 'Yellow'
+  Write-Line ('✗ 没同步完，见上面的提示（' + $now.ToString('HH:mm:ss') + '）') 'Red'
   exit 1
 }
-Write-Line '同步完成，可以开始干活了。' 'Green'
+Write-Line ('✓ 同步完成 · ' + ($report -join ' · ') + ' · ' + $now.ToString('HH:mm:ss')) 'Green'
+Write-Line '  （这一行就是结果，可以关窗口了）' 'DarkGray'
 exit 0
