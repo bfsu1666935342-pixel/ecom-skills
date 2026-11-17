@@ -39,6 +39,13 @@ if (-not $who.Output) {
   Invoke-Git $skillsDir @('config', 'user.email', 'bfsu1666935342-pixel@users.noreply.github.com') | Out-Null
 }
 
+# 把用户名写进远端地址，登录时只需要填 token 这一项
+$remote = Invoke-Git $skillsDir @('remote', 'get-url', 'origin')
+if ($remote.Output -match '^https://github\.com/') {
+  $newUrl = $remote.Output -replace '^https://github\.com/', 'https://bfsu1666935342-pixel@github.com/'
+  Invoke-Git $skillsDir @('remote', 'set-url', 'origin', $newUrl) | Out-Null
+}
+
 # 有改动就先提交，否则 rebase 会因为工作区不干净而失败
 $status = Invoke-Git $skillsDir @('status', '--porcelain')
 if ($status.Output) {
@@ -80,19 +87,17 @@ if (-not $failed) {
 
 # 推送
 if (-not $failed) {
-  $push = Invoke-Git $skillsDir @('push', 'origin', 'main')
-  if ($push.Code -ne 0) {
+  Write-Line '  正在上传…' 'DarkGray'
+  Write-Line '  （第一次在这台电脑上传，会停在 Password：粘贴 GitHub token 后回车；屏幕上不显示字是正常的）' 'DarkGray'
+  # 用 Start-Process 让 git 直接接管控制台，这样登录提示能看见、也能输入
+  $proc = Start-Process -FilePath 'git' -ArgumentList @('push', 'origin', 'main') -WorkingDirectory $skillsDir -NoNewWindow -Wait -PassThru
+  if ($proc.ExitCode -ne 0) {
     Write-Line '  推送失败。' 'Yellow'
-    if ($push.Output -match 'could not read Username|Authentication failed|403|terminal prompts disabled') {
-      Write-Line '  这台电脑还没登录 GitHub（只需登录一次）：' 'Yellow'
-      Write-Line '    用户名：bfsu1666935342-pixel' 'Yellow'
-      Write-Line '    密码：GitHub 的 Personal Access Token（不是账号密码）' 'Yellow'
-      Write-Line '  Windows 会把凭据记住，以后不用再输。' 'Yellow'
-      [void]$report.Add('推送需登录')
-    } else {
-      Write-Line $push.Output 'DarkGray'
-      [void]$report.Add('推送失败')
-    }
+    Write-Line '  如果卡在 Password 那一步输错了，或者这台电脑还没登录 GitHub：' 'Yellow'
+    Write-Line '    用户名：bfsu1666935342-pixel（已自动填好）' 'Yellow'
+    Write-Line '    密码：GitHub 的 Personal Access Token（不是账号密码）' 'Yellow'
+    Write-Line '  登录成功后 Windows 会记住，以后不用再输。' 'Yellow'
+    [void]$report.Add('推送失败')
     $failed = $true
   } else {
     Write-Line '  已推送到 GitHub' 'Green'
