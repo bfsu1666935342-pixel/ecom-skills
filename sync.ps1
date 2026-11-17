@@ -31,6 +31,13 @@ if (-not $tls.Output) {
   Invoke-Git $skillsDir @('config', 'http.sslBackend', 'openssl') | Out-Null
 }
 
+# 新电脑上 git 可能还没配提交身份，没有就补一个（只影响这个仓库）
+$who = Invoke-Git $skillsDir @('config', 'user.email')
+if (-not $who.Output) {
+  Invoke-Git $skillsDir @('config', 'user.name', 'bfsu1666935342-pixel') | Out-Null
+  Invoke-Git $skillsDir @('config', 'user.email', 'bfsu1666935342-pixel@users.noreply.github.com') | Out-Null
+}
+
 # 有改动就先提交，否则 rebase 会因为工作区不干净而失败
 $status = Invoke-Git $skillsDir @('status', '--porcelain')
 if ($status.Output) {
