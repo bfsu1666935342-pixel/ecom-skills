@@ -1,0 +1,19 @@
+{
+  "id": "review-to-qa",
+  "title": "缺点转问答",
+  "group": "上架与内容",
+  "order": 70,
+  "tagline": "把 Alexa 抱怨或差评里的每条缺点，拆成 6 组针对性问答，中英双语导出 Excel",
+  "description": "贴入 Alexa / Rufus 的「买家主要抱怨」或差评原文，也可以直接丢截图。先按分类和正面率拆成缺点清单让你核对，再逐条生成 6 组咬住这个缺点的 Q&A（中文一页、英文一页），导出两 sheet 的 Excel。不是一套通用话术套所有缺点。",
+  "starters": [
+    "把这段 Alexa 抱怨做成 Q&A：",
+    "这批差评帮我转成详情页问答",
+    "帮我补一下 Q&A 板块，重点是耐用性和稳固性"
+  ],
+  "fields": [
+    { "key": "product", "label": "产品名", "type": "text", "placeholder": "例如：人体工学电竞椅（用于文件名和提问）", "required": true },
+    { "key": "source", "label": "缺点来源", "type": "textarea", "placeholder": "Alexa 那段总结，或差评原文；也可以直接上传截图" },
+    { "key": "count", "label": "每条生成几组", "type": "text", "placeholder": "默认 6" }
+  ],
+  "source": "https://github.com/bfsu1666935342-pixel/ecom-toolbox/tree/main/tools/review-to-qa"
+}
