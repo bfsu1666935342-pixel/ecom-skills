@@ -46,6 +46,20 @@ if ($remote.Output -match '^https://github\.com/') {
   Invoke-Git $skillsDir @('remote', 'set-url', 'origin', $newUrl) | Out-Null
 }
 
+# 先探一下：走系统代理能不能连上 GitHub。某些代理会让 git 报 TLS unexpected eof，
+# 那就改成直连（GitHub API 本身不需要代理）。
+$probe = Invoke-Git $skillsDir @('ls-remote', '--heads', 'origin')
+$useNoProxy = $false
+if ($probe.Code -ne 0) {
+  $probe2 = Invoke-Git $skillsDir @('-c', 'http.https://github.com.proxy=', 'ls-remote', '--heads', 'origin')
+  if ($probe2.Code -eq 0) {
+    $useNoProxy = $true
+    Write-Line '  检测到代理连不上 GitHub，本次改走直连' 'DarkGray'
+  }
+}
+$netArgs = @()
+if ($useNoProxy) { $netArgs = @('-c', 'http.https://github.com.proxy=') }
+
 # 有改动就先提交，否则 rebase 会因为工作区不干净而失败
 $status = Invoke-Git $skillsDir @('status', '--porcelain')
 if ($status.Output) {
@@ -71,7 +85,7 @@ if ($status.Output) {
 
 # 拉取：把本地提交叠到远端最新之上
 if (-not $failed) {
-  $pull = Invoke-Git $skillsDir @('pull', '--rebase', '--autostash', 'origin', 'main')
+  $pull = Invoke-Git $skillsDir ($netArgs + @('pull', '--rebase', '--autostash', 'origin', 'main'))
   if ($pull.Code -ne 0) {
     Invoke-Git $skillsDir @('rebase', '--abort') | Out-Null
     Write-Line '  拉取失败——两台电脑可能改了同一个文件。' 'Red'
@@ -90,7 +104,7 @@ if (-not $failed) {
   Write-Line '  正在上传…' 'DarkGray'
   Write-Line '  （第一次在这台电脑上传，会停在 Password：粘贴 GitHub token 后回车；屏幕上不显示字是正常的）' 'DarkGray'
   # 用 Start-Process 让 git 直接接管控制台，这样登录提示能看见、也能输入
-  $proc = Start-Process -FilePath 'git' -ArgumentList @('push', 'origin', 'main') -WorkingDirectory $skillsDir -NoNewWindow -Wait -PassThru
+  $proc = Start-Process -FilePath 'git' -ArgumentList ($netArgs + @('push', 'origin', 'main')) -WorkingDirectory $skillsDir -NoNewWindow -Wait -PassThru
   if ($proc.ExitCode -ne 0) {
     Write-Line '  推送失败。' 'Yellow'
     Write-Line '  如果卡在 Password 那一步输错了，或者这台电脑还没登录 GitHub：' 'Yellow'
