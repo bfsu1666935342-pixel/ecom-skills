@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "amazon-weekly-report",
     "title":  "亚马逊周报",
     "group":  "经营与报表",
@@ -214,5 +214,9 @@
                          "desc":  "不生成报告，只确认领星 MCP 能不能拿到数据。",
                          "timeoutMs":  120000
                      }
-                 ]
+                 ],
+    "configFiles":  [
+                        "config/products.json",
+                        "config/targets.json"
+                    ]
 }
