@@ -4,6 +4,9 @@ set "PY="
 
 if defined WREPORT_PYTHON if exist "%WREPORT_PYTHON%" set "PY=%WREPORT_PYTHON%"
 
+rem 工作台安装包内置的 Python（<app>\runtime\python\python.exe）
+if not defined PY if exist "%~dp0..\..\..\runtime\python\python.exe" set "PY=%~dp0..\..\..\runtime\python\python.exe"
+
 if not defined PY (
   for /d %%D in ("%USERPROFILE%\.dsh\dsh-runtimes\*") do (
     if exist "%%D\dependencies\python\python.exe" set "PY=%%D\dependencies\python\python.exe"

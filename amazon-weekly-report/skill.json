@@ -1,22 +1,92 @@
-{
-  "id": "amazon-weekly-report",
-  "title": "亚马逊周报",
-  "group": "经营与报表",
-  "order": 10,
-  "tagline": "本周所有 SPU 一张总览表 + 每个 SPU 的销量/利润/广告/关键词/竞品；能直接粘进飞书",
-  "description": "多 SPU 周报：总览（销量、销售额、周目标、达成率、目标/实际利润率、合计），然后每个 SPU 一段 A 整体 12 项周对比、B 广告（总览/每日/活动/关键词花费）、C 关键词（每个父体自然位/广告位/前 80%）、D 竞品（价格/评分/变体 + 前 80% 流量结构）。领星取经营，SIF 优先、Sorftime 兜底并标注估算；输出 HTML，点「复制到飞书」即可粘贴成文档。需要本机 Python 或终端。",
-  "starters": [
-    "出一份上周周报，美国站所有 SPU",
-    "66D50F 和 71B22A 上周销量和利润目标完成得怎么样",
-    "这个 SPU 有两个父体，关键词要分开看",
-    "把上周周报重新生成一份，粘到飞书",
-    "哪个 SPU 上周掉得最厉害，广告和关键词哪里拖后腿"
-  ],
-  "fields": [
-    { "key": "site", "label": "站点", "type": "text", "placeholder": "US / DE / GB / JP，默认 US", "required": true },
-    { "key": "spu", "label": "SPU 清单", "type": "text", "placeholder": "多个用逗号分隔，例如 66D50F,71B22A；留空表示全部启用", "required": true },
-    { "key": "parent_asin", "label": "父体 ASIN", "type": "text", "placeholder": "每个 SPU 的父体，多个用逗号分隔", "required": true },
-    { "key": "competitor", "label": "对标竞品链接", "type": "text", "placeholder": "每个 SPU 一个 Amazon 链接或 ASIN", "required": true },
-    { "key": "targets", "label": "月目标 / 目标利润率 / 成本", "type": "text", "placeholder": "从飞书文档复制：每个 SPU 的月销售额目标、目标利润率、采购/头程/FBA/佣金" }
-  ]
+﻿{
+    "id":  "amazon-weekly-report",
+    "title":  "亚马逊周报",
+    "group":  "经营与报表",
+    "order":  10,
+    "tagline":  "本周所有 SPU 一张总览表 + 每个 SPU 的销量/利润/广告/关键词/竞品；能直接粘进飞书",
+    "description":  "多 SPU 周报：总览（销量、销售额、周目标、达成率、目标/实际利润率、合计），然后每个 SPU 一段 A 整体 12 项周对比、B 广告（总览/每日/活动/关键词花费）、C 关键词（每个父体自然位/广告位/前 80%）、D 竞品（价格/评分/变体 + 前 80% 流量结构）。领星取经营，SIF 优先、Sorftime 兜底并标注估算；输出 HTML，点「复制到飞书」即可粘贴成文档。需要本机 Python 或终端。",
+    "starters":  [
+                     "出一份上周周报，美国站所有 SPU",
+                     "66D50F 和 71B22A 上周销量和利润目标完成得怎么样",
+                     "这个 SPU 有两个父体，关键词要分开看",
+                     "把上周周报重新生成一份，粘到飞书",
+                     "哪个 SPU 上周掉得最厉害，广告和关键词哪里拖后腿"
+                 ],
+    "fields":  [
+                   {
+                       "key":  "site",
+                       "label":  "站点",
+                       "type":  "text",
+                       "placeholder":  "US / DE / GB / JP，默认 US",
+                       "required":  true
+                   },
+                   {
+                       "key":  "spu",
+                       "label":  "SPU 清单",
+                       "type":  "text",
+                       "placeholder":  "多个用逗号分隔，例如 66D50F,71B22A；留空表示全部启用",
+                       "required":  true
+                   },
+                   {
+                       "key":  "parent_asin",
+                       "label":  "父体 ASIN",
+                       "type":  "text",
+                       "placeholder":  "每个 SPU 的父体，多个用逗号分隔",
+                       "required":  true
+                   },
+                   {
+                       "key":  "competitor",
+                       "label":  "对标竞品链接",
+                       "type":  "text",
+                       "placeholder":  "每个 SPU 一个 Amazon 链接或 ASIN",
+                       "required":  true
+                   },
+                   {
+                       "key":  "targets",
+                       "label":  "月目标 / 目标利润率 / 成本",
+                       "type":  "text",
+                       "placeholder":  "从飞书文档复制：每个 SPU 的月销售额目标、目标利润率、采购/头程/FBA/佣金"
+                   }
+               ],
+    "commands":  [
+                     {
+                         "label":  "生成本周周报",
+                         "run":  [
+                                     "scripts\\run.cmd",
+                                     "run"
+                                 ],
+                         "desc":  "按 config/products.json 里启用的 SPU 逐一出报告，结果会复制到工作区「技能产出」。需要 .env 里填好领星 / SIF / Sorftime 的密钥。",
+                         "timeoutMs":  600000
+                     },
+                     {
+                         "label":  "单跑一个 SPU",
+                         "run":  [
+                                     "scripts\\run.cmd",
+                                     "run",
+                                     "--product",
+                                     "{spu}"
+                                 ],
+                         "params":  [
+                                        {
+                                            "label":  "SPU",
+                                            "key":  "spu",
+                                            "placeholder":  "例如 66D50F",
+                                            "required":  true
+                                        }
+                                    ],
+                         "desc":  "只跑指定 SPU，适合验证某一个品。",
+                         "timeoutMs":  600000
+                     },
+                     {
+                         "label":  "检查数据源连通性",
+                         "run":  [
+                                     "scripts\\run.cmd",
+                                     "doctor",
+                                     "--provider",
+                                     "lingxing"
+                                 ],
+                         "desc":  "不生成报告，只确认领星 MCP 能不能拿到数据。",
+                         "timeoutMs":  120000
+                     }
+                 ]
 }
