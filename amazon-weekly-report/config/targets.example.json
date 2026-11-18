@@ -1,0 +1,20 @@
+{
+  "_说明": "销量/利润目标与成本。monthly 是按月销售额目标（当地币种）；weekly_overrides 可按周一日期覆盖某一周。cost 用于领星没有返回利润时的兜底核算，报告会标注口径。复制本文件为 targets.json 再填真实值；targets.json 已在 .gitignore 里，不会被提交。",
+  "YOUR-SPU-CODE": {
+    "monthly": {
+      "2026-01": 0
+    },
+    "default_monthly": 0,
+    "weekly_overrides": {},
+    "target_margin": 0.15,
+    "cost": {
+      "unit_cost": 0,
+      "first_leg": 0,
+      "fba_fee": 0,
+      "referral_rate": 0.15,
+      "other_per_unit": 0,
+      "return_handling_per_unit": 0
+    },
+    "rules_note": "利润 = 销售额 − 采购成本 − 头程 − 佣金 − FBA 配送费 − 广告费 − 退款 − 其他；退款按实际退款金额扣减，退货处理费未单列。"
+  }
+}

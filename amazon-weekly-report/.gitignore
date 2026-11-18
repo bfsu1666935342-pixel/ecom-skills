@@ -1,0 +1,10 @@
+.env
+data/
+examples/*/raw/
+examples/*/history/
+examples/*/shots/
+__pycache__/
+*.pyc
+examples/weekly-demo/
+config/products.json
+config/targets.json

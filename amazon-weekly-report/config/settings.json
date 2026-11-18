@@ -1,0 +1,39 @@
+{
+  "week_start": "monday",
+  "currency": "USD",
+  "target_rounding": 100,
+  "thresholds": {
+    "attainment_warn": 0.95,
+    "attainment_high": 0.85,
+    "margin_gap_warn": 0.02,
+    "acoas_warn": 0.15,
+    "return_rate_warn": 0.08,
+    "sessions_drop_warn": -0.10,
+    "cvr_drop_warn": -0.01,
+    "ctr_drop_warn": -0.005,
+    "ad_order_share_warn": 0.70,
+    "competitor_price_gap_warn": 0.05,
+    "competitor_rating_gap_warn": 0.2,
+    "top_keywords": 15,
+    "max_kw_rows": 60,
+    "campaign_rows": 12,
+    "keyword_rows": 15,
+    "traffic_cover": 0.80
+  },
+  "sources": {
+    "keywords": "sif_first",
+    "sif": {
+      "url": "",
+      "auth": "query",
+      "key_param": "secret-key",
+      "tools": {
+        "asin_traffic": "market_get_asin_keyword_signals"
+      }
+    },
+    "sorftime": {
+      "url": "https://mcp.sorftime.com",
+      "auth": "query",
+      "key_param": "key"
+    }
+  }
+}

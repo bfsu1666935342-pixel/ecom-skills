@@ -1,0 +1,26 @@
+{
+  "currency": "USD",
+  "_说明": "一行一个 SPU。复制本文件为 products.json 再填真实值；products.json 已在 .gitignore 里，不会被提交。",
+  "products": [
+    {
+      "id": "示例-SPU",
+      "spu": "YOUR-SPU-CODE",
+      "site": "US",
+      "title": "示例产品（美国站）",
+      "parents": [
+        {
+          "asin": "B0XXXXXXXX",
+          "label": ""
+        }
+      ],
+      "competitor": {
+        "url": "",
+        "asin": "",
+        "note": ""
+      },
+      "price": 0,
+      "rating": 0,
+      "enabled": true
+    }
+  ]
+}
