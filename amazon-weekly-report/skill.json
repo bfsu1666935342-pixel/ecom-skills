@@ -88,5 +88,6 @@
                          "desc":  "不生成报告，只确认领星 MCP 能不能拿到数据。",
                          "timeoutMs":  120000
                      }
-                 ]
+                 ],
+    "runOnly":  true
 }
