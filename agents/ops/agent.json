@@ -1,0 +1,14 @@
+{
+    "id":  "ops",
+    "title":  "经营",
+    "icon":  "📊",
+    "order":  40,
+    "tagline":  "周报、利润、库存，把账算清楚",
+    "description":  "负责周报生成、利润测算和补货计划。",
+    "skills":  [
+                   "amazon-weekly-report",
+                   "profit-pricing",
+                   "inventory-plan"
+               ],
+    "defaultSkill":  "amazon-weekly-report"
+}

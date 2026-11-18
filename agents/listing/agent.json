@@ -1,0 +1,15 @@
+{
+    "id":  "listing",
+    "title":  "上架",
+    "icon":  "✍️",
+    "order":  20,
+    "tagline":  "把产品事实变成能卖货的文案和关键词",
+    "description":  "负责 Listing 撰写、关键词布局、差评洞察和 Q\u0026A。",
+    "skills":  [
+                   "listing-writer",
+                   "keyword-strategy",
+                   "review-insight",
+                   "review-to-qa"
+               ],
+    "defaultSkill":  "listing-writer"
+}

@@ -48,18 +48,144 @@
                        "placeholder":  "从飞书文档复制：每个 SPU 的月销售额目标、目标利润率、采购/头程/FBA/佣金"
                    }
                ],
+    "runOnly":  true,
     "commands":  [
                      {
-                         "label":  "生成本周周报",
+                         "label":  "① 登记一个 SPU",
+                         "run":  [
+                                     "scripts\\run.cmd",
+                                     "init",
+                                     "--site",
+                                     "{site}",
+                                     "--spu",
+                                     "{spu}",
+                                     "--parent",
+                                     "{parent}",
+                                     "--competitor",
+                                     "{competitor}"
+                                 ],
+                         "params":  [
+                                        {
+                                            "label":  "SPU 编码",
+                                            "key":  "spu",
+                                            "placeholder":  "例如 66D38",
+                                            "required":  true
+                                        },
+                                        {
+                                            "label":  "父体 ASIN",
+                                            "key":  "parent",
+                                            "placeholder":  "例如 B0FK5R58VT",
+                                            "required":  true
+                                        },
+                                        {
+                                            "label":  "站点",
+                                            "key":  "site",
+                                            "placeholder":  "默认 US"
+                                        },
+                                        {
+                                            "label":  "竞品链接 / ASIN（可选）",
+                                            "key":  "competitor",
+                                            "placeholder":  "https://www.amazon.com/dp/..."
+                                        }
+                                    ],
+                         "desc":  "把站点 / SPU / 父体 ASIN 记进去，竞品链接可选。有多个父体就同一个 SPU 再登记一次。",
+                         "timeoutMs":  120000
+                     },
+                     {
+                         "label":  "② 设置目标与成本",
+                         "run":  [
+                                     "scripts\\run.cmd",
+                                     "targets",
+                                     "--spu",
+                                     "{spu}",
+                                     "--monthly",
+                                     "{monthly}",
+                                     "--month",
+                                     "{month}",
+                                     "--margin",
+                                     "{margin}",
+                                     "--unit-cost",
+                                     "{unit_cost}",
+                                     "--first-leg",
+                                     "{first_leg}",
+                                     "--fba",
+                                     "{fba}",
+                                     "--referral",
+                                     "{referral}",
+                                     "--other",
+                                     "{other}"
+                                 ],
+                         "params":  [
+                                        {
+                                            "label":  "SPU",
+                                            "key":  "spu",
+                                            "placeholder":  "例如 66D38",
+                                            "required":  true
+                                        },
+                                        {
+                                            "label":  "月销售目标",
+                                            "key":  "monthly",
+                                            "placeholder":  "430000"
+                                        },
+                                        {
+                                            "label":  "目标月份",
+                                            "key":  "month",
+                                            "placeholder":  "2026-11，默认本月"
+                                        },
+                                        {
+                                            "label":  "目标利润率",
+                                            "key":  "margin",
+                                            "placeholder":  "0.16"
+                                        },
+                                        {
+                                            "label":  "单件采购成本",
+                                            "key":  "unit_cost",
+                                            "placeholder":  "17"
+                                        },
+                                        {
+                                            "label":  "单件头程",
+                                            "key":  "first_leg",
+                                            "placeholder":  "3.8"
+                                        },
+                                        {
+                                            "label":  "单件 FBA",
+                                            "key":  "fba",
+                                            "placeholder":  "7"
+                                        },
+                                        {
+                                            "label":  "佣金费率",
+                                            "key":  "referral",
+                                            "placeholder":  "0.15"
+                                        },
+                                        {
+                                            "label":  "单件其他成本",
+                                            "key":  "other",
+                                            "placeholder":  "1"
+                                        }
+                                    ],
+                         "desc":  "月销售目标、目标利润率、成本项。只有填了的会改，留空的不动。",
+                         "timeoutMs":  120000
+                     },
+                     {
+                         "label":  "③ 查看已登记",
+                         "run":  [
+                                     "scripts\\run.cmd",
+                                     "list"
+                                 ],
+                         "desc":  "列出当前 config/products.json 里所有 SPU 和父体，先确认数据对不对。",
+                         "timeoutMs":  60000
+                     },
+                     {
+                         "label":  "④ 生成本周周报",
                          "run":  [
                                      "scripts\\run.cmd",
                                      "run"
                                  ],
-                         "desc":  "按 config/products.json 里启用的 SPU 逐一出报告，结果会复制到工作区「技能产出」。需要 .env 里填好领星 / SIF / Sorftime 的密钥。",
-                         "timeoutMs":  600000
+                         "desc":  "按已登记的 SPU 逐一出报告；结果复制到工作区「技能产出」。",
+                         "timeoutMs":  900000
                      },
                      {
-                         "label":  "单跑一个 SPU",
+                         "label":  "⑤ 单跑一个 SPU",
                          "run":  [
                                      "scripts\\run.cmd",
                                      "run",
@@ -70,15 +196,15 @@
                                         {
                                             "label":  "SPU",
                                             "key":  "spu",
-                                            "placeholder":  "例如 66D50F",
+                                            "placeholder":  "例如 66D38",
                                             "required":  true
                                         }
                                     ],
-                         "desc":  "只跑指定 SPU，适合验证某一个品。",
-                         "timeoutMs":  600000
+                         "desc":  "只跑指定 SPU，适合先验证一个品通不通。",
+                         "timeoutMs":  900000
                      },
                      {
-                         "label":  "检查数据源连通性",
+                         "label":  "⑥ 检查数据源连通性",
                          "run":  [
                                      "scripts\\run.cmd",
                                      "doctor",
@@ -88,6 +214,5 @@
                          "desc":  "不生成报告，只确认领星 MCP 能不能拿到数据。",
                          "timeoutMs":  120000
                      }
-                 ],
-    "runOnly":  true
+                 ]
 }

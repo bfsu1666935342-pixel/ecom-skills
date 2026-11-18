@@ -1,0 +1,15 @@
+{
+  "id": "ads",
+  "title": "广告",
+  "icon": "📈",
+  "order": 30,
+  "tagline": "从起盘架构到数据诊断，花钱要有依据",
+  "description": "负责广告架构、搜索词诊断、流量承接判断和新品 90 天节奏。",
+  "skills": [
+    "ad-architecture",
+    "ad-diagnose",
+    "traffic-diagnosis",
+    "launch-plan"
+  ],
+  "defaultSkill": "ad-architecture"
+}

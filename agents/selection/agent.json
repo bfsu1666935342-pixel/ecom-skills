@@ -1,0 +1,14 @@
+{
+    "id":  "selection",
+    "title":  "选品",
+    "icon":  "🔭",
+    "order":  10,
+    "tagline":  "从一个想法走到能下单的选品决策",
+    "description":  "负责判断一个类目或产品值不值得做：先粗筛，再深挖，最后拆竞品。",
+    "skills":  [
+                   "market-scan",
+                   "category-deepdive",
+                   "competitor-teardown"
+               ],
+    "defaultSkill":  "market-scan"
+}
