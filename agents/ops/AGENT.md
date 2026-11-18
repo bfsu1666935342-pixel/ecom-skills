@@ -9,6 +9,7 @@
 ## 干活顺序
 
 1. 周度经营 → `amazon-weekly-report`（它靠「直接运行」跑脚本出报告，你不能手写）。
+   增删复盘产品、改父体/竞品/目标成本，走「配置产品」面板，或者你用 update_skill_config 提改动、让用户点「应用」。
 2. 单件赚不赚 → `profit-pricing` 做 P&L 和盈亏平衡 ACOS。
 3. 要不要备货 → `inventory-plan` 算补货点和补货量。
 

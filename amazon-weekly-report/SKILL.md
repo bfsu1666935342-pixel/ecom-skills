@@ -35,24 +35,20 @@ description: "Use when the user asks for an Amazon weekly operating report cover
 4. **每个 SPU 的对标竞品链接**：一个 Amazon 链接（或 ASIN）
 5. **飞书文档里的经营参数**：每个 SPU 的本月销售额目标、目标利润率、产品成本（采购/头程/FBA/佣金/其他）、利润核算规则
 
-然后逐个登记：
+**怎么登记：让用户点技能里的「配置产品」**（工作表格式的表格，一行一个 SPU，可增删改）。
+你没有写盘权限时，用 `update_skill_config` 提交改动、让用户点「应用」，**不要让他手改 JSON、也不要让他敲命令行**。
 
-```bat
-scripts\run.cmd init --site US --spu 66D50F --parent B0XXXXXXXX --competitor https://www.amazon.com/dp/B0XXXXXXXX
-scripts\run.cmd init --site US --spu 71B22A --parent B0H22BB001 --competitor https://www.amazon.com/dp/B0YYYYYYYY
-```
-
-- 多个父体就写多个 `--parent`。
-- 每个 SPU 把第 5 项写进 `config/targets.json`。可以直接编辑，也可以一条命令：
-
-```bat
-scripts\run.cmd targets --spu 66D50F --monthly 100000 --margin 0.16 ^
-  --unit-cost 17 --first-leg 3.8 --fba 7 --referral 0.15 --other 1 ^
-  --note "利润=销售额-采购-头程-佣金-FBA-广告-退款-其他"
-```
-
-- **没有就留空**，报告会显示缺口，不要填假数。
+- 多个父体就在同一个 SPU 下加多行。
+- 目标与成本在同一个编辑框里填；**没有就留空**，报告会显示缺口，不要填假数。
 - 把密钥填进 `.env`（照 `.env.example`）：
+
+> 命令行等价操作（仅当用户主动问起、或面板不可用时才提）：
+>
+> ```bat
+> scripts\run.cmd init --site US --spu 66D50F --parent B0XXXXXXXX --competitor https://www.amazon.com/dp/B0XXXXXXXX
+> scripts\run.cmd targets --spu 66D50F --monthly 100000 --margin 0.16 --unit-cost 17 --first-leg 3.8 --fba 7 --referral 0.15 --other 1
+> ```
+
   - 领星：`LINGXING_MCP_KEY`（请求头 `X-Mcp-Key`）
   - SIF：`SIF_MCP_URL`（通常已带 `secret-key`）
   - Sorftime：`SORFTIME_MCP_KEY`
@@ -105,7 +101,7 @@ scripts\run.cmd schema
 scripts\run.cmd run
 
 :: 只跑某一个
-scripts\run.cmd run --product 66D50F
+scripts\run.cmd run --product 66D50F  # 只跑一个 SPU（界面上已收起，需要时用命令行）
 
 :: 2. 校验（所有 SPU）
 scripts\run.cmd check
