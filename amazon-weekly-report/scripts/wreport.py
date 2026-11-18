@@ -222,7 +222,8 @@ def cmd_collect(args: argparse.Namespace) -> int:
 
     from wr.util import env
     if not args.no_lingxing and not env("LINGXING_MCP_KEY"):
-        print("  ! 未配置 LINGXING_MCP_KEY，跳过领星；没有经营数据就无法生成报告。先填 .env 再跑。")
+        print("  ! 未配置 LINGXING_MCP_KEY，跳过领星；没有经营数据就无法生成报告。
+    先到工作台「数据源」里配好领星（保存即生效），或在本技能 .env 里填 LINGXING_MCP_KEY。")
         args.no_lingxing = True
 
     only = [x.strip() for x in (args.only or "").split(",") if x.strip()] or None

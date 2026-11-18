@@ -70,7 +70,7 @@ def doctor() -> Dict[str, Any]:
     cfg = _cfg()
     load_env()
     if not env("LINGXING_MCP_KEY"):
-        return {"ok": False, "error": "未配置 LINGXING_MCP_KEY（在 .env 里填 AI 助手 → MCP → 复制密钥）"}
+        return {"ok": False, "error": "未配置 LINGXING_MCP_KEY：请到工作台「数据源」里配置领星并保存（会自动注入），或在本技能 .env 里填 LINGXING_MCP_KEY"}
     c = client()
     try:
         tools = c.list_tools()
