@@ -38,5 +38,6 @@
   "configFiles": [
     "config/products.json",
     "config/targets.json"
-  ]
+  ],
+  "primaryOutput": "\\.html$"
 }
