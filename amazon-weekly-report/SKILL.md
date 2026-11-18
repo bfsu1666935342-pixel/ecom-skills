@@ -40,7 +40,7 @@ description: "Use when the user asks for an Amazon weekly operating report cover
 
 - 多个父体就在同一个 SPU 下加多行。
 - 目标与成本在同一个编辑框里填；**没有就留空**，报告会显示缺口，不要填假数。
-- 把密钥填进 `.env`（照 `.env.example`）：
+- **密钥不用单独填**：工作台会把你「数据源」里配好的 MCP 凭据（领星 / SIF / Sorftime）直接注入脚本进程，优先级高于本技能的 `.env`。所以只要在界面里配过一次数据源，换台电脑也不用再填 `.env`。`.env` 只是没配数据源时的兜底。
 
 > 命令行等价操作（仅当用户主动问起、或面板不可用时才提）：
 >
