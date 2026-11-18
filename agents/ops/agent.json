@@ -1,9 +1,10 @@
 {
     "id":  "ops",
-    "title":  "经营",
+    "role":  "经营",
+    "title":  "Penny",
     "icon":  "📊",
     "order":  40,
-    "tagline":  "周报、利润、库存，把账算清楚",
+    "tagline":  "精算师，帮你把钱算得明明白白",
     "description":  "负责周报生成、利润测算和补货计划。",
     "skills":  [
                    "amazon-weekly-report",

@@ -1,9 +1,10 @@
 {
     "id":  "listing",
-    "title":  "上架",
+    "role":  "上架",
+    "title":  "Copy",
     "icon":  "✍️",
     "order":  20,
-    "tagline":  "把产品事实变成能卖货的文案和关键词",
+    "tagline":  "键盘侠，专治 Listing 没流量",
     "description":  "负责 Listing 撰写、关键词布局、差评洞察和 Q\u0026A。",
     "skills":  [
                    "listing-writer",
