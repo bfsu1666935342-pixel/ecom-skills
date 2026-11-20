@@ -6,7 +6,7 @@
   "order": 30,
   "featured": true,
   "tagline": "价格 / Listing / 图片 / 评论护城河 / 流量结构",
-  "description": "给 1–3 个竞品 ASIN 做作战卡：它靠什么赢、哪里守不住、三个差异化切入角度、Listing 反击要点和广告打法。抓不到的字段会明确标注，不编数据。",
+  "description": "给 1–3 个竞品 ASIN 做作战卡：它靠什么赢、哪里守不住、三个差异化切入角度、Listing 反击要点、广告审计和我们的打法。抓不到的字段会明确标注，不编数据。",
   "starters": [
     "帮我拆解这个竞品：B0XXXXXXXX",
     "这个竞品评论 3000+，我还有机会吗",
@@ -24,7 +24,9 @@
       { "key": "weak", "label": "它守不住的地方", "kind": "list" },
       { "key": "angles", "label": "三个切入角度", "kind": "table", "minRows": 3 },
       { "key": "listing", "label": "Listing 反击要点", "kind": "list" },
-      { "key": "ads", "label": "广告打法", "kind": "list" },
+      { "key": "ads", "label": "竞品广告审计", "kind": "table", "optional": true },
+      { "key": "offsite", "label": "站外痕迹", "kind": "list", "optional": true },
+      { "key": "attack", "label": "我们的广告打法", "kind": "list" },
       { "key": "risk", "label": "风险", "kind": "list" }
     ]
   }
