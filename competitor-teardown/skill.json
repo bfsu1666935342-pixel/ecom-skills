@@ -15,5 +15,17 @@
   "fields": [
     { "key": "asin", "label": "竞品 ASIN / 链接", "placeholder": "例如：B0XXXXXXXX 或亚马逊链接", "required": true },
     { "key": "mine", "label": "你的产品 / 价格", "placeholder": "例如：同款露营灯，计划 $26.99，比它轻 30%" }
-  ]
+  ],
+  "outputGuard": {
+    "name": "竞品作战卡",
+    "sections": [
+      { "key": "profile", "label": "竞品档案", "kind": "table" },
+      { "key": "win", "label": "它靠什么赢", "kind": "list" },
+      { "key": "weak", "label": "它守不住的地方", "kind": "list" },
+      { "key": "angles", "label": "三个切入角度", "kind": "table", "minRows": 3 },
+      { "key": "listing", "label": "Listing 反击要点", "kind": "list" },
+      { "key": "ads", "label": "广告打法", "kind": "list" },
+      { "key": "risk", "label": "风险", "kind": "list" }
+    ]
+  }
 }
