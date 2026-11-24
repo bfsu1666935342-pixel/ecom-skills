@@ -317,6 +317,7 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
     parts.append('<p class="note">本表为 SPU 合计（含 SP/SD/SB）；各父体拆分见下表。CPC = 花费 ÷ 点击，CPA = 花费 ÷ 广告订单。' + units_note + "</p>")
 
     parent_list = spu.get("parents") or []
+    multi = len(parent_list) > 1
     parent_ads = [p for p in parent_list if (p.get("ads") or {}).get("available")]
     if len(parent_list) > 1 and parent_ads:
         parts.append("<h4>按父体拆分的广告</h4>")
@@ -346,7 +347,7 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
             extra = " 以下父体无 ASIN 维度数据：" + "、".join(str(x) for x in missing) + "。"
         parts.append(
             '<p class="note">按父体拆分来自领星「产品表现」的 ASIN 维度行（含 SP/SD/SB）；'
-            "同一父体下多个子体的广告已合并到该父体。活动级明细无法拆分，见下方「广告活动」。"
+            "同一父体下多个子体的广告已合并到该父体。活动与关键词按「活动×商品」归属到父体，跨父体投放的标为「跨父体」，取不到商品明细的标为「未归属」。"
             + extra
             + (" 广告销量缺失时按广告订单代替。" if any((p.get("ads") or {}).get("ad_units_fallback") for p in parent_ads) else "")
             + "</p>"
@@ -367,21 +368,54 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
         parts.append("<h4>每日广告表现</h4>")
         parts.append(_table(["日期", "曝光", "点击", "CTR", "CPC", "CVR", "广告销量"], rows, ["left", "right", "right", "right", "right", "right", "right"]))
 
+    if multi and parent_ads:
+        rows = []
+        for p in parent_ads:
+            for day in ((p.get("ads") or {}).get("daily") or []):
+                rows.append([
+                    esc(str(day.get("date"))[5:]),
+                    esc(p.get("asin") or ""),
+                    f"{num(day.get('ad_impressions')):,.0f}",
+                    f"{num(day.get('ad_clicks')):,.0f}",
+                    pct(day.get("ad_ctr"), 2),
+                    f"${num(day.get('cpc')):,.2f}",
+                    pct(day.get("ad_cvr"), 2),
+                    f"{num(day.get('ad_units') or day.get('ad_orders')):,.0f}",
+                ])
+        if rows:
+            parts.append("<h4>每日广告表现（按父体）</h4>")
+            parts.append(
+                _table(
+                    ["日期", "父体 ASIN", "曝光", "点击", "CTR", "CPC", "CVR", "广告销量"],
+                    rows,
+                    ["left", "left", "right", "right", "right", "right", "right", "right"],
+                )
+            )
+
     campaigns = ads.get("campaigns") or []
     parts.append("<h4>广告活动</h4>")
     if campaigns:
         rows = []
         for c in campaigns:
             used = c.get("budget_used")
-            rows.append([
-                esc(c.get("name")),
+            row = [esc(c.get("name"))]
+            heads = ["广告活动"]
+            aligns = ["left"]
+            if multi:
+                row.append(esc(c.get("parents") or "未归属"))
+                heads.append("父体")
+                aligns.append("left")
+            row += [
                 money(c.get("budget"), currency) if c.get("budget") else "—",
                 money(c.get("spend"), currency),
                 pct(used, 0) if used is not None else "—",
                 pct(c.get("cvr"), 2),
                 f"${num(c.get('cpa')):,.2f}" if c.get("cpa") else "—",
-            ])
-        parts.append(_table(["广告活动", "预算", "花费", "预算使用", "CVR", "CPA"], rows, ["left", "right", "right", "right", "right", "right"]))
+            ]
+            rows.append(row)
+        heads += ["预算", "花费", "预算使用", "CVR", "CPA"]
+        aligns += ["right", "right", "right", "right", "right"]
+        parts.append(_table(heads, rows, aligns))
         parts.append('<p class="note">预算使用 = 周花费 ÷ 周预算（日预算已 ×7）；活动按名称包含该 SPU 汇总；跨 SPU 共用活动为活动全量花费，与 B① 的 SPU 广告花费可能有差额。</p>')
     else:
         parts.append('<p class="note">本期无广告活动数据。</p>')
@@ -389,8 +423,12 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
     words = ads.get("keywords") or []
     parts.append("<h4>关键词花费（跨活动）</h4>")
     if words:
-        rows = [[esc(w.get("keyword")), f"{num(w.get('clicks')):,.0f}", money(w.get("spend"), currency), pct(w.get("spend_share"), 1), pct(w.get("cvr"), 1)] for w in words]
-        parts.append(_table(["关键词", "点击", "花费", "花费占比", "CVR"], rows, ["left", "right", "right", "right", "right"]))
+        if multi:
+            rows = [[esc(w.get("keyword")), esc(w.get("parents") or "未归属"), f"{num(w.get('clicks')):,.0f}", money(w.get("spend"), currency), pct(w.get("spend_share"), 1), pct(w.get("cvr"), 1)] for w in words]
+            parts.append(_table(["关键词", "父体", "点击", "花费", "花费占比", "CVR"], rows, ["left", "left", "right", "right", "right", "right"]))
+        else:
+            rows = [[esc(w.get("keyword")), f"{num(w.get('clicks')):,.0f}", money(w.get("spend"), currency), pct(w.get("spend_share"), 1), pct(w.get("cvr"), 1)] for w in words]
+            parts.append(_table(["关键词", "点击", "花费", "花费占比", "CVR"], rows, ["left", "right", "right", "right", "right"]))
         parts.append('<p class="note">按 SPU 汇总所有广告活动下的关键词；同名关键词已合并。</p>')
     else:
         parts.append('<p class="note">本期无关键词花费数据。</p>')

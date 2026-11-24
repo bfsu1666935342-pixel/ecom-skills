@@ -295,6 +295,7 @@ def build(
         budget = num(row.get("budget"))
         campaigns.append({
             "name": row.get("name"),
+            "parents": row.get("parents") or "",
             "budget": budget,
             "spend": spend,
             "budget_used": safe_div(spend, budget) if budget else None,
@@ -321,6 +322,7 @@ def build(
         orders = num(row.get("orders"))
         keywords_spend.append({
             "keyword": row.get("keyword"),
+            "parents": row.get("parents") or "",
             "clicks": clicks,
             "spend": spend,
             "orders": orders,
@@ -360,6 +362,16 @@ def build(
             "revenue": m_this.get("revenue", 0),
             "units": m_this.get("units", 0),
             "spend_share": safe_div(m_this.get("ad_spend", 0), total_parent_ad_spend),
+            "daily": [
+                {
+                    "date": day.get("date"),
+                    **{
+                        key: derived({k: num(v) for k, v in day.items()})[key]
+                        for key in ("ad_impressions", "ad_clicks", "ad_ctr", "cpc", "ad_cvr", "ad_units", "ad_orders")
+                    },
+                }
+                for day in (perf.get("this") or {}).get("daily") or []
+            ],
             "last_ad_spend": m_last.get("ad_spend", 0),
             "last_ad_sales": m_last.get("ad_sales", 0),
             "last_acos": m_last.get("acos"),

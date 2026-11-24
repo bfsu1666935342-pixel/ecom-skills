@@ -23,7 +23,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 from .mcp import MCPClient, MCPError, rows_from
 from .util import env, first, load_config, load_env, num, read_json, write_json
 
-CANONICAL = ("performance", "campaign", "keyword", "profit", "shops", "listing")
+CANONICAL = ("performance", "campaign", "keyword", "profit", "shops", "listing", "ad_product")
 
 
 # --------------------------------------------------------------------------- config
@@ -448,6 +448,71 @@ def _campaigns(name: str, start: str, end: str, profiles: List[str]) -> List[Dic
     return sorted(result, key=lambda c: c["spend"], reverse=True)
 
 
+def _ad_products(
+    campaign_ids: List[str], start: str, end: str, shops: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    """活动 × ASIN 的广告花费。
+    领星的 ad_campaign_product_report 只能按单个店铺（profile_id，必须是整数）查，
+    所以对每个店铺各查一遍，再按 campaign_id 过滤出本 SPU 的活动。
+    """
+    wanted = {str(c) for c in campaign_ids}
+    if not wanted:
+        return []
+    merged: Dict[str, Dict[str, Any]] = {}
+    for shop in shops:
+        raw_profile = shop.get("profile_id")
+        if not raw_profile:
+            continue
+        try:
+            profile = int(str(raw_profile))
+        except (TypeError, ValueError):
+            continue
+        page = 1
+        while page <= 5:
+            try:
+                payload = action("ad_campaign_product_report", {
+                    "report_date": f"{start} - {end}",
+                    "profile_id": profile,
+                    "page": page,
+                    "length": 200,
+                    "sort_field": "spends",
+                    "sort_type": "desc",
+                })
+            except Exception:  # noqa: BLE001
+                break
+            rows = _rows(payload)
+            if not rows:
+                break
+            for row in rows:
+                cid = str(row.get("campaign_id") or "")
+                if cid not in wanted:
+                    continue
+                asin = str(row.get("asin") or "").upper()
+                key = cid + "|" + asin
+                item = merged.setdefault(key, {
+                    "campaign_id": cid,
+                    "campaign_name": str(row.get("campaign_name") or row.get("name") or ""),
+                    "asin": asin,
+                    "sku": str(row.get("sku") or ""),
+                    "spend": 0.0,
+                    "clicks": 0.0,
+                    "impressions": 0.0,
+                    "orders": 0.0,
+                    "sales": 0.0,
+                    "units": 0.0,
+                })
+                item["spend"] += num(row.get("spends"))
+                item["clicks"] += num(row.get("clicks"))
+                item["impressions"] += num(row.get("impressions"))
+                item["orders"] += num(row.get("orders"))
+                item["sales"] += num(row.get("sales"))
+                item["units"] += num(row.get("ad_units"))
+            if len(rows) < 200:
+                break
+            page += 1
+    return sorted(merged.values(), key=lambda x: x["spend"], reverse=True)
+
+
 def _keywords(campaign_ids: List[str], start: str, end: str, profiles: List[str]) -> List[Dict[str, Any]]:
     merged: Dict[str, Dict[str, Any]] = {}
     for index in range(0, len(campaign_ids), 50):
@@ -468,13 +533,21 @@ def _keywords(campaign_ids: List[str], start: str, end: str, profiles: List[str]
                 word = str(row.get("keyword_text") or "").strip().lower()
                 if not word:
                     continue
-                item = merged.setdefault(word, {"keyword": word, "clicks": 0.0, "spend": 0.0, "orders": 0.0, "sales": 0.0})
+                item = merged.setdefault(
+                    word,
+                    {"keyword": word, "clicks": 0.0, "spend": 0.0, "orders": 0.0, "sales": 0.0, "campaign_ids": set()},
+                )
+                cid = str(row.get("campaign_id") or "")
+                if cid:
+                    item["campaign_ids"].add(cid)
                 item["clicks"] += num(row.get("clicks"))
                 item["spend"] += num(row.get("spends"))
                 item["orders"] += num(row.get("orders"))
                 item["sales"] += num(row.get("sales"))
             if len(rows) < 200:
                 break
+    for item in merged.values():
+        item["campaign_ids"] = sorted(item.get("campaign_ids") or [])
     return sorted(merged.values(), key=lambda x: x["spend"], reverse=True)
 
 
@@ -518,6 +591,7 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
 
     campaigns: List[Dict[str, Any]] = []
     keywords: List[Dict[str, Any]] = []
+    ad_products: List[Dict[str, Any]] = []
     if "campaign" in wanted:
         try:
             suffix = re.sub(r"^[A-Z]{2,5}-", "", spu)
@@ -529,20 +603,63 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
             keywords = _keywords([c["campaign_id"] for c in campaigns], this_start, this_end, profiles)
         except Exception as exc:  # noqa: BLE001
             errors["keyword"] = str(exc)
+    if campaigns:
+        try:
+            ad_products = _ad_products(
+                [c["campaign_id"] for c in campaigns], this_start, this_end, shops
+            )
+        except Exception as exc:  # noqa: BLE001
+            errors["ad_product"] = str(exc)
 
     this_block = _block(this_rows)
     last_block = _block(last_rows)
 
     # 每个父体单独留一份，供报告按父体拆分广告
+    parent_children: Dict[str, List[str]] = {}
     by_parent: Dict[str, Any] = {}
     for parent in product.get("parents") or []:
         asin = str(parent.get("asin") or "")
         if not asin or f"{asin}-this" not in raw_rows:
             continue
+        this_rows_raw = raw_rows.get(f"{asin}-this") or []
         by_parent[asin] = {
-            "this": _block([_map_perf(r) for r in raw_rows.get(f"{asin}-this") or []]),
+            "this": _block([_map_perf(r) for r in this_rows_raw]),
             "last": _block([_map_perf(r) for r in raw_rows.get(f"{asin}-last") or []]),
         }
+        children: List[str] = []
+        for row in this_rows_raw:
+            for child in row.get("asins") or []:
+                child_asin = str((child or {}).get("asin") or "").upper()
+                if child_asin and child_asin not in children:
+                    children.append(child_asin)
+        parent_children[asin] = children
+
+    # 活动 / 关键词归属到父体（靠“活动×商品”明细 + 父体子体映射）
+    if ad_products:
+        child2parent: Dict[str, str] = {}
+        for parent_asin, children in parent_children.items():
+            child2parent[parent_asin.upper()] = parent_asin
+            for child in children:
+                child2parent[child.upper()] = parent_asin
+        camp_parents: Dict[str, set] = {}
+        for row in ad_products:
+            parent_asin = child2parent.get(str(row.get("asin") or "").upper())
+            if parent_asin:
+                camp_parents.setdefault(row["campaign_id"], set()).add(parent_asin)
+
+        def _label(cids: Any) -> str:
+            hit: set = set()
+            for cid in cids or []:
+                hit |= camp_parents.get(str(cid), set())
+            if not hit:
+                return ""
+            return next(iter(hit)) if len(hit) == 1 else "跨父体"
+
+        for camp in campaigns:
+            camp["parents"] = _label([camp.get("campaign_id")])
+        for word in keywords:
+            word["parents"] = _label(word.get("campaign_ids") or [])
+
     result = {
         "source": "lingxing",
         "week_start": this_start,
@@ -550,6 +667,8 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
         "last": last_block,
         "campaigns": campaigns,
         "keywords": keywords,
+        "ad_products": ad_products,
+        "parent_children": parent_children,
         "profit": this_block["aggregate"].get("profit", 0.0),
         "errors": errors,
         "shops": [{"sid": s.get("sid"), "profile_id": s.get("profile_id"), "alias": s.get("alias")} for s in shops],

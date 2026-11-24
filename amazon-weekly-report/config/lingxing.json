@@ -9,7 +9,8 @@
     "keyword": "ad_campaign_keyword_report",
     "profit": "get_profit_report_msku",
     "shops": "ad_auth_shops",
-    "listing": "erp_listing"
+    "listing": "erp_listing",
+    "ad_product": "ad_campaign_product_report"
   },
   "args": {
     "performance": {},
@@ -17,30 +18,178 @@
     "keyword": {},
     "profit": {},
     "shops": {},
-    "listing": {}
+    "listing": {},
+    "ad_product": {}
   },
   "field_aliases": {
-    "date": ["date", "stat_date", "report_date", "day", "biz_date", "日期"],
-    "units": ["sales_qty", "order_qty", "units", "units_ordered", "quantity", "total_order_qty", "volume", "销量", "订单量", "商品销量"],
-    "revenue": ["sales_amount", "order_amount", "sales", "gmv", "total_sales", "amount", "销售额", "销售收入"],
-    "sessions": ["sessions", "session", "sessions_total", "sessions-total", "session_num", "会话", "会话数", "浏览量"],
-    "clicks": ["clicks", "click", "click_num", "点击", "点击量"],
-    "impressions": ["total_impressions", "impressions", "impression", "曝光量", "商品曝光", "总曝光"],
-    "orders": ["orders", "order_count", "order_num", "order_qty_total", "订单数", "订单量"],
-    "ad_impressions": ["ad_impressions", "impressions", "ad_impression", "广告曝光", "曝光量"],
-    "ad_clicks": ["ad_clicks", "ad_click", "广告点击", "广告点击量"],
-    "ad_spend": ["ad_spend", "ad_cost", "spend", "cost", "广告花费", "广告费"],
-    "ad_orders": ["ad_orders", "ad_order_qty", "ad_order_count", "广告订单", "广告订单量"],
-    "ad_units": ["ad_units", "ad_sales_qty", "ad_quantity", "广告销量", "广告销售量"],
-    "ad_sales": ["ad_sales", "ad_sales_amount", "ad_revenue", "广告销售额"],
-    "returns": ["returns", "return_qty", "returned_qty", "退货量", "退货数量"],
-    "refunds": ["refund_amount", "refunds", "refund", "退款金额", "退款"],
-    "profit": ["profit", "gross_profit", "order_profit", "profit_amount", "利润", "毛利"],
-    "campaign_name": ["campaign_name", "name", "campaign", "广告活动", "广告活动名称"],
-    "campaign_budget": ["budget", "daily_budget", "campaign_budget", "预算", "日预算"],
-    "keyword": ["keyword", "keyword_text", "targeting", "search_term", "关键词", "投放词"],
-    "sku": ["sku", "msku", "seller_sku", "local_sku", "local_name", "sku_name", "MSKU"],
-    "spu": ["spu", "spu_code", "product_spu", "SPU"],
-    "asin": ["asin", "child_asin", "parent_asin", "ASIN"]
+    "date": [
+      "date",
+      "stat_date",
+      "report_date",
+      "day",
+      "biz_date",
+      "日期"
+    ],
+    "units": [
+      "sales_qty",
+      "order_qty",
+      "units",
+      "units_ordered",
+      "quantity",
+      "total_order_qty",
+      "volume",
+      "销量",
+      "订单量",
+      "商品销量"
+    ],
+    "revenue": [
+      "sales_amount",
+      "order_amount",
+      "sales",
+      "gmv",
+      "total_sales",
+      "amount",
+      "销售额",
+      "销售收入"
+    ],
+    "sessions": [
+      "sessions",
+      "session",
+      "sessions_total",
+      "sessions-total",
+      "session_num",
+      "会话",
+      "会话数",
+      "浏览量"
+    ],
+    "clicks": [
+      "clicks",
+      "click",
+      "click_num",
+      "点击",
+      "点击量"
+    ],
+    "impressions": [
+      "total_impressions",
+      "impressions",
+      "impression",
+      "曝光量",
+      "商品曝光",
+      "总曝光"
+    ],
+    "orders": [
+      "orders",
+      "order_count",
+      "order_num",
+      "order_qty_total",
+      "订单数",
+      "订单量"
+    ],
+    "ad_impressions": [
+      "ad_impressions",
+      "impressions",
+      "ad_impression",
+      "广告曝光",
+      "曝光量"
+    ],
+    "ad_clicks": [
+      "ad_clicks",
+      "ad_click",
+      "广告点击",
+      "广告点击量"
+    ],
+    "ad_spend": [
+      "ad_spend",
+      "ad_cost",
+      "spend",
+      "cost",
+      "广告花费",
+      "广告费"
+    ],
+    "ad_orders": [
+      "ad_orders",
+      "ad_order_qty",
+      "ad_order_count",
+      "广告订单",
+      "广告订单量"
+    ],
+    "ad_units": [
+      "ad_units",
+      "ad_sales_qty",
+      "ad_quantity",
+      "广告销量",
+      "广告销售量"
+    ],
+    "ad_sales": [
+      "ad_sales",
+      "ad_sales_amount",
+      "ad_revenue",
+      "广告销售额"
+    ],
+    "returns": [
+      "returns",
+      "return_qty",
+      "returned_qty",
+      "退货量",
+      "退货数量"
+    ],
+    "refunds": [
+      "refund_amount",
+      "refunds",
+      "refund",
+      "退款金额",
+      "退款"
+    ],
+    "profit": [
+      "profit",
+      "gross_profit",
+      "order_profit",
+      "profit_amount",
+      "利润",
+      "毛利"
+    ],
+    "campaign_name": [
+      "campaign_name",
+      "name",
+      "campaign",
+      "广告活动",
+      "广告活动名称"
+    ],
+    "campaign_budget": [
+      "budget",
+      "daily_budget",
+      "campaign_budget",
+      "预算",
+      "日预算"
+    ],
+    "keyword": [
+      "keyword",
+      "keyword_text",
+      "targeting",
+      "search_term",
+      "关键词",
+      "投放词"
+    ],
+    "sku": [
+      "sku",
+      "msku",
+      "seller_sku",
+      "local_sku",
+      "local_name",
+      "sku_name",
+      "MSKU"
+    ],
+    "spu": [
+      "spu",
+      "spu_code",
+      "product_spu",
+      "SPU"
+    ],
+    "asin": [
+      "asin",
+      "child_asin",
+      "parent_asin",
+      "ASIN"
+    ]
   }
 }
