@@ -16,6 +16,7 @@ Nothing here fabricates a value: a missing field stays missing and becomes a gap
 from __future__ import annotations
 
 import datetime as dt
+import time
 import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
@@ -347,9 +348,19 @@ def _rows(payload: Any) -> List[Dict[str, Any]]:
     return []
 
 
-def shops_for(site: str) -> List[Dict[str, Any]]:
-    data = action("ad_auth_shops", {})
-    rows = data.get("data") or []
+_SHOPS_CACHE: Dict[str, Any] = {"at": 0.0, "rows": []}
+_SHOPS_TTL = 10 * 60
+
+
+def shops_for(site: str, force: bool = False) -> List[Dict[str, Any]]:
+    """按站点取授权店铺。结果缓存 10 分钟——一次跑 5 个 SPU 只拉一次，省掉 4 次等待。"""
+    now = time.time()
+    rows = _SHOPS_CACHE.get("rows") or []
+    if force or not rows or now - float(_SHOPS_CACHE.get("at") or 0) > _SHOPS_TTL:
+        data = action("ad_auth_shops", {})
+        rows = data.get("data") or []
+        _SHOPS_CACHE["rows"] = rows
+        _SHOPS_CACHE["at"] = now
     return [r for r in rows if str(r.get("country", "")).upper() == site.upper()]
 
 
@@ -505,8 +516,11 @@ def _ad_products(
             profile = int(str(raw_profile))
         except (TypeError, ValueError):
             continue
+        print("    店铺 %s …" % (shop.get("alias") or shop.get("sid")), flush=True)
         page = 1
         while page <= 5:
+            if page > 1:
+                print("    店铺 %s 第 %d 页 …" % (shop.get("alias") or shop.get("sid"), page), flush=True)
             try:
                 payload = action("ad_campaign_product_report", {
                     "report_date": f"{start} - {end}",
@@ -592,6 +606,7 @@ def _keywords(campaign_ids: List[str], start: str, end: str, profiles: List[str]
 def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path, only: Optional[List[str]] = None) -> Dict[str, Any]:
     site = product.get("site", "US")
     spu = str(product.get("spu", ""))
+    print("  领星：读取店铺列表", flush=True)
     all_shops = shops_for(site)
     if not all_shops:
         raise MCPError(f"领星没有 {site} 的广告授权店铺")
@@ -600,6 +615,10 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
         shops = all_shops
     sids = ",".join(str(s.get("sid")) for s in shops if s.get("sid"))
     profiles = [str(s.get("profile_id")) for s in shops if s.get("profile_id")]
+    print(
+        "  领星：%d 个店铺 · %s" % (len(shops), "、".join(str(x.get("alias") or x.get("sid")) for x in shops[:3]) + ("…" if len(shops) > 3 else "")),
+        flush=True,
+    )
     store_cfg = product.get("store") or {}
     store_wanted = bool(store_cfg.get("sid") or store_cfg.get("alias"))
     store_matched = len(shops) < len(all_shops) or (store_wanted and len(all_shops) == 1)
@@ -616,12 +635,14 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
     wanted = set(only or ["performance", "campaign", "keyword"])
 
     if "performance" in wanted:
+        print("  领星：产品表现", flush=True)
         for parent in product.get("parents") or []:
             asin = str(parent.get("asin") or "")
             if not asin:
                 continue
             try:
                 rows = _performance(asin, this_start, this_end, sids)
+                print("    父体 %s：本周 %d 行" % (asin, len(rows)), flush=True)
                 raw_rows[f"{asin}-this"] = rows
                 this_rows.extend(_map_perf(r) for r in rows)
             except Exception as exc:  # noqa: BLE001
@@ -638,8 +659,10 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
     ad_products: List[Dict[str, Any]] = []
     if "campaign" in wanted:
         try:
+            print("  领星：广告活动", flush=True)
             suffix = re.sub(r"^[A-Z]{2,5}-", "", spu)
             campaigns = _campaigns(suffix or spu, this_start, this_end, profiles)
+            print("    活动 %d 个" % len(campaigns), flush=True)
         except Exception as exc:  # noqa: BLE001
             errors["campaign"] = str(exc)
     # 活动所属店铺：活动报表自带 profile_id，只查这些店铺，省掉空店铺的等待
@@ -653,14 +676,18 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
 
     if "keyword" in wanted and campaigns:
         try:
+            print("  领星：关键词花费", flush=True)
             keywords = _keywords([c["campaign_id"] for c in campaigns], this_start, this_end, kw_profiles)
+            print("    关键词 %d 个" % len(keywords), flush=True)
         except Exception as exc:  # noqa: BLE001
             errors["keyword"] = str(exc)
     if campaigns:
         try:
+            print("  领星：活动×商品（%d 个店铺）" % len(ad_shops), flush=True)
             ad_products = _ad_products(
                 [c["campaign_id"] for c in campaigns], this_start, this_end, ad_shops
             )
+            print("    明细 %d 行" % len(ad_products), flush=True)
         except Exception as exc:  # noqa: BLE001
             errors["ad_product"] = str(exc)
 

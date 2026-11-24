@@ -245,6 +245,7 @@ def cmd_collect(args: argparse.Namespace) -> int:
                 asin = parent.get("asin")
                 if not asin:
                     continue
+                print(f"  关键词 {asin}：抓取中…", flush=True)
                 try:
                     kw = collect_keywords.collect(asin, product.get("site", "US"), out, label=parent.get("label", ""), force=args.keyword_source, week_end=(monday + dt.timedelta(days=6)).isoformat())
                     print(f"  关键词 {asin}：{len(kw.get('terms') or [])} 词，来源 {kw.get('source')}")
@@ -254,6 +255,7 @@ def cmd_collect(args: argparse.Namespace) -> int:
         comp_cfg = product.get("competitor") or {}
         comp_asin = comp_cfg.get("asin") or asin_from_url(comp_cfg.get("url", ""))
         if comp_asin and not args.no_competitor:
+            print(f"  竞品 {comp_asin}：抓取中…", flush=True)
             try:
                 comp = competitor.collect(comp_asin, product.get("site", "US"), out, url=comp_cfg.get("url", ""), force_keyword_source=args.keyword_source, week_end=(monday + dt.timedelta(days=6)).isoformat())
                 print(f"  竞品 {comp_asin}：{comp.get('title', '')[:40]}")
