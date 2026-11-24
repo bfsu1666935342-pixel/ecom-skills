@@ -268,6 +268,11 @@ def _collect_direct(product: Dict[str, Any], week_start: dt.date, out_dir: Path,
         return payload
 
     errors: Dict[str, str] = {}
+    if store_wanted and not store_matched:
+        errors["store"] = (
+            "配置的店铺（" + str(store_cfg.get("alias") or store_cfg.get("sid")) + "）没在领星授权店铺里找到，"
+            "已按该站点全部 " + str(len(all_shops)) + " 个店铺采集"
+        )
     result: Dict[str, Any] = {
         "source": "lingxing",
         "week_start": this_start.isoformat(),
@@ -346,6 +351,37 @@ def shops_for(site: str) -> List[Dict[str, Any]]:
     data = action("ad_auth_shops", {})
     rows = data.get("data") or []
     return [r for r in rows if str(r.get("country", "")).upper() == site.upper()]
+
+
+def shops_for_product(product: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """按产品配置的店铺过滤授权店铺；没配就返回该站点全部。
+
+    配置里的 store 形如 {"alias": "JUNAO-Amazon-US-香港凯萨", "sid": 517633}。
+    优先按 sid 匹配（稳），其次别名，最后 profile_id。
+    """
+    site = str(product.get("site") or "US").upper()
+    all_shops = shops_for(site)
+    store = product.get("store") or {}
+    if not isinstance(store, dict) or not all_shops:
+        return all_shops
+    sid = store.get("sid")
+    alias = str(store.get("alias") or "").strip()
+    profile_id = str(store.get("profile_id") or "").strip()
+    if not sid and not alias and not profile_id:
+        return all_shops
+    if sid:
+        for shop in all_shops:
+            if str(shop.get("sid")) == str(sid):
+                return [shop]
+    if alias:
+        for shop in all_shops:
+            if str(shop.get("alias") or "").strip() == alias:
+                return [shop]
+    if profile_id:
+        for shop in all_shops:
+            if str(shop.get("profile_id") or "") == profile_id:
+                return [shop]
+    return all_shops
 
 
 def _performance(asin: str, start: str, end: str, sids: str) -> List[Dict[str, Any]]:
@@ -435,6 +471,8 @@ def _campaigns(name: str, start: str, end: str, profiles: List[str]) -> List[Dic
             result.append({
                 "campaign_id": cid,
                 "name": cname,
+                "profile_id": str(row.get("profile_id") or ""),
+                "store_name": str(row.get("store_name") or ""),
                 "budget": budget,
                 "spend": num(row.get("spends")),
                 "clicks": num(row.get("clicks")),
@@ -554,11 +592,17 @@ def _keywords(campaign_ids: List[str], start: str, end: str, profiles: List[str]
 def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path, only: Optional[List[str]] = None) -> Dict[str, Any]:
     site = product.get("site", "US")
     spu = str(product.get("spu", ""))
-    shops = shops_for(site)
-    if not shops:
+    all_shops = shops_for(site)
+    if not all_shops:
         raise MCPError(f"领星没有 {site} 的广告授权店铺")
+    shops = shops_for_product(product)
+    if not shops:
+        shops = all_shops
     sids = ",".join(str(s.get("sid")) for s in shops if s.get("sid"))
     profiles = [str(s.get("profile_id")) for s in shops if s.get("profile_id")]
+    store_cfg = product.get("store") or {}
+    store_wanted = bool(store_cfg.get("sid") or store_cfg.get("alias"))
+    store_matched = len(shops) < len(all_shops) or (store_wanted and len(all_shops) == 1)
 
     this_start = week_start.isoformat()
     this_end = (week_start + dt.timedelta(days=6)).isoformat()
@@ -598,15 +642,24 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
             campaigns = _campaigns(suffix or spu, this_start, this_end, profiles)
         except Exception as exc:  # noqa: BLE001
             errors["campaign"] = str(exc)
+    # 活动所属店铺：活动报表自带 profile_id，只查这些店铺，省掉空店铺的等待
+    camp_profiles = sorted({c.get("profile_id") for c in campaigns if c.get("profile_id")})
+    if camp_profiles:
+        ad_shops = [s for s in shops if str(s.get("profile_id")) in camp_profiles] or shops
+        kw_profiles = [str(s.get("profile_id")) for s in ad_shops]
+    else:
+        ad_shops = shops
+        kw_profiles = profiles
+
     if "keyword" in wanted and campaigns:
         try:
-            keywords = _keywords([c["campaign_id"] for c in campaigns], this_start, this_end, profiles)
+            keywords = _keywords([c["campaign_id"] for c in campaigns], this_start, this_end, kw_profiles)
         except Exception as exc:  # noqa: BLE001
             errors["keyword"] = str(exc)
     if campaigns:
         try:
             ad_products = _ad_products(
-                [c["campaign_id"] for c in campaigns], this_start, this_end, shops
+                [c["campaign_id"] for c in campaigns], this_start, this_end, ad_shops
             )
         except Exception as exc:  # noqa: BLE001
             errors["ad_product"] = str(exc)
