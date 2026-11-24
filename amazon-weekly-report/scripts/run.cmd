@@ -28,5 +28,5 @@ if not defined PY (
   exit /b 1
 )
 
-%PY% "%~dp0wreport.py" %*
+%PY% -u "%~dp0wreport.py" %*
 exit /b %errorlevel%
