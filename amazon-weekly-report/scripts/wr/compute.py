@@ -329,13 +329,45 @@ def build(
             "spend_share": safe_div(spend, total_kw_spend),
         })
 
+    by_parent_raw = lingxing.get("by_parent") or {}
+    parent_ad_totals: Dict[str, float] = {}
+    for p in product.get("parents") or []:
+        pa = str(p.get("asin") or "")
+        perf = by_parent_raw.get(pa) or {}
+        if perf:
+            parent_ad_totals[pa] = derived(_block_metrics(perf.get("this") or {})).get("ad_spend", 0)
+    total_parent_ad_spend = sum(parent_ad_totals.values())
+
     parents = []
     for parent in product.get("parents") or []:
         asin = parent.get("asin")
         kw = keywords_by_asin.get(asin) or {}
+        perf = by_parent_raw.get(asin) or {}
+        m_this = derived(_block_metrics(perf.get("this") or {})) if perf else {}
+        m_last = derived(_block_metrics(perf.get("last") or {})) if perf else {}
+        ads_block = {
+            "available": bool(perf),
+            "ad_spend": m_this.get("ad_spend", 0),
+            "ad_sales": m_this.get("ad_sales", 0),
+            "ad_orders": m_this.get("ad_orders", 0),
+            "ad_clicks": m_this.get("ad_clicks", 0),
+            "ad_impressions": m_this.get("ad_impressions", 0),
+            "ad_units": m_this.get("ad_units", 0),
+            "ad_units_fallback": m_this.get("ad_units_fallback", True),
+            "acos": m_this.get("acos"),
+            "cpc": m_this.get("cpc"),
+            "ad_cvr": m_this.get("ad_cvr"),
+            "revenue": m_this.get("revenue", 0),
+            "units": m_this.get("units", 0),
+            "spend_share": safe_div(m_this.get("ad_spend", 0), total_parent_ad_spend),
+            "last_ad_spend": m_last.get("ad_spend", 0),
+            "last_ad_sales": m_last.get("ad_sales", 0),
+            "last_acos": m_last.get("acos"),
+        }
         parents.append({
             "asin": asin,
             "label": parent.get("label") or "",
+            "ads": ads_block,
             "keywords": {
                 "source": kw.get("source"),
                 "estimated_share": kw.get("estimated_share"),

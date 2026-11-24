@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from . import collect_keywords, compute
+from .collect_lingxing import _block, _map_perf
 from .render import render_html, render_markdown, render_markdown_report, render_report
 from .util import load_config, read_json, write_json
 
@@ -30,6 +31,22 @@ def build_product(
     targets_override: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     lingxing = read_json(data_dir / "raw" / "lingxing.json", {}) or {}
+    # 兼容旧数据：早期采集的 lingxing.json 没有 by_parent，
+    # 但 raw/lingxing-performance.json 里按父体存了原始行，这里补一次
+    if not lingxing.get("by_parent"):
+        perf_raw = read_json(data_dir / "raw" / "lingxing-performance.json", {}) or {}
+        if perf_raw:
+            by_parent: Dict[str, Any] = {}
+            for parent in product.get("parents") or []:
+                asin = str(parent.get("asin") or "")
+                if not asin or f"{asin}-this" not in perf_raw:
+                    continue
+                by_parent[asin] = {
+                    "this": _block([_map_perf(r) for r in perf_raw.get(f"{asin}-this") or []]),
+                    "last": _block([_map_perf(r) for r in perf_raw.get(f"{asin}-last") or []]),
+                }
+            if by_parent:
+                lingxing["by_parent"] = by_parent
     if not demo and not (lingxing.get("this") or {}).get("row_count"):
         raise RuntimeError(
             f"没有领星本周数据（{data_dir / 'raw' / 'lingxing.json'}）。先跑 collect/run，或确认 --week、SPU、站点。"

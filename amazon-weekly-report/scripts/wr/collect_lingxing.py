@@ -532,6 +532,17 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
 
     this_block = _block(this_rows)
     last_block = _block(last_rows)
+
+    # 每个父体单独留一份，供报告按父体拆分广告
+    by_parent: Dict[str, Any] = {}
+    for parent in product.get("parents") or []:
+        asin = str(parent.get("asin") or "")
+        if not asin or f"{asin}-this" not in raw_rows:
+            continue
+        by_parent[asin] = {
+            "this": _block([_map_perf(r) for r in raw_rows.get(f"{asin}-this") or []]),
+            "last": _block([_map_perf(r) for r in raw_rows.get(f"{asin}-last") or []]),
+        }
     result = {
         "source": "lingxing",
         "week_start": this_start,
@@ -542,6 +553,7 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
         "profit": this_block["aggregate"].get("profit", 0.0),
         "errors": errors,
         "shops": [{"sid": s.get("sid"), "profile_id": s.get("profile_id"), "alias": s.get("alias")} for s in shops],
+        "by_parent": by_parent,
     }
     (out_dir / "raw").mkdir(parents=True, exist_ok=True)
     write_json(out_dir / "raw" / "lingxing-performance.json", raw_rows)

@@ -243,7 +243,7 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
     # ---------------------------------------------------------------- per SPU
     parts.append(f"<h2>二、{esc(spu['spu'])} 分项</h2>")
     if len(parents) > 1:
-        parts.append(f'<p class="note">该 SPU 下有 {len(parents)} 个父体：{esc(" / ".join(p["asin"] for p in parents))}。整体与广告按 SPU 合并；关键词按父体分别展开。</p>')
+        parts.append(f'<p class="note">该 SPU 下有 {len(parents)} 个父体：{esc(" / ".join(p["asin"] for p in parents))}。广告与关键词均按父体分别展开；活动明细为 SPU 合并（活动可能跨父体投放，无法归属到单一父体）。</p>')
 
     # A
     parts.append("<h3>A　整体数据（领星）</h3>")
@@ -314,7 +314,43 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
         rows.append([esc(label), cur, prev, _delta_html(wow.get(key), kind)])
     parts.append(_table(["指标", "本周", "上周", "变化"], rows, ["left", "right", "right", "right"]))
     units_note = "广告销量缺失时按广告订单数代替。" if (summary or {}).get("units_fallback") else ""
-    parts.append('<p class="note">广告数据为 SPU 维度，含 SP/SD/SB 汇总；CPC = 花费 ÷ 点击，CPA = 花费 ÷ 广告订单。' + units_note + "</p>")
+    parts.append('<p class="note">本表为 SPU 合计（含 SP/SD/SB）；各父体拆分见下表。CPC = 花费 ÷ 点击，CPA = 花费 ÷ 广告订单。' + units_note + "</p>")
+
+    parent_list = spu.get("parents") or []
+    parent_ads = [p for p in parent_list if (p.get("ads") or {}).get("available")]
+    if len(parent_list) > 1 and parent_ads:
+        parts.append("<h4>按父体拆分的广告</h4>")
+        rows = []
+        for p in parent_ads:
+            a = p.get("ads") or {}
+            rows.append([
+                esc(p.get("asin") or ""),
+                pct(a.get("spend_share"), 1),
+                money(a.get("ad_spend"), currency),
+                money(a.get("ad_sales"), currency),
+                pct(a.get("acos"), 2),
+                f"{num(a.get('ad_orders')):,.0f}",
+                f"{num(a.get('ad_clicks')):,.0f}",
+                f"{num(a.get('ad_units') or a.get('ad_orders')):,.0f}",
+            ])
+        parts.append(
+            _table(
+                ["父体 ASIN", "花费占比", "广告花费", "广告销售额", "ACOS", "广告订单", "广告点击", "广告销量"],
+                rows,
+                ["left", "right", "right", "right", "right", "right", "right", "right"],
+            )
+        )
+        missing = [p.get("asin") for p in parent_list if not (p.get("ads") or {}).get("available")]
+        extra = ""
+        if missing:
+            extra = " 以下父体无 ASIN 维度数据：" + "、".join(str(x) for x in missing) + "。"
+        parts.append(
+            '<p class="note">按父体拆分来自领星「产品表现」的 ASIN 维度行（含 SP/SD/SB）；'
+            "同一父体下多个子体的广告已合并到该父体。活动级明细无法拆分，见下方「广告活动」。"
+            + extra
+            + (" 广告销量缺失时按广告订单代替。" if any((p.get("ads") or {}).get("ad_units_fallback") for p in parent_ads) else "")
+            + "</p>"
+        )
 
     if daily:
         rows = []
