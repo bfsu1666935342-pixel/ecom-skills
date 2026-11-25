@@ -364,9 +364,17 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
                 f"${num(day.get('cpc')):,.2f}",
                 pct(day.get("ad_cvr"), 2),
                 f"{num(day.get('ad_units')):,.0f}",
+                pct(day.get("acos"), 2),
+                pct(day.get("acoas"), 2),
             ])
         parts.append("<h4>每日广告表现</h4>")
-        parts.append(_table(["日期", "曝光", "点击", "CTR", "CPC", "CVR", "广告销量"], rows, ["left", "right", "right", "right", "right", "right", "right"]))
+        parts.append(
+            _table(
+                ["日期", "曝光", "点击", "CTR", "CPC", "CVR", "广告销量", "ACOS", "ACoAS"],
+                rows,
+                ["left", "right", "right", "right", "right", "right", "right", "right", "right"],
+            )
+        )
 
     if multi and parent_ads:
         rows = []
@@ -381,14 +389,16 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
                     f"${num(day.get('cpc')):,.2f}",
                     pct(day.get("ad_cvr"), 2),
                     f"{num(day.get('ad_units') or day.get('ad_orders')):,.0f}",
+                    pct(day.get("acos"), 2),
+                    pct(day.get("acoas"), 2),
                 ])
         if rows:
             parts.append("<h4>每日广告表现（按父体）</h4>")
             parts.append(
                 _table(
-                    ["日期", "父体 ASIN", "曝光", "点击", "CTR", "CPC", "CVR", "广告销量"],
+                    ["日期", "父体 ASIN", "曝光", "点击", "CTR", "CPC", "CVR", "广告销量", "ACOS", "ACoAS"],
                     rows,
-                    ["left", "left", "right", "right", "right", "right", "right", "right"],
+                    ["left", "left", "right", "right", "right", "right", "right", "right", "right", "right"],
                 )
             )
 

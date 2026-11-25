@@ -285,6 +285,8 @@ def build(
             "ad_ctr": row["ad_ctr"],
             "ad_cvr": row["ad_cvr"],
             "cpc": row["cpc"],
+            "acos": row["acos"],
+            "acoas": row["acoas"],
         })
 
     campaigns = []
@@ -367,7 +369,7 @@ def build(
                     "date": day.get("date"),
                     **{
                         key: derived({k: num(v) for k, v in day.items()})[key]
-                        for key in ("ad_impressions", "ad_clicks", "ad_ctr", "cpc", "ad_cvr", "ad_units", "ad_orders")
+                        for key in ("ad_impressions", "ad_clicks", "ad_ctr", "cpc", "ad_cvr", "ad_units", "ad_orders", "acos", "acoas")
                     },
                 }
                 for day in (perf.get("this") or {}).get("daily") or []
