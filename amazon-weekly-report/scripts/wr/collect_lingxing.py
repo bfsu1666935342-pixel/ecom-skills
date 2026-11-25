@@ -739,8 +739,32 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
         try:
             print("  领星：广告活动（按父体 ASIN 匹配）", flush=True)
             suffix = re.sub(r"^[A-Z]{2,5}-", "", spu)
+            # 只在「这个 SPU 真的有 listing」的店铺里找活动：
+            # 产品表现行里的 parent_asins[].sid 就是该父体挂在哪些店铺
+            listing_sids = set()
+            for parent_item in product.get("parents") or []:
+                pa = str((parent_item or {}).get("asin") or "")
+                if not pa:
+                    continue
+                for row in raw_rows.get(f"{pa}-this") or []:
+                    for item in row.get("parent_asins") or []:
+                        sid = str((item or {}).get("sid") or "")
+                        if sid:
+                            listing_sids.add(sid)
+            scoped_shops = shops
+            if listing_sids:
+                hit = [x for x in shops if str(x.get("sid")) in listing_sids]
+                if hit:
+                    scoped_shops = hit
+            scoped_profiles = [str(x.get("profile_id")) for x in scoped_shops if x.get("profile_id")]
+            if len(scoped_shops) < len(shops):
+                print(
+                    "    店铺收窄：%d → %d（按 listing 所在店铺）"
+                    % (len(shops), len(scoped_shops)),
+                    flush=True,
+                )
             # 先按名称拿一份，用来补预算/状态，并把"没有商品明细的活动"（如 SB）兜进来
-            by_name = _campaigns(suffix or spu, this_start, this_end, profiles)
+            by_name = _campaigns(suffix or spu, this_start, this_end, scoped_profiles)
             by_name_map = {str(c.get("campaign_id")): c for c in by_name}
 
             children: List[str] = []
@@ -754,7 +778,7 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
                         child_asin = str((child or {}).get("asin") or "").upper()
                         if child_asin and child_asin not in children:
                             children.append(child_asin)
-            matched = _campaigns_by_asin(children, this_start, this_end, shops)
+            matched = _campaigns_by_asin(children, this_start, this_end, scoped_shops)
             hit_ids = {str(c.get("campaign_id")) for c in matched}
             for c in matched:
                 extra = by_name_map.get(str(c.get("campaign_id"))) or {}
@@ -780,7 +804,7 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
     # 活动所属店铺：活动报表自带 profile_id，只查这些店铺，省掉空店铺的等待
     camp_profiles = sorted({c.get("profile_id") for c in campaigns if c.get("profile_id")})
     if camp_profiles:
-        ad_shops = [s for s in shops if str(s.get("profile_id")) in camp_profiles] or shops
+        ad_shops = [s for s in scoped_shops if str(s.get("profile_id")) in camp_profiles] or scoped_shops
         kw_profiles = [str(s.get("profile_id")) for s in ad_shops]
     else:
         ad_shops = shops
