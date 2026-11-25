@@ -1,0 +1,3025 @@
+{
+  "spu": "LS-66B18A",
+  "site": "US",
+  "title": "LS-66B18A（US）",
+  "store": {
+    "alias": "Kaisa US-US",
+    "sid": 519763,
+    "profile_id": ""
+  },
+  "shops": [
+    {
+      "sid": 519763,
+      "alias": "Kaisa US-US"
+    }
+  ],
+  "today": "2026-11-25",
+  "settings": {
+    "lead_time_days": 45,
+    "safety_days": 30,
+    "sale_window_days": 30,
+    "half_month_count": 3,
+    "history_years": 3,
+    "_说明": "备货参数。改这里就生效，不用动代码。"
+  },
+  "daily": [
+    {
+      "date": "2026-11-08",
+      "sku": "LS-66B18A-04",
+      "units": 22.0,
+      "revenue": 4179.78
+    },
+    {
+      "date": "2026-11-06",
+      "sku": "LS-66B18A-04",
+      "units": 13.0,
+      "revenue": 2469.87
+    },
+    {
+      "date": "2026-11-03",
+      "sku": "LS-66B18A-04",
+      "units": 11.0,
+      "revenue": 2089.89
+    },
+    {
+      "date": "2026-11-07",
+      "sku": "LS-66B18A-04",
+      "units": 10.0,
+      "revenue": 1899.9
+    },
+    {
+      "date": "2026-11-04",
+      "sku": "LS-66B18A-04",
+      "units": 10.0,
+      "revenue": 1899.9
+    },
+    {
+      "date": "2026-10-29",
+      "sku": "LS-66B18A-04",
+      "units": 9.0,
+      "revenue": 1709.91
+    },
+    {
+      "date": "2026-11-08",
+      "sku": "LS-66B18A-01",
+      "units": 8.0,
+      "revenue": 1519.92
+    },
+    {
+      "date": "2026-10-30",
+      "sku": "LS-66B18A-04",
+      "units": 8.0,
+      "revenue": 1549.92
+    },
+    {
+      "date": "2026-11-01",
+      "sku": "LS-66B18A-04",
+      "units": 8.0,
+      "revenue": 1519.92
+    },
+    {
+      "date": "2026-11-02",
+      "sku": "LS-66B18A-04",
+      "units": 7.0,
+      "revenue": 1329.93
+    },
+    {
+      "date": "2026-11-09",
+      "sku": "LS-66B18A-04",
+      "units": 7.0,
+      "revenue": 1329.93
+    },
+    {
+      "date": "2026-10-26",
+      "sku": "LS-66B18A-04",
+      "units": 7.0,
+      "revenue": 1359.93
+    },
+    {
+      "date": "2026-11-06",
+      "sku": "LS-66B18A-01",
+      "units": 6.0,
+      "revenue": 1139.94
+    },
+    {
+      "date": "2026-10-31",
+      "sku": "LS-66B18A-04",
+      "units": 6.0,
+      "revenue": 1139.94
+    },
+    {
+      "date": "2026-11-05",
+      "sku": "LS-66B18A-04",
+      "units": 6.0,
+      "revenue": 1139.94
+    },
+    {
+      "date": "2026-10-28",
+      "sku": "LS-66B18A-04",
+      "units": 6.0,
+      "revenue": 1139.94
+    },
+    {
+      "date": "2026-11-10",
+      "sku": "LS-66B18A-05",
+      "units": 6.0,
+      "revenue": 1199.94
+    },
+    {
+      "date": "2026-11-04",
+      "sku": "LS-66B18A-01",
+      "units": 5.0,
+      "revenue": 949.95
+    },
+    {
+      "date": "2026-10-27",
+      "sku": "LS-66B18A-04",
+      "units": 5.0,
+      "revenue": 949.95
+    },
+    {
+      "date": "2026-10-29",
+      "sku": "LS-66B18A-05",
+      "units": 5.0,
+      "revenue": 949.95
+    },
+    {
+      "date": "2026-11-01",
+      "sku": "LS-66B18A-01",
+      "units": 4.0,
+      "revenue": 759.96
+    },
+    {
+      "date": "2026-11-09",
+      "sku": "LS-66B18A-01",
+      "units": 4.0,
+      "revenue": 869.96
+    },
+    {
+      "date": "2026-11-03",
+      "sku": "LS-66B18A-01",
+      "units": 4.0,
+      "revenue": 759.96
+    },
+    {
+      "date": "2026-10-25",
+      "sku": "LS-66B18A-04",
+      "units": 4.0,
+      "revenue": 759.96
+    },
+    {
+      "date": "2026-10-23",
+      "sku": "LS-66B18A-04",
+      "units": 4.0,
+      "revenue": 759.96
+    },
+    {
+      "date": "2026-11-24",
+      "sku": "LS-66B18A-05",
+      "units": 4.0,
+      "revenue": 839.96
+    },
+    {
+      "date": "2026-10-25",
+      "sku": "LS-66B18A-05",
+      "units": 4.0,
+      "revenue": 759.96
+    },
+    {
+      "date": "2026-10-27",
+      "sku": "LS-66B18A-05",
+      "units": 4.0,
+      "revenue": 759.96
+    },
+    {
+      "date": "2026-11-21",
+      "sku": "LS-66B18A-01",
+      "units": 3.0,
+      "revenue": 629.97
+    },
+    {
+      "date": "2026-11-23",
+      "sku": "LS-66B18A-01",
+      "units": 3.0,
+      "revenue": 629.97
+    },
+    {
+      "date": "2026-11-05",
+      "sku": "LS-66B18A-01",
+      "units": 3.0,
+      "revenue": 569.97
+    },
+    {
+      "date": "2026-10-26",
+      "sku": "LS-66B18A-01",
+      "units": 3.0,
+      "revenue": 569.97
+    },
+    {
+      "date": "2026-10-30",
+      "sku": "LS-66B18A-05",
+      "units": 3.0,
+      "revenue": 569.97
+    },
+    {
+      "date": "2026-11-01",
+      "sku": "LS-66B18A-05",
+      "units": 3.0,
+      "revenue": 569.97
+    },
+    {
+      "date": "2026-10-24",
+      "sku": "LS-66B18A-05",
+      "units": 3.0,
+      "revenue": 569.97
+    },
+    {
+      "date": "2026-11-20",
+      "sku": "LS-66B18A-01",
+      "units": 2.0,
+      "revenue": 419.98
+    },
+    {
+      "date": "2026-10-23",
+      "sku": "LS-66B18A-01",
+      "units": 2.0,
+      "revenue": 379.98
+    },
+    {
+      "date": "2026-11-02",
+      "sku": "LS-66B18A-01",
+      "units": 2.0,
+      "revenue": 379.98
+    },
+    {
+      "date": "2026-11-24",
+      "sku": "LS-66B18A-01",
+      "units": 2.0,
+      "revenue": 419.98
+    },
+    {
+      "date": "2026-10-29",
+      "sku": "LS-66B18A-01",
+      "units": 2.0,
+      "revenue": 409.98
+    },
+    {
+      "date": "2026-10-30",
+      "sku": "LS-66B18A-01",
+      "units": 2.0,
+      "revenue": 379.98
+    },
+    {
+      "date": "2026-11-10",
+      "sku": "LS-66B18A-01",
+      "units": 2.0,
+      "revenue": 419.98
+    },
+    {
+      "date": "2026-11-07",
+      "sku": "LS-66B18A-01",
+      "units": 2.0,
+      "revenue": 379.98
+    },
+    {
+      "date": "2026-10-22",
+      "sku": "LS-66B18A-04",
+      "units": 2.0,
+      "revenue": 379.98
+    },
+    {
+      "date": "2026-11-21",
+      "sku": "LS-66B18A-05",
+      "units": 2.0,
+      "revenue": 419.98
+    },
+    {
+      "date": "2026-10-31",
+      "sku": "LS-66B18A-05",
+      "units": 2.0,
+      "revenue": 379.98
+    },
+    {
+      "date": "2026-10-28",
+      "sku": "LS-66B18A-05",
+      "units": 2.0,
+      "revenue": 379.98
+    },
+    {
+      "date": "2026-11-22",
+      "sku": "LS-66B18A-01",
+      "units": 1.0,
+      "revenue": 209.99
+    },
+    {
+      "date": "2026-10-31",
+      "sku": "LS-66B18A-01",
+      "units": 1.0,
+      "revenue": 189.99
+    },
+    {
+      "date": "2026-10-28",
+      "sku": "LS-66B18A-01",
+      "units": 1.0,
+      "revenue": 189.99
+    },
+    {
+      "date": "2026-10-27",
+      "sku": "LS-66B18A-01",
+      "units": 1.0,
+      "revenue": 189.99
+    },
+    {
+      "date": "2026-11-24",
+      "sku": "LS-66B18A-02",
+      "units": 1.0,
+      "revenue": 209.99
+    },
+    {
+      "date": "2026-10-24",
+      "sku": "LS-66B18A-04",
+      "units": 1.0,
+      "revenue": 189.99
+    },
+    {
+      "date": "2026-10-12",
+      "sku": "LS-66B18A-04",
+      "units": 1.0,
+      "revenue": 299.99
+    },
+    {
+      "date": "2026-10-26",
+      "sku": "LS-66B18A-05",
+      "units": 1.0,
+      "revenue": 189.99
+    },
+    {
+      "date": "2026-11-02",
+      "sku": "LS-66B18A-05",
+      "units": 1.0,
+      "revenue": 189.99
+    },
+    {
+      "date": "2026-11-20",
+      "sku": "LS-66B18A-05",
+      "units": 1.0,
+      "revenue": 209.99
+    },
+    {
+      "date": "2026-11-23",
+      "sku": "LS-66B18A-05",
+      "units": 1.0,
+      "revenue": 209.99
+    },
+    {
+      "date": "2026-10-22",
+      "sku": "LS-66B18A-05",
+      "units": 1.0,
+      "revenue": 189.99
+    },
+    {
+      "date": "2026-11-24",
+      "sku": "LS-66B18A-06",
+      "units": 1.0,
+      "revenue": 209.99
+    },
+    {
+      "date": "2026-09-09",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-29",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-24",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-11",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-17",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-14",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-09",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-15",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-17",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-18",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-16",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-15",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-06",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-23",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-15",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-12",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-19",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-26",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-04",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-06",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-07",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-05",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-12",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-22",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-22",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-03",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-20",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-13",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-25",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-19",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-21",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-30",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-14",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-19",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-01",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-28",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-08",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-12",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-20",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-11",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-16",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-21",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-25",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-18",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-27",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-18",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-14",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-16",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-10",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-08",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-07",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-10",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-11",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-24",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-13",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-25",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-13",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-17",
+      "sku": "LS-66B18A-01",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-16",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-23",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-30",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-11",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-27",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-06",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-13",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-21",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-10",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-14",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-20",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-08",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-11",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-25",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-19",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-12",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-27",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-02",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-16",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-13",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-18",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-24",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-14",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-07",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-15",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-09",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-05",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-08",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-11",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-16",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-14",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-18",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-21",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-01",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-15",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-29",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-22",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-23",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-21",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-20",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-28",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-31",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-09",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-04",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-19",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-09",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-10",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-07",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-17",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-04",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-08",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-12",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-20",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-30",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-07",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-24",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-28",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-22",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-26",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-03",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-05",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-17",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-29",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-15",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-18",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-19",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-03",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-01",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-26",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-06",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-25",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-25",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-17",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-13",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-10",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-23",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-22",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-12",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-06",
+      "sku": "LS-66B18A-02",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-15",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-14",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-22",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-29",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-20",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-01",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-11",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-21",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-18",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-24",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-15",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-23",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-27",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-28",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-03",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-02",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-12",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-06",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-20",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-25",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-24",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-16",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-15",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-10",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-09",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-08",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-19",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-18",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-12",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-27",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-26",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-17",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-16",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-06",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-07",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-25",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-04",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-01",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-30",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-08",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-10",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-31",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-05",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-09",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-29",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-18",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-07",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-06",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-12",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-17",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-16",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-21",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-24",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-25",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-08",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-28",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-05",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-04",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-10",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-14",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-09",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-30",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-22",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-07",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-19",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-17",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-26",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-21",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-11",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-23",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-11",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-14",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-22",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-13",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-13",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-03",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-23",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-13",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-20",
+      "sku": "LS-66B18A-03",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-07",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-15",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-06",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-24",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-17",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-28",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-29",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-10",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-15",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-18",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-09",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-08",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-22",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-03",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-21",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-10",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-19",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-12",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-13",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-07",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-20",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-08",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-05",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-19",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-11",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-04",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-12",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-23",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-17",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-19",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-21",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-24",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-25",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-30",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-25",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-09",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-15",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-14",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-01",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-21",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-16",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-13",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-18",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-16",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-11",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-10",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-14",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-26",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-27",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-20",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-13",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-06",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-16",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-20",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-17",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-11",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-18",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-14",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-23",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-22",
+      "sku": "LS-66B18A-04",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-22",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-20",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-13",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-07",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-08",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-03",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-23",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-13",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-21",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-20",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-22",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-18",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-23",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-15",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-13",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-06",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-03",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-04",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-14",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-17",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-16",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-11",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-09",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-18",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-26",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-06",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-27",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-19",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-15",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-21",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-17",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-16",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-12",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-14",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-15",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-09",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-07",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-06",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-19",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-05",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-24",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-17",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-16",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-28",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-30",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-29",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-25",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-12",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-04",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-11",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-10",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-11",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-18",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-14",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-10",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-09",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-07",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-25",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-19",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-15",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-05",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-04",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-26",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-14",
+      "sku": "LS-66B18A-05",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-21",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-25",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-17",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-13",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-27",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-14",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-10",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-07",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-13",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-12",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-06",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-09",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-06",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-28",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-24",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-30",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-01",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-31",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-29",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-21",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-23",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-19",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-15",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-05",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-16",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-02",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-27",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-20",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-10",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-05",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-28",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-18",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-26",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-23",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-14",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-25",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-17",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-16",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-13",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-30",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-29",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-24",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-09",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-08",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-04",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-15",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-22",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-19",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-11",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-01",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-21",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-16",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-12",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-08",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-15",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-11",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-20",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-07",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-23",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-22",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-19",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-17",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-03",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-26",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-18",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-03",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-12",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-08",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-10",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-14",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-11",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-09",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-04",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-22",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-18",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-25",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-20",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-07",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-06",
+      "sku": "LS-66B18A-06",
+      "units": 0.0,
+      "revenue": 0.0
+    }
+  ],
+  "same_month": {
+    "2026": {
+      "units": 165.0,
+      "skus": {
+        "LS-66B18A-04": 94.0,
+        "LS-66B18A-01": 51.0,
+        "LS-66B18A-05": 18.0,
+        "LS-66B18A-02": 1.0,
+        "LS-66B18A-06": 1.0,
+        "LS-66B18A-03": 0.0
+      },
+      "rows": 6
+    },
+    "2025": {
+      "units": 0.0,
+      "skus": {
+        "LS-66B18A-01": 0.0,
+        "LS-66B18A-02": 0.0,
+        "LS-66B18A-03": 0.0,
+        "LS-66B18A-04": 0.0,
+        "LS-66B18A-05": 0.0,
+        "LS-66B18A-06": 0.0
+      },
+      "rows": 6
+    },
+    "2024": {
+      "units": 0.0,
+      "skus": {
+        "LS-66B18A-01": 0.0,
+        "LS-66B18A-02": 0.0,
+        "LS-66B18A-03": 0.0,
+        "LS-66B18A-04": 0.0,
+        "LS-66B18A-05": 0.0,
+        "LS-66B18A-06": 0.0
+      },
+      "rows": 6
+    }
+  },
+  "stock": [
+    {
+      "sku": "LS-66B18A-01",
+      "on_hand": 0.0,
+      "in_transit": 0.0,
+      "in_production": 0.0,
+      "has_stock": false
+    },
+    {
+      "sku": "LS-66B18A-02",
+      "on_hand": 0.0,
+      "in_transit": 0.0,
+      "in_production": 0.0,
+      "has_stock": false
+    },
+    {
+      "sku": "LS-66B18A-03",
+      "on_hand": 0.0,
+      "in_transit": 0.0,
+      "in_production": 0.0,
+      "has_stock": false
+    },
+    {
+      "sku": "LS-66B18A-04",
+      "on_hand": 0.0,
+      "in_transit": 0.0,
+      "in_production": 0.0,
+      "has_stock": false
+    },
+    {
+      "sku": "LS-66B18A-05",
+      "on_hand": 0.0,
+      "in_transit": 0.0,
+      "in_production": 0.0,
+      "has_stock": false
+    },
+    {
+      "sku": "LS-66B18A-06",
+      "on_hand": 0.0,
+      "in_transit": 0.0,
+      "in_production": 0.0,
+      "has_stock": false
+    }
+  ]
+}

@@ -2,67 +2,911 @@
   "today": "2026-11-25",
   "products": [
     {
+      "spu": "LS-66B18A",
+      "site": "US",
+      "title": "LS-66B18A（US）",
+      "today": "2026-11-25",
+      "skus": [
+        {
+          "sku": "LS-66B18A-04",
+          "per_day": 4.5,
+          "half": 0.0,
+          "mtd": 94.0,
+          "month_est": 135.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 94.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66B18A-01",
+          "per_day": 2.033333333333333,
+          "half": 11.0,
+          "mtd": 51.0,
+          "month_est": 61.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 51.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66B18A-05",
+          "per_day": 1.1666666666666667,
+          "half": 8.0,
+          "mtd": 18.0,
+          "month_est": 35.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 18.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66B18A-02",
+          "per_day": 0.03333333333333333,
+          "half": 1.0,
+          "mtd": 1.0,
+          "month_est": 1.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 1.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66B18A-06",
+          "per_day": 0.03333333333333333,
+          "half": 1.0,
+          "mtd": 1.0,
+          "month_est": 1.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 1.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66B18A-03",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        }
+      ],
+      "halves": [
+        {
+          "label": "2026-11-下",
+          "units": 21.0,
+          "days": 10,
+          "per_day": 2.1
+        },
+        {
+          "label": "2026-11-上",
+          "units": 144.0,
+          "days": 15,
+          "per_day": 9.6
+        },
+        {
+          "label": "2026-10-下",
+          "units": 89.0,
+          "days": 16,
+          "per_day": 5.5625
+        }
+      ],
+      "spu_metrics": {
+        "per_day": 7.766666666666667,
+        "half": 21.0,
+        "mtd": 165.0,
+        "month_est": 233.0,
+        "on_hand": 0.0,
+        "in_transit": 0.0,
+        "has_stock": false,
+        "cover_days": null,
+        "suggest": null,
+        "same_month": {
+          "2026": 165.0,
+          "2025": 0.0,
+          "2024": 0.0
+        },
+        "this_year": 165.0,
+        "last_year": 0.0,
+        "yoy": null
+      }
+    },
+    {
+      "spu": "LS-66D33",
+      "site": "US",
+      "title": "LS-66D33（US）",
+      "today": "2026-11-25",
+      "skus": [
+        {
+          "sku": "LS-66D33C-01",
+          "per_day": 1.6666666666666667,
+          "half": 11.0,
+          "mtd": 30.0,
+          "month_est": 50.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 30.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D33C-02",
+          "per_day": 1.4333333333333333,
+          "half": 22.0,
+          "mtd": 40.0,
+          "month_est": 43.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 40.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D33B-01",
+          "per_day": 0.9,
+          "half": 20.0,
+          "mtd": 26.0,
+          "month_est": 27.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 26.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D33-01",
+          "per_day": 0.8333333333333334,
+          "half": 12.0,
+          "mtd": 22.0,
+          "month_est": 25.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 22.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D33-06",
+          "per_day": 0.6,
+          "half": 4.0,
+          "mtd": 14.0,
+          "month_est": 18.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 14.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D33-03",
+          "per_day": 0.5666666666666667,
+          "half": 6.0,
+          "mtd": 15.0,
+          "month_est": 17.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 15.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D33B-02",
+          "per_day": 0.5,
+          "half": 5.0,
+          "mtd": 14.0,
+          "month_est": 15.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 14.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D33C-05",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-02",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 12.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-03",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 16.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-07",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 19.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D58J-06",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        }
+      ],
+      "halves": [
+        {
+          "label": "2026-11-下",
+          "units": 80.0,
+          "days": 10,
+          "per_day": 8.0
+        },
+        {
+          "label": "2026-11-上",
+          "units": 81.0,
+          "days": 15,
+          "per_day": 5.4
+        },
+        {
+          "label": "2026-10-下",
+          "units": 117.0,
+          "days": 16,
+          "per_day": 7.3125
+        }
+      ],
+      "spu_metrics": {
+        "per_day": 6.5,
+        "half": 80.0,
+        "mtd": 161.0,
+        "month_est": 195.0,
+        "on_hand": 0.0,
+        "in_transit": 0.0,
+        "has_stock": false,
+        "cover_days": null,
+        "suggest": null,
+        "same_month": {
+          "2026": 161.0,
+          "2025": 47.0,
+          "2024": 0.0
+        },
+        "this_year": 161.0,
+        "last_year": 47.0,
+        "yoy": 2.425531914893617
+      }
+    },
+    {
+      "spu": "LS-66D38",
+      "site": "US",
+      "title": "LS-66D38（US）",
+      "today": "2026-11-25",
+      "skus": [
+        {
+          "sku": "LS-66D38-01",
+          "per_day": 19.066666666666666,
+          "half": 246.0,
+          "mtd": 493.0,
+          "month_est": 572.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 493.0,
+            "2025": 643.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D38-04",
+          "per_day": 7.5,
+          "half": 83.0,
+          "mtd": 199.0,
+          "month_est": 225.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 199.0,
+            "2025": 115.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D38-02",
+          "per_day": 2.0,
+          "half": 14.0,
+          "mtd": 51.0,
+          "month_est": 60.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 51.0,
+            "2025": 63.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D38-05",
+          "per_day": 1.5,
+          "half": 16.0,
+          "mtd": 40.0,
+          "month_est": 45.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 40.0,
+            "2025": 20.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D38-03",
+          "per_day": 1.4,
+          "half": 15.0,
+          "mtd": 32.0,
+          "month_est": 42.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 32.0,
+            "2025": 86.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D37-01",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 59.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        }
+      ],
+      "halves": [
+        {
+          "label": "2026-11-下",
+          "units": 374.0,
+          "days": 10,
+          "per_day": 37.4
+        },
+        {
+          "label": "2026-11-上",
+          "units": 441.0,
+          "days": 15,
+          "per_day": 29.4
+        },
+        {
+          "label": "2026-10-下",
+          "units": 352.0,
+          "days": 16,
+          "per_day": 22.0
+        }
+      ],
+      "spu_metrics": {
+        "per_day": 31.466666666666665,
+        "half": 374.0,
+        "mtd": 815.0,
+        "month_est": 944.0,
+        "on_hand": 0.0,
+        "in_transit": 0.0,
+        "has_stock": false,
+        "cover_days": null,
+        "suggest": null,
+        "same_month": {
+          "2026": 815.0,
+          "2025": 986.0,
+          "2024": 0.0
+        },
+        "this_year": 815.0,
+        "last_year": 986.0,
+        "yoy": -0.17342799188640978
+      }
+    },
+    {
       "spu": "LS-66D50F",
       "site": "US",
       "title": "LS-66D50F（US）",
       "today": "2026-11-25",
       "skus": [
         {
+          "sku": "LS-66D50C-01",
+          "per_day": 6.333333333333333,
+          "half": 115.0,
+          "mtd": 176.0,
+          "month_est": 190.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 176.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-07",
+          "per_day": 1.2666666666666666,
+          "half": 16.0,
+          "mtd": 31.0,
+          "month_est": 38.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 31.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-03",
+          "per_day": 1.2,
+          "half": 16.0,
+          "mtd": 30.0,
+          "month_est": 36.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 30.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-02",
+          "per_day": 1.1,
+          "half": 19.0,
+          "mtd": 31.0,
+          "month_est": 33.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 31.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-06",
+          "per_day": 1.1,
+          "half": 18.0,
+          "mtd": 30.0,
+          "month_est": 33.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 30.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-05",
+          "per_day": 0.6666666666666666,
+          "half": 11.0,
+          "mtd": 19.0,
+          "month_est": 20.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 19.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D50C-04",
+          "per_day": 0.5,
+          "half": 9.0,
+          "mtd": 14.0,
+          "month_est": 15.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 14.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
           "sku": "LS-66D50F-01",
           "per_day": 0.0,
-          "window_units": 0.0,
+          "half": 0.0,
           "mtd": 0.0,
           "month_est": 0.0,
-          "fba": 0.0,
-          "inbound": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
           "cover_days": null,
-          "suggest": 0.0,
+          "suggest": null,
           "same_month": {
-            "2024": 0.0,
+            "2026": 0.0,
             "2025": 0.0,
-            "2026": 331.0
+            "2024": 0.0
           },
-          "yoy": null,
-          "asin": "",
-          "title": "Gaming Chair with Footrest, Dowinx Quilted Fabric, Linkage Armrests | Pocket spring cushion, Wingless flat seat, Quilted fabric upholstery, Vibrating lumbar pillow, Headrest, Two-position recline",
-          "stock_date": "2026-11-25",
-          "risk": "正常"
+          "risk": "待补库存"
+        },
+        {
+          "sku": "YK-OLD",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        }
+      ],
+      "halves": [
+        {
+          "label": "2026-11-下",
+          "units": 204.0,
+          "days": 10,
+          "per_day": 20.4
+        },
+        {
+          "label": "2026-11-上",
+          "units": 127.0,
+          "days": 15,
+          "per_day": 8.466666666666667
+        },
+        {
+          "label": "2026-10-下",
+          "units": 96.0,
+          "days": 16,
+          "per_day": 6.0
         }
       ],
       "spu_metrics": {
-        "per_day": 0.0,
-        "window_units": 0.0,
-        "fba": 0.0,
-        "inbound": 0.0,
+        "per_day": 12.166666666666666,
+        "half": 204.0,
+        "mtd": 331.0,
+        "month_est": 365.0,
+        "on_hand": 0.0,
+        "in_transit": 0.0,
+        "has_stock": false,
         "cover_days": null,
-        "suggest": 0.0,
+        "suggest": null,
         "same_month": {
-          "2024": 0.0,
+          "2026": 331.0,
           "2025": 0.0,
-          "2026": 331.0
+          "2024": 0.0
         },
         "this_year": 331.0,
         "last_year": 0.0,
         "yoy": null
-      },
+      }
+    },
+    {
+      "spu": "LS-66D57D",
+      "site": "US",
+      "title": "LS-66D57D（US）",
+      "today": "2026-11-25",
+      "skus": [
+        {
+          "sku": "LS-66D57D-03",
+          "per_day": 0.16666666666666666,
+          "half": 3.0,
+          "mtd": 5.0,
+          "month_est": 5.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 5.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        },
+        {
+          "sku": "LS-66D57D-10",
+          "per_day": 0.0,
+          "half": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "on_hand": 0.0,
+          "in_transit": 0.0,
+          "in_production": 0.0,
+          "has_stock": false,
+          "cover_days": null,
+          "suggest": null,
+          "same_month": {
+            "2026": 0.0,
+            "2025": 0.0,
+            "2024": 0.0
+          },
+          "risk": "待补库存"
+        }
+      ],
       "halves": [
         {
           "label": "2026-11-下",
-          "units": 0.0,
-          "days": 10
+          "units": 3.0,
+          "days": 10,
+          "per_day": 0.3
         },
         {
           "label": "2026-11-上",
-          "units": 0.0,
-          "days": 15
+          "units": 2.0,
+          "days": 15,
+          "per_day": 0.13333333333333333
         },
         {
           "label": "2026-10-下",
           "units": 0.0,
-          "days": 16
+          "days": 16,
+          "per_day": 0.0
         }
-      ]
+      ],
+      "spu_metrics": {
+        "per_day": 0.16666666666666666,
+        "half": 3.0,
+        "mtd": 5.0,
+        "month_est": 5.0,
+        "on_hand": 0.0,
+        "in_transit": 0.0,
+        "has_stock": false,
+        "cover_days": null,
+        "suggest": null,
+        "same_month": {
+          "2026": 5.0,
+          "2025": 0.0,
+          "2024": 0.0
+        },
+        "this_year": 5.0,
+        "last_year": 0.0,
+        "yoy": null
+      }
     }
   ],
-  "gaps": []
+  "gaps": [
+    "LS-66B18A 库存表里没有这些 SKU",
+    "LS-66D33 库存表里没有这些 SKU",
+    "LS-66D38 库存表里没有这些 SKU",
+    "LS-66D50F 库存表里没有这些 SKU",
+    "LS-66D57D 库存表里没有这些 SKU"
+  ]
 }
