@@ -298,6 +298,9 @@ def build(
         campaigns.append({
             "name": row.get("name"),
             "parents": row.get("parents") or "",
+            "portfolio": row.get("portfolio") or "",
+            "state": row.get("state") or "",
+            "match": row.get("match") or "",
             "budget": budget,
             "spend": spend,
             "budget_used": safe_div(spend, budget) if budget else None,
@@ -309,8 +312,35 @@ def build(
             "acos": safe_div(spend, num(row.get("sales"))),
         })
 
+    # 按广告组合汇总（用截断前的完整活动列表）
+    live_campaigns = [c for c in campaigns if c["spend"] > 0]
+    bucket: Dict[str, Dict[str, Any]] = {}
+    for c in live_campaigns:
+        key = c.get("portfolio") or "未分组"
+        item = bucket.setdefault(key, {"campaigns": 0, "spend": 0.0, "sales": 0.0, "orders": 0.0, "clicks": 0.0})
+        item["campaigns"] += 1
+        item["spend"] += c["spend"]
+        item["sales"] += c["sales"]
+        item["orders"] += c["orders"]
+        item["clicks"] += c["clicks"]
+    total_pf_spend = sum(v["spend"] for v in bucket.values()) or 1.0
+    portfolios: List[Dict[str, Any]] = []
+    for key, v in bucket.items():
+        portfolios.append({
+            "portfolio": key,
+            "campaigns": v["campaigns"],
+            "spend": v["spend"],
+            "sales": v["sales"],
+            "orders": v["orders"],
+            "clicks": v["clicks"],
+            "acos": safe_div(v["spend"], v["sales"]),
+            "cpa": safe_div(v["spend"], v["orders"]),
+            "spend_share": safe_div(v["spend"], total_pf_spend),
+        })
+    portfolios.sort(key=lambda x: x["spend"], reverse=True)
+
     campaign_cap = int((settings.get("thresholds") or {}).get("campaign_rows", 12))
-    campaigns = [c for c in campaigns if c["spend"] > 0][:campaign_cap]
+    campaigns = live_campaigns[:campaign_cap]
     total_spend = this["ad_spend"] or sum(c["spend"] for c in campaigns)
     for c in campaigns:
         c["spend_share"] = safe_div(c["spend"], total_spend)
@@ -515,6 +545,7 @@ def build(
                 },
                 "daily": daily_out,
                 "campaigns": campaigns,
+                "portfolios": portfolios,
                 "keywords": keywords_spend,
             },
             "parents": parents,

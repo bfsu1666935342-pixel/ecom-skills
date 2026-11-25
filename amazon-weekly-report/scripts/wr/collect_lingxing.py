@@ -459,15 +459,18 @@ def _campaigns(name: str, start: str, end: str, profiles: List[str]) -> List[Dic
     seen = set()
     page = 1
     while page <= 10:
-        rows = _rows(action("ad_campaign_report", {
-            "report_date": f"{start} - {end}",
-            "profile_ids": profiles,
-            "name": name,
-            "page": page,
-            "length": 100,
-            "sort_field": "spends",
-            "sort_type": "desc",
-        }))
+        try:
+            rows = _rows(action("ad_campaign_report", {
+                "report_date": f"{start} - {end}",
+                "profile_ids": profiles,
+                "name": name,
+                "page": page,
+                "length": 100,
+                "sort_field": "spends",
+                "sort_type": "desc",
+            }))
+        except Exception:  # noqa: BLE001
+            break
         if not rows:
             break
         for row in rows:
@@ -565,6 +568,81 @@ def _ad_products(
     return sorted(merged.values(), key=lambda x: x["spend"], reverse=True)
 
 
+def _campaigns_by_asin(
+    children: List[str], start: str, end: str, shops: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    """按「父体下的子 ASIN」抓广告活动，而不是按活动名称匹配。
+
+    只要某个活动投过这个 SPU 的任意一个子 ASIN，就算这个 SPU 的活动。
+    同时带回广告组合（portfolio）与活动状态，供上层做组合汇总。
+    """
+    wanted = {str(c).upper() for c in children if c}
+    if not wanted:
+        return []
+    merged: Dict[str, Dict[str, Any]] = {}
+    for shop in shops:
+        raw_profile = shop.get("profile_id")
+        if not raw_profile:
+            continue
+        try:
+            profile = int(str(raw_profile))
+        except (TypeError, ValueError):
+            continue
+        page = 1
+        while page <= 10:
+            try:
+                payload = action("ad_campaign_product_report", {
+                    "report_date": f"{start} - {end}",
+                    "profile_id": profile,
+                    "page": page,
+                    "length": 200,
+                    "sort_field": "spends",
+                    "sort_type": "desc",
+                })
+            except Exception:  # noqa: BLE001
+                break
+            rows = _rows(payload)
+            if not rows:
+                break
+            for row in rows:
+                asin = str(row.get("asin") or "").upper()
+                if asin not in wanted:
+                    continue
+                cid = str(row.get("campaign_id") or "")
+                if not cid:
+                    continue
+                item = merged.setdefault(cid, {
+                    "campaign_id": cid,
+                    "name": str(row.get("campaign_name") or row.get("name") or ""),
+                    "portfolio_id": str(row.get("portfolio_id") or ""),
+                    "portfolio": str(row.get("portfolio_name") or ""),
+                    "state": str(row.get("campaign_state") or ""),
+                    "sponsored_type": str(row.get("sponsored_type") or ""),
+                    "budget": 0.0,
+                    "spend": 0.0,
+                    "clicks": 0.0,
+                    "orders": 0.0,
+                    "sales": 0.0,
+                    "units": 0.0,
+                    "asins": set(),
+                })
+                item["spend"] += num(row.get("spends"))
+                item["clicks"] += num(row.get("clicks"))
+                item["orders"] += num(row.get("orders"))
+                item["sales"] += num(row.get("sales"))
+                item["units"] += num(row.get("ad_units"))
+                if asin:
+                    item["asins"].add(asin)
+            if len(rows) < 200:
+                break
+            page += 1
+    out = []
+    for item in merged.values():
+        item["asins"] = sorted(item["asins"])
+        out.append(item)
+    return sorted(out, key=lambda x: x["spend"], reverse=True)
+
+
 def _keywords(campaign_ids: List[str], start: str, end: str, profiles: List[str]) -> List[Dict[str, Any]]:
     merged: Dict[str, Dict[str, Any]] = {}
     for index in range(0, len(campaign_ids), 50):
@@ -659,10 +737,44 @@ def _collect_gateway(product: Dict[str, Any], week_start: dt.date, out_dir: Path
     ad_products: List[Dict[str, Any]] = []
     if "campaign" in wanted:
         try:
-            print("  领星：广告活动", flush=True)
+            print("  领星：广告活动（按父体 ASIN 匹配）", flush=True)
             suffix = re.sub(r"^[A-Z]{2,5}-", "", spu)
-            campaigns = _campaigns(suffix or spu, this_start, this_end, profiles)
-            print("    活动 %d 个" % len(campaigns), flush=True)
+            # 先按名称拿一份，用来补预算/状态，并把"没有商品明细的活动"（如 SB）兜进来
+            by_name = _campaigns(suffix or spu, this_start, this_end, profiles)
+            by_name_map = {str(c.get("campaign_id")): c for c in by_name}
+
+            children: List[str] = []
+            # 子 ASIN 直接从已抓到的产品表现原始行里取（parent_children 在后面才定义）
+            for parent_item in product.get("parents") or []:
+                pa = str((parent_item or {}).get("asin") or "")
+                if not pa:
+                    continue
+                for row in raw_rows.get(f"{pa}-this") or []:
+                    for child in row.get("asins") or []:
+                        child_asin = str((child or {}).get("asin") or "").upper()
+                        if child_asin and child_asin not in children:
+                            children.append(child_asin)
+            matched = _campaigns_by_asin(children, this_start, this_end, shops)
+            hit_ids = {str(c.get("campaign_id")) for c in matched}
+            for c in matched:
+                extra = by_name_map.get(str(c.get("campaign_id"))) or {}
+                c["budget"] = num(extra.get("budget"))
+                if not c.get("state"):
+                    c["state"] = str(extra.get("state") or "")
+                c["match"] = "asin"
+            # 名称命中但没有任何商品明细的活动（SB/SBV 常见），标成按名称匹配
+            for c in by_name:
+                cid = str(c.get("campaign_id"))
+                if cid in hit_ids or num(c.get("spend")) <= 0:
+                    continue
+                c["portfolio"] = ""
+                c["portfolio_id"] = ""
+                c["match"] = "name"
+                c["asins"] = []
+                matched.append(c)
+            campaigns = sorted(matched, key=lambda x: num(x.get("spend")), reverse=True)
+            asin_n = sum(1 for c in campaigns if c.get("match") == "asin")
+            print("    活动 %d 个（按 ASIN %d / 按名称兜底 %d）" % (len(campaigns), asin_n, len(campaigns) - asin_n), flush=True)
         except Exception as exc:  # noqa: BLE001
             errors["campaign"] = str(exc)
     # 活动所属店铺：活动报表自带 profile_id，只查这些店铺，省掉空店铺的等待

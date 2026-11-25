@@ -402,15 +402,51 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
                 )
             )
 
+    # 广告组合汇总（同一组合下的活动加总）
+    portfolios = ads.get("portfolios") or []
+    if portfolios:
+        parts.append("<h4>广告组合汇总</h4>")
+        pf_rows = []
+        for p in portfolios:
+            pf_rows.append([
+                esc(p.get("portfolio") or "未分组"),
+                f"{num(p.get('campaigns')):,.0f}",
+                pct(p.get("spend_share"), 1),
+                money(p.get("spend"), currency),
+                money(p.get("sales"), currency),
+                pct(p.get("acos"), 2),
+                f"{num(p.get('orders')):,.0f}",
+            ])
+        parts.append(
+            _table(
+                ["广告组合", "活动数", "花费占比", "花费", "广告销售额", "ACOS", "广告订单"],
+                pf_rows,
+                ["left", "right", "right", "right", "right", "right", "right"],
+            )
+        )
+        parts.append(
+            '<p class="note">按领星「广告组合」归并：同一个组合下的活动花费、销售额、订单直接加总。'
+            '没有挂组合的活动归到「未分组」。</p>'
+        )
+
     campaigns = ads.get("campaigns") or []
     parts.append("<h4>广告活动</h4>")
     if campaigns:
         rows = []
         for c in campaigns:
             used = c.get("budget_used")
-            row = [esc(c.get("name"))]
+            label = c.get("name") or ""
+            if str(c.get("match") or "") == "name":
+                label += "（按名称匹配）"
+            state = str(c.get("state") or "").lower()
+            if state and state != "enabled":
+                label += "（已暂停）"
+            row = [esc(label)]
             heads = ["广告活动"]
             aligns = ["left"]
+            row.append(esc(c.get("portfolio") or "未分组"))
+            heads.append("广告组合")
+            aligns.append("left")
             if multi:
                 row.append(esc(c.get("parents") or "未归属"))
                 heads.append("父体")
@@ -426,7 +462,13 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
         heads += ["预算", "花费", "预算使用", "CVR", "CPA"]
         aligns += ["right", "right", "right", "right", "right"]
         parts.append(_table(heads, rows, aligns))
-        parts.append('<p class="note">预算使用 = 周花费 ÷ 周预算（日预算已 ×7）；活动按名称包含该 SPU 汇总；跨 SPU 共用活动为活动全量花费，与 B① 的 SPU 广告花费可能有差额。</p>')
+        asin_n = sum(1 for c in campaigns if str(c.get("match") or "") == "asin")
+        name_n = sum(1 for c in campaigns if str(c.get("match") or "") == "name")
+        parts.append(
+            '<p class="note">活动按「是否投放了本 SPU 的任意一个父体 ASIN」筛出'
+            f"（{asin_n} 个）；另外 {name_n} 个活动领星没返回商品明细（多为 SB/SBV 品牌广告），"
+            "只能按名称兜底并已标注。预算使用 = 周花费 ÷ 周预算（日预算已 ×7）。</p>"
+        )
     else:
         parts.append('<p class="note">本期无广告活动数据。</p>')
 
