@@ -304,7 +304,7 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
         ("广告销量", "ad_units", "int"),
         ("广告销售额", "ad_sales", "money"),
         ("广告花费", "ad_spend", "money"),
-        ("ACOS", "acos", "pct"),
+        ("ACoAS", "acoas", "pct"),
         ("CPA", "cpa", "money2"),
     ]
     rows = []
@@ -314,7 +314,7 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
         rows.append([esc(label), cur, prev, _delta_html(wow.get(key), kind)])
     parts.append(_table(["指标", "本周", "上周", "变化"], rows, ["left", "right", "right", "right"]))
     units_note = "广告销量缺失时按广告订单数代替。" if (summary or {}).get("units_fallback") else ""
-    parts.append('<p class="note">本表为 SPU 合计（含 SP/SD/SB）；各父体拆分见下表。CPC = 花费 ÷ 点击，CPA = 花费 ÷ 广告订单。' + units_note + "</p>")
+    parts.append('<p class="note">本表为 SPU 合计（含 SP/SD/SB）；各父体拆分见下表。CPC = 花费 ÷ 点击，CPA = 花费 ÷ 广告订单，ACoAS = 花费 ÷ 总销售额。' + units_note + "</p>")
 
     parent_list = spu.get("parents") or []
     multi = len(parent_list) > 1
@@ -329,14 +329,14 @@ def _single_page(data: Dict[str, Any], *, demo: bool = False) -> str:
                 pct(a.get("spend_share"), 1),
                 money(a.get("ad_spend"), currency),
                 money(a.get("ad_sales"), currency),
-                pct(a.get("acos"), 2),
+                pct(a.get("acoas"), 2),
                 f"{num(a.get('ad_orders')):,.0f}",
                 f"{num(a.get('ad_clicks')):,.0f}",
                 f"{num(a.get('ad_units') or a.get('ad_orders')):,.0f}",
             ])
         parts.append(
             _table(
-                ["父体 ASIN", "花费占比", "广告花费", "广告销售额", "ACOS", "广告订单", "广告点击", "广告销量"],
+                ["父体 ASIN", "花费占比", "广告花费", "广告销售额", "ACoAS", "广告订单", "广告点击", "广告销量"],
                 rows,
                 ["left", "right", "right", "right", "right", "right", "right", "right"],
             )

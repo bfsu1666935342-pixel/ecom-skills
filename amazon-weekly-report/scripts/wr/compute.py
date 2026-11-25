@@ -359,6 +359,7 @@ def build(
             "ad_units": m_this.get("ad_units", 0),
             "ad_units_fallback": m_this.get("ad_units_fallback", True),
             "acos": m_this.get("acos"),
+            "acoas": safe_div(m_this.get("ad_spend", 0), m_this.get("revenue", 0)),
             "cpc": m_this.get("cpc"),
             "ad_cvr": m_this.get("ad_cvr"),
             "revenue": m_this.get("revenue", 0),
