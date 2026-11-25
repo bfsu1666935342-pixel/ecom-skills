@@ -1,0 +1,25 @@
+{
+  "id": "restock-plan",
+  "title": "备货计划",
+  "tagline": "按半月销量、日销、历年同月，算出每个 SKU 该备多少货、什么时候断",
+  "description": "读取领星的 SKU 级销量与库存，按自然半月汇总，给出日销、月总、可售天数、建议备货量，并附该 SPU 历年同月销量对比。输出 HTML。",
+  "group": "利润与供应链",
+  "order": 3,
+  "icon": "box",
+  "requiresEnv": ["LINGXING_MCP_KEY"],
+  "commands": [
+    {
+      "label": "① 生成备货计划",
+      "run": ["scripts\\run.cmd", "run"],
+      "desc": "按已登记的产品逐个出备货表；结果复制到工作区「技能产出」。",
+      "timeoutMs": 1800000
+    },
+    {
+      "label": "② 检查数据源连通性",
+      "run": ["scripts\\run.cmd", "doctor"],
+      "desc": "不生成报告，只确认领星 MCP 能拿到 SKU 级数据。",
+      "timeoutMs": 120000
+    }
+  ],
+  "primaryOutput": "restock-.*\\.html$"
+}

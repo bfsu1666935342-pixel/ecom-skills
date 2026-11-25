@@ -1,0 +1,68 @@
+{
+  "today": "2026-11-25",
+  "products": [
+    {
+      "spu": "LS-66D50F",
+      "site": "US",
+      "title": "LS-66D50F（US）",
+      "today": "2026-11-25",
+      "skus": [
+        {
+          "sku": "LS-66D50F-01",
+          "per_day": 0.0,
+          "window_units": 0.0,
+          "mtd": 0.0,
+          "month_est": 0.0,
+          "fba": 0.0,
+          "inbound": 0.0,
+          "cover_days": null,
+          "suggest": 0.0,
+          "same_month": {
+            "2024": 0.0,
+            "2025": 0.0,
+            "2026": 331.0
+          },
+          "yoy": null,
+          "asin": "",
+          "title": "Gaming Chair with Footrest, Dowinx Quilted Fabric, Linkage Armrests | Pocket spring cushion, Wingless flat seat, Quilted fabric upholstery, Vibrating lumbar pillow, Headrest, Two-position recline",
+          "stock_date": "2026-11-25",
+          "risk": "正常"
+        }
+      ],
+      "spu_metrics": {
+        "per_day": 0.0,
+        "window_units": 0.0,
+        "fba": 0.0,
+        "inbound": 0.0,
+        "cover_days": null,
+        "suggest": 0.0,
+        "same_month": {
+          "2024": 0.0,
+          "2025": 0.0,
+          "2026": 331.0
+        },
+        "this_year": 331.0,
+        "last_year": 0.0,
+        "yoy": null
+      },
+      "halves": [
+        {
+          "label": "2026-11-下",
+          "units": 0.0,
+          "days": 10
+        },
+        {
+          "label": "2026-11-上",
+          "units": 0.0,
+          "days": 15
+        },
+        {
+          "label": "2026-10-下",
+          "units": 0.0,
+          "days": 16
+        }
+      ]
+    }
+  ],
+  "gaps": []
+}

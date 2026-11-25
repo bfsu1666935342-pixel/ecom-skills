@@ -1,0 +1,662 @@
+{
+  "spu": "LS-66D50F",
+  "site": "US",
+  "title": "LS-66D50F（US）",
+  "store": {
+    "alias": "JUNAO-Amazon-US-香港凯萨",
+    "sid": 517633,
+    "profile_id": ""
+  },
+  "shops": [
+    {
+      "sid": 517633,
+      "alias": "JUNAO-Amazon-US-香港凯萨"
+    }
+  ],
+  "today": "2026-11-25",
+  "settings": {
+    "lead_time_days": 45,
+    "safety_days": 30,
+    "sale_window_days": 30,
+    "half_month_count": 3,
+    "_说明": "备货参数。改这里就生效，不用动代码。"
+  },
+  "daily": [
+    {
+      "date": "2026-10-06",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-27",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-26",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-16",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-21",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-25",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-17",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-13",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-10",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-04",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-15",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-23",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-14",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-30",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-12",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-29",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-28",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-05",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-09",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-30",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-25",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-19",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-15",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-26",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-02",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-23",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-11",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-24",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-07",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-23",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-24",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-20",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-19",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-29",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-21",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-10",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-11",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-22",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-17",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-18",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-31",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-28",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-24",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-05",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-09",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-08",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-01",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-20",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-03",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-02",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-16",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-20",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-04",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-01",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-17",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-22",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-27",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-18",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-14",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-06",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-12",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-07",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-03",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-10-08",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-19",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-25",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-21",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-16",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-13",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-11-18",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    },
+    {
+      "date": "2026-09-22",
+      "sku": "LS-66D50F-01",
+      "spu": "LS-66D50F",
+      "units": 0.0,
+      "revenue": 0.0
+    }
+  ],
+  "stock": {
+    "LS-66D50C-01": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-25",
+      "asin": "",
+      "title": "Gaming Chair with Footrest, Dowinx Quilted Fabric, Linkage Armrests | Pocket spring cushion, Wingless flat seat, Quilted fabric upholstery, Vibrating lumbar pillow, Headrest, Two-position recline"
+    },
+    "LS-66D50C-02": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-25",
+      "asin": "",
+      "title": "Dowinx Gaming Chair with Pocket Spring Cushion, High Back Ergonomic 360° Swivel Chair for Office Gaming, Massage Lumbar Support with Footrest for Adults, 300LBS Capacity, Beige for Office Gaming"
+    },
+    "LS-66D50C-03": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-25",
+      "asin": "",
+      "title": "Dowinx Gaming Chair Fabric with Pocket Spring Cushion, High Back Ergonomic Computer Chair with Footrest for Adults, Massage Lumbar Support Swivel Game Chair for Office Gaming 300LBS, Black and Gray"
+    },
+    "LS-66D50C-07": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-25",
+      "asin": "",
+      "title": "Gaming Chair with Footrest, Dowinx Quilted Fabric, Linkage Armrests | Pocket spring cushion, Wingless flat seat, Quilted fabric upholstery, Vibrating lumbar pillow, Headrest, Two-position recline"
+    },
+    "LS-66D50C-05": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-24",
+      "asin": "",
+      "title": "Dowinx Gaming Chair Fabric with Pocket Spring Cushion, High Back Ergonomic Computer Chair with Footrest for Adults, Massage Lumbar Support Swivel Game Chair for Office Gaming 300LBS, Cyan"
+    },
+    "LS-66D50C-06": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-25",
+      "asin": "",
+      "title": "Gaming Chair with Footrest, Dowinx Quilted Fabric, Linkage Armrests | Pocket spring cushion, Wingless flat seat, Quilted fabric upholstery, Vibrating lumbar pillow, Headrest, Two-position recline"
+    },
+    "LS-66D50C-04": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-25",
+      "asin": "",
+      "title": "Dowinx Gaming Chair Fabric with Pocket Spring Cushion, High Back Ergonomic Computer Chair with Footrest for Adults, Massage Lumbar Support Swivel Game Chair for Office Gaming 300LBS, Pink"
+    },
+    "LS-66D50F-01": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-25",
+      "asin": "",
+      "title": "Gaming Chair with Footrest, Dowinx Quilted Fabric, Linkage Armrests | Pocket spring cushion, Wingless flat seat, Quilted fabric upholstery, Vibrating lumbar pillow, Headrest, Two-position recline"
+    },
+    "YK-OLD": {
+      "fba": 0.0,
+      "reserved": 0.0,
+      "inbound": 0.0,
+      "shipped": 0.0,
+      "working": 0.0,
+      "date": "2026-11-25",
+      "asin": "",
+      "title": "Gaming Chair with Footrest, Dowinx Quilted Fabric, Linkage Armrests | Pocket spring cushion, Wingless flat seat, Quilted fabric upholstery, Vibrating lumbar pillow, Headrest, Two-position recline"
+    }
+  },
+  "same_month": {
+    "2024": {
+      "units": 0.0,
+      "skus": {
+        "LS-66D50C-01": 0.0,
+        "LS-66D50C-02": 0.0,
+        "LS-66D50C-03": 0.0,
+        "LS-66D50C-04": 0.0,
+        "LS-66D50C-05": 0.0,
+        "LS-66D50C-06": 0.0,
+        "LS-66D50C-07": 0.0,
+        "LS-66D50F-01": 0.0,
+        "YK-OLD": 0.0
+      },
+      "rows": 9
+    },
+    "2025": {
+      "units": 0.0,
+      "skus": {
+        "LS-66D50C-01": 0.0,
+        "LS-66D50C-02": 0.0,
+        "LS-66D50C-03": 0.0,
+        "LS-66D50C-04": 0.0,
+        "LS-66D50C-05": 0.0,
+        "LS-66D50C-06": 0.0,
+        "LS-66D50C-07": 0.0,
+        "LS-66D50F-01": 0.0,
+        "YK-OLD": 0.0
+      },
+      "rows": 9
+    },
+    "2026": {
+      "units": 331.0,
+      "skus": {
+        "LS-66D50C-01": 176.0,
+        "LS-66D50C-02": 31.0,
+        "LS-66D50C-07": 31.0,
+        "LS-66D50C-03": 30.0,
+        "LS-66D50C-06": 30.0,
+        "LS-66D50C-05": 19.0,
+        "LS-66D50C-04": 14.0,
+        "LS-66D50F-01": 0.0,
+        "YK-OLD": 0.0
+      },
+      "rows": 9
+    }
+  }
+}

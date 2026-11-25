@@ -1,0 +1,7 @@
+{
+  "_说明": "备货参数。改这里就生效，不用动代码。",
+  "lead_time_days": 45,
+  "safety_days": 30,
+  "sale_window_days": 30,
+  "half_month_count": 3
+}
