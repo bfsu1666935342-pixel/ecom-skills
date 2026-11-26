@@ -37,6 +37,7 @@ DEFAULTS = {
     "sale_window_days": 30,
     "half_month_count": 3,
     "history_years": 3,
+    "months_ahead": 4,
 }
 
 
@@ -722,6 +723,120 @@ def render(data: Dict[str, Any], settings: Dict[str, Any]) -> str:
     )
 
 
+
+# ---------------------------------------------------------------- 生成可计算的 Excel 备货表
+def cmd_sheet(settings: Dict[str, Any]) -> Path:
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+    from openpyxl.formatting.rule import CellIsRule
+    from openpyxl.utils import get_column_letter
+
+    today = dt.date.today()
+    months = []  # [(标题, 天数)]
+    # 本月剩余
+    days_in_month = (dt.date(today.year + (today.month == 12), (today.month % 12) + 1, 1) - dt.timedelta(days=1)).day
+    months.append((f"{today.month}月剩余", max(1, days_in_month - today.day + 1)))
+    for i in range(1, int(settings.get("months_ahead") or 4) + 1):
+        m = today.month + i
+        y = today.year + (m - 1) // 12
+        m = (m - 1) % 12 + 1
+        last = (dt.date(y + (m == 12), (m % 12) + 1, 1) - dt.timedelta(days=1)).day
+        months.append((f"{m}月", last))
+
+    rows: List[Dict[str, Any]] = []
+    for path in sorted(DATA.glob("*.json")):
+        bundle = build_bundle(path, settings)
+        for sku in bundle["skus"]:
+            rows.append(
+                {
+                    "spu": bundle["spu"],
+                    "sku": sku["sku"],
+                    "per_day": sku["per_day"],
+                    "on_hand": sku["on_hand"] if sku["has_stock"] else None,
+                    "in_transit": sku["in_transit"] if sku["has_stock"] else None,
+                    "in_production": sku["in_production"] if sku["has_stock"] else None,
+                }
+            )
+    if not rows:
+        raise SystemExit("没有数据，先跑一次 collect")
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "备货"
+
+    head_fill = PatternFill("solid", fgColor="F2F4F7")
+    section_fill = PatternFill("solid", fgColor="FAFAFB")
+    thin = Side(style="thin", color="DDE1E6")
+    border = Border(bottom=thin)
+    bold = Font(bold=True)
+
+    headers = ["SKU", "在产", "在途", "在库", "可用率", "可用数量"] + [m[0] for m in months] + ["总计", "需下单", "日销", "备注"]
+    for col, name in enumerate(headers, start=1):
+        cell = ws.cell(row=1, column=col, value=name)
+        cell.font = bold
+        cell.fill = head_fill
+        cell.alignment = Alignment(horizontal="center", vertical="center")
+        cell.border = border
+
+    first_data_row = 3
+    # 第 2 行放说明
+    ws.cell(row=2, column=1, value=f"生成于 {today.isoformat()}｜日销来自领星近{settings.get('sale_window_days',30)}天｜灰底列可改，其余自动算")
+    ws.cell(row=2, column=1).font = Font(size=9, color="777777")
+    ws.merge_cells(start_row=2, start_column=1, end_row=2, end_column=len(headers))
+
+    r = first_data_row
+    for item in rows:
+        ws.cell(row=r, column=1, value=item["sku"])
+        ws.cell(row=r, column=2, value=item["in_production"] or 0)
+        ws.cell(row=r, column=3, value=item["in_transit"] or 0)
+        ws.cell(row=r, column=4, value=item["on_hand"] or 0)
+        rate = ws.cell(row=r, column=5, value=1)
+        rate.number_format = "0%"
+        rate.fill = section_fill
+        ws.cell(row=r, column=6, value=f"=ROUND((B{r}+C{r}+D{r})*E{r},0)")
+        for i, (_, days) in enumerate(months):
+            col = 7 + i
+            cell = ws.cell(row=r, column=col, value=round(item["per_day"] * days))
+            cell.fill = section_fill
+        demand_first = 7
+        demand_last = 6 + len(months)
+        total_col = demand_last + 1
+        need_col = total_col + 1
+        ws.cell(row=r, column=total_col, value=f"=SUM({get_column_letter(demand_first)}{r}:{get_column_letter(demand_last)}{r})")
+        ws.cell(row=r, column=need_col, value=f"={get_column_letter(total_col)}{r}-F{r}")
+        day_cell = ws.cell(row=r, column=need_col + 1, value=round(item["per_day"], 1))
+        day_cell.number_format = "0.0"
+        ws.cell(row=r, column=need_col + 2, value="")
+        for col in range(1, len(headers) + 1):
+            ws.cell(row=r, column=col).border = border
+        r += 1
+
+    last_row = r - 1
+    # 红字标出需要下单的
+    need_letter = get_column_letter(need_col)
+    ws.conditional_formatting.add(
+        f"{need_letter}{first_data_row}:{need_letter}{last_row}",
+        CellIsRule(operator="greaterThan", formula=["0"], font=Font(color="B91C1C", bold=True)),
+    )
+
+    widths = {1: 20, 2: 8, 3: 8, 4: 8, 5: 8, 6: 10}
+    for col, w in widths.items():
+        ws.column_dimensions[get_column_letter(col)].width = w
+    for i in range(len(months)):
+        ws.column_dimensions[get_column_letter(7 + i)].width = 9
+    ws.column_dimensions[get_column_letter(total_col)].width = 9
+    ws.column_dimensions[need_letter].width = 10
+    ws.column_dimensions[get_column_letter(need_col + 1)].width = 8
+    ws.column_dimensions[get_column_letter(need_col + 2)].width = 26
+    ws.freeze_panes = f"A{first_data_row}"
+    ws.auto_filter.ref = f"A1:{get_column_letter(len(headers))}{last_row}"
+
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    out = REPORT_DIR / f"备货表-{today.isoformat()}.xlsx"
+    wb.save(out)
+    return out
+
+
 # ---------------------------------------------------------------- 命令
 def cmd_build(settings: Dict[str, Any]) -> Path:
     products = []
@@ -781,6 +896,10 @@ def main() -> int:
         products = [p for p in products if str(p.get("spu", "")).upper() in wanted]
         if not products:
             raise SystemExit("指定的 SPU 没在配置里")
+    if cmd == "sheet":
+        out = cmd_sheet(settings)
+        print(f"表格：{out}")
+        return 0
     if cmd in ("run", "collect"):
         cmd_collect(products, settings, dt.date.today())
     out = cmd_build(settings)

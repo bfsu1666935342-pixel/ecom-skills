@@ -15,7 +15,13 @@
       "timeoutMs": 1800000
     },
     {
-      "label": "② 检查数据源连通性",
+      "label": "② 生成备货表格（Excel，可改可算）",
+      "run": ["scripts\\run.cmd", "sheet"],
+      "desc": "生成带公式的 xlsx：填在产/在途/在库，自动算可用数量、总需求、需下单。",
+      "timeoutMs": 300000
+    },
+    {
+      "label": "③ 检查数据源连通性",
       "run": ["scripts\\run.cmd", "doctor"],
       "desc": "不生成报告，只确认领星 MCP 能拿到 SKU 级数据。",
       "timeoutMs": 120000
