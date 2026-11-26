@@ -1,0 +1,29 @@
+{
+  "id": "review-writer",
+  "title": "买家评论生成",
+  "group": "内容与文案",
+  "order": 6,
+  "icon": "💬",
+  "tagline": "给几个夸的点，写成有人味儿的买家评论，导出 Excel",
+  "description": "对话里定夸奖点、长度、条数、语种，生成带人设与场景的评论，输出双语 Excel。",
+  "runOnly": false,
+  "howto": [
+    "告诉员工：产品是什么、想夸哪几点（坐垫软 / 靠背高 / 面料透气）",
+    "选长度（短 30-60 词 / 中 80-120 / 长 150-220）和条数",
+    "员工写好评论、落到 review-input.json，再点运行导出 Excel"
+  ],
+  "sections": [
+    ["输入", "产品、夸奖点、长度、条数、语种"],
+    ["写法", "每条一个真实人设 + 场景 + 使用时长，只夸指定点"],
+    ["输出", "Excel 两张表：外语原文 + 中文对照"]
+  ],
+  "commands": [
+    {
+      "label": "① 导出评论 Excel",
+      "run": ["scripts\\run.cmd", "build"],
+      "desc": "读取工作区的 review-input.json，生成双语 Excel。",
+      "timeoutMs": 120000
+    }
+  ],
+  "primaryOutput": "reviews-.*\\.xlsx$"
+}
