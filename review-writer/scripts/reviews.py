@@ -10,6 +10,8 @@
   "reviews": [
     {
       "stars": 5,
+      "title": "英文标题…",
+      "title_zh": "中文标题…",
       "persona": "带娃的上班族，35 岁，家里养猫",
       "scene": "每天在家办公 8 小时，猫和孩子抢椅子",
       "used": "用了 3 周",
@@ -90,7 +92,7 @@ def build(xlsx):
     border = Border(bottom=thin)
     bold = Font(bold=True)
 
-    headers = ["#", "语言", "星级", "长度", "夸奖点", "人设", "场景", "使用时长", "评论正文"]
+    headers = ["#", "语言", "星级", "标题", "长度", "夸奖点", "人设", "场景", "使用时长", "评论正文"]
     for col, name in enumerate(headers, start=1):
         cell = en.cell(row=1, column=col, value=name)
         cell.font = bold
@@ -104,6 +106,7 @@ def build(xlsx):
             i,
             doc.get("language") or "en",
             item.get("stars") or 5,
+            item.get("title") or "",
             doc.get("length") or "",
             "、".join(item.get("points") or []),
             item.get("persona") or "",
@@ -113,10 +116,10 @@ def build(xlsx):
         ]
         for col, value in enumerate(values, start=1):
             cell = en.cell(row=row, column=col, value=value)
-            cell.alignment = Alignment(vertical="top", wrap_text=(col == 9))
+            cell.alignment = Alignment(vertical="top", wrap_text=(col == 10))
             cell.border = border
 
-    zh_headers = ["#", "中文对照", "夸奖点"]
+    zh_headers = ["#", "标题", "中文对照", "夸奖点"]
     for col, name in enumerate(zh_headers, start=1):
         cell = zh.cell(row=1, column=col, value=name)
         cell.font = bold
@@ -126,16 +129,22 @@ def build(xlsx):
     for i, item in enumerate(reviews, start=1):
         row = i + 1
         for col, value in enumerate(
-            [i, item.get("text_zh") or item.get("text") or "", "、".join(item.get("points") or [])], start=1
+            [
+                i,
+                item.get("title_zh") or item.get("title") or "",
+                item.get("text_zh") or item.get("text") or "",
+                "、".join(item.get("points") or []),
+            ],
+            start=1,
         ):
             cell = zh.cell(row=row, column=col, value=value)
-            cell.alignment = Alignment(vertical="top", wrap_text=(col == 2))
+            cell.alignment = Alignment(vertical="top", wrap_text=(col == 3))
             cell.border = border
 
-    widths = {1: 5, 2: 7, 3: 6, 4: 8, 5: 24, 6: 28, 7: 34, 8: 12, 9: 80}
+    widths = {1: 5, 2: 7, 3: 6, 4: 34, 5: 8, 6: 24, 7: 28, 8: 34, 9: 12, 10: 80}
     for col, w in widths.items():
         en.column_dimensions[get_column_letter(col)].width = w
-    for col, w in {1: 5, 2: 80, 3: 24}.items():
+    for col, w in {1: 5, 2: 34, 3: 80, 4: 24}.items():
         zh.column_dimensions[get_column_letter(col)].width = w
     en.freeze_panes = "A2"
     zh.freeze_panes = "A2"

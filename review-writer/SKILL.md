@@ -45,6 +45,22 @@ description: "亚马逊买家评论生成：用户给夸奖点，写成人味儿
 - 像宣传语：“ergonomic design”“premium quality materials”
 - 每条都用同一个句式开头（“I bought this...”）
 
+## 标题（每条评论都要）
+
+亚马逊评论标题是**一句话**，不是总结全文。规则：
+
+- 6–12 个词，小写为主，只首字母大写
+- 写**具体的一件事**，不写评价总结
+- 允许口语、允许带一点情绪
+
+| 别写 | 这么写 |
+|---|---|
+| Great chair, highly recommend | The heat pillow is the part I didn't expect to use |
+| Very comfortable gaming chair | Two weeks in and my cat has claimed it |
+| Excellent quality | Fits a 189cm guy without the headrest digging in |
+
+配套字段：`title`（英文标题）+ `title_zh`（中文对照，一句，直译意思即可）。
+
 **要有变化**
 
 10 条里：人设不重复、场景不重复、开头句式不重复、至少 2 条带小瑕疵。
