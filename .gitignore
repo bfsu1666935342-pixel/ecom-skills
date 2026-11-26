@@ -8,3 +8,4 @@ logs/
 # 配置备份（含真实业务数据，别提交）
 *.bak-*
 *.tmp-*
+review-writer/reports/

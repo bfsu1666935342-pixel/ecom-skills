@@ -53,7 +53,8 @@ description: "亚马逊买家评论生成：用户给夸奖点，写成人味儿
 
 1. 按上面的规则写好评论，每条带 `persona / scene / used / points / text / text_zh`
 2. 用 `write_file` 写到工作区根目录的 `review-input.json`（结构见 `scripts/reviews.py` 顶部注释）
-3. 告诉用户「点运行导出 Excel」，或直接说已经写好了
+3. **自己调 `run_skill` 运行「① 导出评论 Excel」**，不要只让用户去点按钮；
+   跑完把 Excel 路径告给用户（会在工作区「技能产出」里，同时留在 workspace 根目录）
 
 Excel 两张表：`Comments`（外语原文 + 人设场景）和 `中文对照`。
 

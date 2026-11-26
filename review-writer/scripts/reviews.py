@@ -35,12 +35,24 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SKILL = HERE.parent
 
-CANDIDATES = [
-    os.environ.get("REVIEW_INPUT", ""),
-    str(Path.cwd() / "review-input.json"),
-    str(SKILL / "review-input.json"),
-    str(SKILL.parent.parent / "review-input.json"),
-]
+def _candidates():
+    """技能运行时 cwd 是技能目录，工作区在别处，所以往上层找 workspace/。"""
+    out = [os.environ.get("REVIEW_INPUT", ""), str(Path.cwd() / "review-input.json")]
+    here = SKILL
+    for _ in range(5):
+        out.append(str(here / "review-input.json"))
+        out.append(str(here / "workspace" / "review-input.json"))
+        try:
+            out.extend(str(p) for p in here.glob("*/workspace/review-input.json"))
+        except OSError:
+            pass
+        here = here.parent
+        if here == here.parent:
+            break
+    return [x for x in out if x]
+
+
+CANDIDATES = _candidates()
 
 
 def find_input(explicit: str = "") -> Path:
@@ -52,8 +64,9 @@ def find_input(explicit: str = "") -> Path:
     for item in CANDIDATES:
         if item and Path(item).exists():
             return Path(item)
+    tried = "\n".join("  " + x for x in CANDIDATES)
     raise SystemExit(
-        "找不到 review-input.json。把员工写好的 JSON 放到工作区根目录，或用 --input 指定。"
+        "找不到 review-input.json。找过这些位置：\n" + tried + "\n把员工写好的 JSON 放到工作区根目录，或用 --input 指定。"
     )
 
 
@@ -127,8 +140,24 @@ def build(xlsx):
     en.freeze_panes = "A2"
     zh.freeze_panes = "A2"
 
-    out = Path(xlsx) if xlsx else Path.cwd() / f"reviews-{dt.datetime.now():%Y%m%d-%H%M}.xlsx"
+    src = find_input(args.input)
+    name = f"reviews-{dt.datetime.now():%Y%m%d-%H%M}.xlsx"
+    if xlsx:
+        out = Path(xlsx)
+    else:
+        # 主产出放技能自己的 reports/，工作台会把它复制到「技能产出」
+        out = SKILL / "reports" / name
+    out.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out)
+    # 再放一份到输入文件旁边（工作区根目录），方便直接打开
+    try:
+        if src.parent.resolve() != out.parent.resolve():
+            import shutil
+
+            shutil.copyfile(out, src.parent / out.name)
+            print(f"副本：{src.parent / out.name}")
+    except OSError:
+        pass
     print(f"已生成：{out}")
     print(f"条数：{len(reviews)}｜语言：{doc.get('language') or 'en'}｜长度：{doc.get('length') or '-'}")
     return out
