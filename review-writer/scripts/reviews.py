@@ -72,6 +72,14 @@ def find_input(explicit: str = "") -> Path:
     )
 
 
+def _title(item):
+    """标题字段兼容：title / 标题 / headline"""
+    for key in ("title", "标题", "headline"):
+        v = (item or {}).get(key)
+        if v:
+            return str(v)
+    return ""
+
 def build(xlsx):
     from openpyxl import Workbook  # 延迟导入，doctor 不需要
     from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
@@ -106,7 +114,7 @@ def build(xlsx):
             i,
             doc.get("language") or "en",
             item.get("stars") or 5,
-            item.get("title") or "",
+            _title(item),
             doc.get("length") or "",
             "、".join(item.get("points") or []),
             item.get("persona") or "",
@@ -131,7 +139,7 @@ def build(xlsx):
         for col, value in enumerate(
             [
                 i,
-                item.get("title_zh") or item.get("title") or "",
+                item.get("title_zh") or _title(item),
                 item.get("text_zh") or item.get("text") or "",
                 "、".join(item.get("points") or []),
             ],
@@ -168,6 +176,9 @@ def build(xlsx):
     except OSError:
         pass
     print(f"已生成：{out}")
+    missing = [str(i + 1) for i, r in enumerate(reviews) if not _title(r)]
+    if missing:
+        print(f"警告：第 {', '.join(missing)} 条缺标题")
     print(f"条数：{len(reviews)}｜语言：{doc.get('language') or 'en'}｜长度：{doc.get('length') or '-'}")
     return out
 
