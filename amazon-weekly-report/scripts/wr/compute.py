@@ -119,6 +119,7 @@ def profit_block(entry: Dict[str, Any], raw: Dict[str, float], revenue: float, u
     fba_fee = num(cost.get("fba_fee"))
     referral_rate = num(cost.get("referral_rate"))
     other = num(cost.get("other_per_unit"))
+    storage_rate = num(cost.get("storage_rate"))
     if not unit_cost and not fba_fee:
         return {"amount": None, "rate": None, "target_rate": target_rate, "source": "missing", "note": "成本配置为空，无法核算利润。"}
     cogs = unit_cost * units
@@ -126,7 +127,8 @@ def profit_block(entry: Dict[str, Any], raw: Dict[str, float], revenue: float, u
     referral = revenue * referral_rate
     fba = fba_fee * units
     other_cost = other * units
-    amount = revenue - cogs - logistics - referral - fba - other_cost - ad_spend - refunds
+    storage = revenue * storage_rate
+    amount = revenue - cogs - logistics - referral - fba - storage - other_cost - ad_spend - refunds
     return {
         "amount": amount,
         "rate": safe_div(amount, revenue),
@@ -137,7 +139,8 @@ def profit_block(entry: Dict[str, Any], raw: Dict[str, float], revenue: float, u
             "采购成本": -cogs,
             "头程": -logistics,
             "佣金": -referral,
-            "FBA 配送费": -fba,
+            "尾程配送费": -fba,
+            "仓储费": -storage,
             "广告费": -ad_spend,
             "退款": -refunds,
             "其他": -other_cost,
