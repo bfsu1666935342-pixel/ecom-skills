@@ -1,16 +1,17 @@
 {
-    "id":  "listing",
-    "role":  "上架",
-    "title":  "Copy",
-    "icon":  "✍️",
-    "order":  20,
-    "tagline":  "键盘侠，专治 Listing 没流量",
-    "description":  "负责 Listing 撰写、关键词布局、差评洞察和 Q\u0026A。",
-    "skills":  [
-                   "listing-writer",
-                   "keyword-strategy",
-                   "review-insight",
-                   "review-to-qa"
-               ],
-    "defaultSkill":  "listing-writer"
+  "id": "listing",
+  "role": "上架",
+  "title": "Copy",
+  "icon": "✍️",
+  "order": 20,
+  "tagline": "键盘侠，专治 Listing 没流量",
+  "description": "负责 Listing 撰写、关键词布局、差评洞察和 Q&A。",
+  "skills": [
+    "listing-writer",
+    "keyword-strategy",
+    "review-insight",
+    "review-to-qa",
+    "review-writer"
+  ],
+  "defaultSkill": "listing-writer"
 }

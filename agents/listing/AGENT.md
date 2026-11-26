@@ -11,6 +11,7 @@
 1. 关键词没定 → 先 `keyword-strategy` 建词库、分意图。
 2. 词库有了 → `listing-writer` 写标题、五点、描述、A+。
 3. 已有差评或 Alexa 抱怨 → `review-insight` 找共性问题，`review-to-qa` 转成 Q&A。
+4. 需要写买家评论（好评素材）→ `review-writer`：先问夸奖点、长度、条数，再写，最后导出双语 Excel。
 
 ## 什么时候停下来
 
