@@ -30,6 +30,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import re
 import os
 import sys
 from pathlib import Path
@@ -80,8 +81,18 @@ def _title(item):
             return str(v)
     return ""
 
+def _points(item):
+    """夸奖点兼容：数组、或用、/，/ 分隔的字符串"""
+    pts = (item or {}).get("points")
+    if isinstance(pts, list):
+        return [str(x).strip() for x in pts if str(x).strip()]
+    if isinstance(pts, str):
+        return [p.strip() for p in re.split(r"[、,，/;；|]", pts) if p.strip()]
+    return []
+
+
 def build(xlsx):
-    from openpyxl import Workbook  # 延迟导入，doctor 不需要
+    from openpyxl import Workbook
     from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
     from openpyxl.utils import get_column_letter
 
@@ -95,18 +106,22 @@ def build(xlsx):
     en.title = "Comments"
     zh = wb.create_sheet("中文对照")
 
-    head_fill = PatternFill("solid", fgColor="F2F4F7")
-    thin = Side(style="thin", color="DDE1E6")
-    border = Border(bottom=thin)
-    bold = Font(bold=True)
+    HEAD_FILL = PatternFill("solid", fgColor="1F2937")
+    ZEBRA = PatternFill("solid", fgColor="F7F8FA")
+    LINE = Side(style="thin", color="D9DDE3")
+    BORDER = Border(left=LINE, right=LINE, top=LINE, bottom=LINE)
+    HEAD_FONT = Font(bold=True, color="FFFFFF", size=10)
+    BODY_FONT = Font(size=10)
+    TITLE_FONT = Font(size=10, bold=True)
 
     headers = ["#", "语言", "星级", "标题", "长度", "夸奖点", "人设", "场景", "使用时长", "评论正文"]
     for col, name in enumerate(headers, start=1):
         cell = en.cell(row=1, column=col, value=name)
-        cell.font = bold
-        cell.fill = head_fill
+        cell.font = HEAD_FONT
+        cell.fill = HEAD_FILL
         cell.alignment = Alignment(horizontal="center", vertical="center")
-        cell.border = border
+        cell.border = BORDER
+    en.row_dimensions[1].height = 26
 
     for i, item in enumerate(reviews, start=1):
         row = i + 1
@@ -116,7 +131,7 @@ def build(xlsx):
             item.get("stars") or 5,
             _title(item),
             doc.get("length") or "",
-            "、".join(item.get("points") or []),
+            " · ".join(_points(item)),
             item.get("persona") or "",
             item.get("scene") or "",
             item.get("used") or "",
@@ -124,61 +139,74 @@ def build(xlsx):
         ]
         for col, value in enumerate(values, start=1):
             cell = en.cell(row=row, column=col, value=value)
-            cell.alignment = Alignment(vertical="top", wrap_text=(col == 10))
-            cell.border = border
+            cell.font = TITLE_FONT if col == 4 else BODY_FONT
+            cell.border = BORDER
+            cell.alignment = Alignment(
+                vertical="top",
+                horizontal="center" if col in (1, 2, 3, 5) else "left",
+                wrap_text=col in (4, 6, 7, 8, 10),
+            )
+            if i % 2 == 0:
+                cell.fill = ZEBRA
+        text_len = len(str(item.get("text") or ""))
+        en.row_dimensions[row].height = max(42, min(210, 15 * (text_len // 75 + 1)))
+
+    widths = {1: 4, 2: 6, 3: 6, 4: 38, 5: 8, 6: 22, 7: 24, 8: 30, 9: 11, 10: 72}
+    for col, w in widths.items():
+        en.column_dimensions[get_column_letter(col)].width = w
+    en.freeze_panes = "A2"
+    en.auto_filter.ref = f"A1:J{len(reviews) + 1}"
+    en.sheet_properties.tabColor = "1F2937"
 
     zh_headers = ["#", "标题", "中文对照", "夸奖点"]
     for col, name in enumerate(zh_headers, start=1):
         cell = zh.cell(row=1, column=col, value=name)
-        cell.font = bold
-        cell.fill = head_fill
+        cell.font = HEAD_FONT
+        cell.fill = HEAD_FILL
         cell.alignment = Alignment(horizontal="center", vertical="center")
-        cell.border = border
+        cell.border = BORDER
+    zh.row_dimensions[1].height = 26
     for i, item in enumerate(reviews, start=1):
         row = i + 1
-        for col, value in enumerate(
-            [
-                i,
-                item.get("title_zh") or _title(item),
-                item.get("text_zh") or item.get("text") or "",
-                "、".join(item.get("points") or []),
-            ],
-            start=1,
-        ):
+        values = [
+            i,
+            item.get("title_zh") or _title(item),
+            item.get("text_zh") or item.get("text") or "",
+            " · ".join(_points(item)),
+        ]
+        for col, value in enumerate(values, start=1):
             cell = zh.cell(row=row, column=col, value=value)
-            cell.alignment = Alignment(vertical="top", wrap_text=(col == 3))
-            cell.border = border
+            cell.font = TITLE_FONT if col == 2 else BODY_FONT
+            cell.border = BORDER
+            cell.alignment = Alignment(
+                vertical="top", horizontal="center" if col in (1, 4) else "left", wrap_text=col in (2, 3)
+            )
+            if i % 2 == 0:
+                cell.fill = ZEBRA
+        zh.row_dimensions[row].height = max(42, min(180, 15 * (len(str(item.get("text_zh") or "")) // 60 + 1)))
 
-    widths = {1: 5, 2: 7, 3: 6, 4: 34, 5: 8, 6: 24, 7: 28, 8: 34, 9: 12, 10: 80}
-    for col, w in widths.items():
-        en.column_dimensions[get_column_letter(col)].width = w
-    for col, w in {1: 5, 2: 34, 3: 80, 4: 24}.items():
+    for col, w in {1: 4, 2: 34, 3: 68, 4: 22}.items():
         zh.column_dimensions[get_column_letter(col)].width = w
-    en.freeze_panes = "A2"
     zh.freeze_panes = "A2"
+    zh.sheet_properties.tabColor = "6B7280"
 
-    src = find_input(args.input)
+    src_path = find_input(args.input)
     name = f"reviews-{dt.datetime.now():%Y%m%d-%H%M}.xlsx"
-    if xlsx:
-        out = Path(xlsx)
-    else:
-        # 主产出放技能自己的 reports/，工作台会把它复制到「技能产出」
-        out = SKILL / "reports" / name
+    out = Path(xlsx) if xlsx else SKILL / "reports" / name
     out.parent.mkdir(parents=True, exist_ok=True)
     wb.save(out)
-    # 再放一份到输入文件旁边（工作区根目录），方便直接打开
     try:
-        if src.parent.resolve() != out.parent.resolve():
+        if src_path.parent.resolve() != out.parent.resolve():
             import shutil
 
-            shutil.copyfile(out, src.parent / out.name)
-            print(f"副本：{src.parent / out.name}")
+            shutil.copyfile(out, src_path.parent / out.name)
+            print(f"副本：{src_path.parent / out.name}")
     except OSError:
         pass
-    print(f"已生成：{out}")
     missing = [str(i + 1) for i, r in enumerate(reviews) if not _title(r)]
     if missing:
         print(f"警告：第 {', '.join(missing)} 条缺标题")
+    print(f"已生成：{out}")
     print(f"条数：{len(reviews)}｜语言：{doc.get('language') or 'en'}｜长度：{doc.get('length') or '-'}")
     return out
 
