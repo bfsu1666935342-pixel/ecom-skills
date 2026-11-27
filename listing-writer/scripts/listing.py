@@ -186,12 +186,16 @@ def export(draft: dict, out: Path, violations: list) -> None:
         for c, v in enumerate(row, 1):
             cell = ws.cell(row=r, column=c, value=v)
             cell.border = border
-            cell.alignment = Alignment(vertical="top", horizontal="center" if c in (1, 4) else "left", wrap_text=c == 3)
-        ws.row_dimensions[r].height = max(30, min(120, 15 * (len(str(row[2])) // 60 + 1)))
+            cell.alignment = Alignment(vertical="top", horizontal="center" if c in (1, 4, 6) else "left", wrap_text=c == 3)
+            if r % 2 == 0:
+                cell.fill = PatternFill("solid", fgColor="F7F8FA")
+        ws.row_dimensions[r].height = max(28, min(96, 15 * (len(str(row[2])) // 95 + 1)))
 
-    for c, w in {1: 4, 2: 12, 3: 78, 4: 8, 5: 22, 6: 14, 7: 20}.items():
-        ws.column_dimensions[chr(64 + c)].width = w
-    ws.freeze_panes = "A2"
+    for col, w in {'A': 5, 'B': 12, 'C': 100, 'D': 9, 'E': 26, 'F': 16, 'G': 28}.items():
+        ws.column_dimensions[col].width = w
+    ws.freeze_panes = "C2"
+    ws.auto_filter.ref = f"A1:G{len(rows) + 1}"
+    ws.sheet_properties.tabColor = "1F2937"
 
     if violations:
         bad = wb.create_sheet("未通过项")
