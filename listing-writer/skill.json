@@ -5,17 +5,34 @@
   "group": "上架与内容",
   "order": 40,
   "featured": true,
-  "tagline": "标题 / 五点 / 描述 / 后台关键词 / A+ 提纲",
-  "description": "把产品参数翻译成美国消费者看得懂、平台允许、关键词能索引的销售文案。支持新品从零写、老链接重写、标题 A/B 版本、五点与 A+ 提纲，并逐条标出合规风险。",
-  "starters": [
-    "帮我写一条新品 Listing，产品是便携露营灯",
-    "把这条老 Listing 重写得更像美国人写的",
-    "给我 3 个标题版本，分别偏搜索、偏利益、偏场景"
+  "tagline": "参数进，Excel 出；关键词按搜索量分配，写作前必须取知识库风格",
+  "description": "把产品参数转成可发布的英文 Listing：标题 / 五点 / 后台词，埋词按相关度与搜索量分配，交稿前过校验（字数、埋词位置、禁词、场景、风格引用），通过后导出 Excel 直接复制。",
+  "howto": [
+    "发产品链接或参数，我从里面提卖点；再说这次要埋的流量词",
+    "我把 参数 / 卖点 / 流量词 / 人群 / 场景 一次列出来，你确认或改",
+    "我写完先过校验，不通过就重写；通过了导出 Excel"
   ],
-  "fields": [
-    { "key": "product", "label": "产品与规格", "type": "textarea", "placeholder": "例如：USB-C 充电露营灯，三档调光，ABS 外壳，带挂钩，重量 280g", "required": true },
-    { "key": "audience", "label": "目标人群 / 场景", "placeholder": "例如：周末露营、停电应急、车库备用" },
-    { "key": "diff", "label": "与竞品的真实差异", "type": "textarea", "placeholder": "例如：比同类轻 30%，有电量显示，磁吸底座" },
-    { "key": "keywords", "label": "已有核心关键词", "placeholder": "例如：camping lantern, rechargeable lantern" }
-  ]
+  "sections": [
+    ["输入", "产品链接或参数 + 要埋的流量词（或我从 SIF 拉）"],
+    ["调研", "评论/搜索词里找真实人群与场景，附证据，你确认"],
+    ["校验", "标题≤200、五点≤500、埋词到位、禁词、场景、风格引用"],
+    ["输出", "Excel：模块 / 英文原文 / 字符数 / 埋入词 / 场景"]
+  ],
+  "commands": [
+    {
+      "label": "① 校验并导出 Listing Excel",
+      "run": ["scripts\\run.cmd", "build", "--input", "{input}"],
+      "desc": "读取工作区的 draft-listing.json；不通过只报问题，通过了才出 Excel。",
+      "timeoutMs": 120000,
+      "params": [
+        {
+          "key": "input",
+          "label": "草稿文件（留空=工作区 draft-listing.json）",
+          "placeholder": "draft-listing.json",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "primaryOutput": "listing-.*\\.xlsx$"
 }
