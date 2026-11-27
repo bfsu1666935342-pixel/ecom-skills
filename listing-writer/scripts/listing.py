@@ -210,6 +210,37 @@ def export(draft: dict, out: Path, violations: list) -> None:
     wb.save(out)
 
 
+def draft_candidates(explicit: str = "") -> list:
+    """技能运行时 cwd 是技能目录，草稿通常在工作区，所以要往上层找。"""
+    out = []
+    if explicit:
+        out.append(Path(explicit))
+    out.append(Path.cwd() / "draft-listing.json")
+    here = SKILL
+    for _ in range(5):
+        out.append(here / "draft-listing.json")
+        out.append(here / "workspace" / "draft-listing.json")
+        try:
+            out.extend(sorted(here.glob("*/workspace/draft-listing.json")))
+            out.extend(sorted(here.glob("*/draft-listing.json")))
+        except OSError:
+            pass
+        here = here.parent
+        if here == here.parent:
+            break
+    return out
+
+
+def find_draft(explicit: str = "") -> Path | None:
+    for c in draft_candidates(explicit):
+        try:
+            if c.exists():
+                return c
+        except OSError:
+            continue
+    return None
+
+
 def main() -> int:
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -222,9 +253,11 @@ def main() -> int:
     parser.add_argument("--force", action="store_true")
     args, _ = parser.parse_known_args()
 
-    src = Path(args.input) if args.input else Path.cwd() / "draft-listing.json"
-    if not src.exists():
-        print(f"找不到草稿：{src}")
+    src = find_draft(args.input)
+    if src is None:
+        print('找不到草稿。找过这些位置：')
+        for c in draft_candidates(args.input):
+            print('  ' + str(c))
         return 2
 
     draft = json.loads(src.read_text(encoding="utf-8"))
