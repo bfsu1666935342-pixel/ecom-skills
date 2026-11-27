@@ -40,7 +40,11 @@ SKILL = HERE.parent
 
 def _candidates():
     """技能运行时 cwd 是技能目录，工作区在别处，所以往上层找 workspace/。"""
-    out = [os.environ.get("REVIEW_INPUT", ""), str(Path.cwd() / "review-input.json")]
+    ws = os.environ.get("ECOM_WORKSPACE", "")
+    out = [os.environ.get("REVIEW_INPUT", "")]
+    if ws:
+        out.append(str(Path(ws) / "review-input.json"))
+    out.append(str(Path.cwd() / "review-input.json"))
     here = SKILL
     for _ in range(5):
         out.append(str(here / "review-input.json"))

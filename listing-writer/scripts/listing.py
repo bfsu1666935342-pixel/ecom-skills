@@ -211,8 +211,11 @@ def export(draft: dict, out: Path, violations: list) -> None:
 
 
 def draft_candidates(explicit: str = "") -> list:
-    """技能运行时 cwd 是技能目录，草稿通常在工作区，所以要往上层找。"""
+    """优先用平台注入的 ECOM_WORKSPACE；没有才逐层找（老版本兜底）。"""
     out = []
+    ws = os.environ.get("ECOM_WORKSPACE", "")
+    if ws:
+        out.append(Path(ws) / "draft-listing.json")
     if explicit:
         out.append(Path(explicit))
     out.append(Path.cwd() / "draft-listing.json")
